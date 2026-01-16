@@ -912,6 +912,28 @@
       "downloaded_at": "2026-01-16T11:06:44.762639Z",
       "file_path": "/data/audio/twt_2670940377.mp3",
       "duration_sec": 8888
+    },
+    {
+      "id": "yt_MLstFPWAd48",
+      "source": "youtube",
+      "title": "The Wild Project \u2014 Ibai reveals whether he has used Ozempic at any point during his physical transformation",
+      "channel": "The Wild Project",
+      "original_url": "https://www.youtube.com/watch?v=MLstFPWAd48",
+      "published_at": "2026-01-16T15:55:45Z",
+      "downloaded_at": "2026-01-16T16:00:40.168526Z",
+      "file_path": "/data/audio/yt_MLstFPWAd48.mp3",
+      "duration_sec": 729.0
+    },
+    {
+      "id": "yt_fbFxLnN4YQ0",
+      "source": "youtube",
+      "title": "The Wild Project \u2014 Ibai and Jordi Wild give their opinions on THE HOUSE OF THE TWINS 2 and the most extreme content ...",
+      "channel": "The Wild Project",
+      "original_url": "https://www.youtube.com/watch?v=fbFxLnN4YQ0",
+      "published_at": "2026-01-16T16:30:30Z",
+      "downloaded_at": "2026-01-16T16:46:15.516528Z",
+      "file_path": "/data/audio/yt_fbFxLnN4YQ0.mp3",
+      "duration_sec": 771.0
     }
   ]
 }

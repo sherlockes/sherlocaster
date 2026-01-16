@@ -17,24 +17,32 @@ start_time = datetime.now(timezone.utc)
 
 class TeeLogger(object):
     def __init__(self, filepath):
-        self.file = open(filepath, "w", buffering=1)   # <--- line buffered
+        self.file = open(filepath, "w", buffering=1)
         self.stdout = sys.stdout
+        self.stderr = sys.stderr   # para capturar stderr también
 
     def write(self, data):
         self.stdout.write(data)
-
-        if data.lstrip().startswith("[download]") and "100%" not in data:
-            return
-
-        self.file.write(data)  # flushing automático por buffering=1
+        self.file.write(data)
 
     def flush(self):
         self.stdout.flush()
         self.file.flush()
 
+    def close(self):
+        try:
+            self.flush()
+            self.file.close()
+        except:
+            pass
+
+
 
 # Activamos el logger
-sys.stdout = TeeLogger("/data/last_run.log")
+tee = TeeLogger("/data/last_run.log")
+sys.stdout = tee
+sys.stderr = tee   # capturamos también stderr
+
 
 def run():
     config = load_config()
@@ -84,6 +92,12 @@ def run():
     with open("/data/last_run.meta", "w") as meta:
         meta.write(f"timestamp={end_time.isoformat()}Z\n")
         meta.write(f"duration={duration.total_seconds():.2f}\n")
+
+
+    # Cerrar TeeLogger antes de rotar logs
+    sys.stdout.close()
+    sys.stdout = sys.__stdout__
+    sys.stderr = sys.__stderr__
 
     # Publicar contenido en nginx
     archive_last_run()

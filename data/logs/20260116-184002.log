@@ -1,8 +1,10 @@
 [Yt] Canal: Oliver Nabani
 [Yt] yt_IM-WDOL4q60 ya procesado
+WARNING: [youtube] q-B5UwNfhxk: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_q-B5UwNfhxk más de 5 días
 [Yt] Canal: Jordi LLatzer
 [Yt] yt_UDZUuJYz3l4 ya procesado
+WARNING: [youtube] 9tkYdkcVAc0: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_9tkYdkcVAc0 más de 5 días
 [Yt] Canal: Wall Street Wolverine
 [Yt] yt_rHMJyVNUzsA ya procesado
@@ -26,6 +28,7 @@
 [Yt] yt_DvtWvB5H85g ya procesado
 [Yt] yt_MKmyXptEdfc ya procesado
 [Yt] yt_y4s7Od_f1jE ya procesado
+WARNING: [youtube] vh2kzlw3go8: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_vh2kzlw3go8 más de 5 días
 [Yt] Canal: Dross Rotzank
 [Yt] yt_T-e-zNC8S0Y ya procesado
@@ -34,11 +37,12 @@
 [Yt] yt_Cq1fDxWZgJs ya procesado
 [Yt] yt_P56c3oGRuAg ya procesado
 [Yt] Canal: The Wild Project
+[Yt] yt_fbFxLnN4YQ0 ya procesado
+[Yt] yt_MLstFPWAd48 ya procesado
 [Yt] yt_E5uRb8ZYbZo ya procesado
 [Yt] yt_JPkPqZ-6L4w ya procesado
+WARNING: [youtube] qVCSBu1UNb0: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_qVCSBu1UNb0. 3m < 5m
-[Yt] yt_mX_2EpBSC5c ya procesado
-[Yt] yt_mtmzNLo6Hzc ya procesado
 [Yt] Canal: Red Pill
 [Yt] yt_1tpXqVxrkoY ya procesado
 [Yt] yt_J5tC_ZFFP5o ya procesado
@@ -46,17 +50,20 @@
 [Yt] yt_73EOY0s15wE ya procesado
 [Yt] yt_lRq2aN1T6zw ya procesado
 [Yt] Canal: La contracronica
+ERROR: [youtube] _wjGaxw_Z3M: Join this channel to get access to members-only content like this video, and other exclusive perks.
+[Yt] Error metadata https://www.youtube.com/watch?v=_wjGaxw_Z3M: ERROR: [youtube] _wjGaxw_Z3M: Join this channel to get access to members-only content like this video, and other exclusive perks.
+[Yt] yt__wjGaxw_Z3M sin datos, saltando
 [Yt] yt_zC5s4q2LBvM ya procesado
 [Yt] yt_ytxW7QdQGCU ya procesado
 [Yt] yt_rL_7Zsg5Rak ya procesado
 [Yt] yt_MUmEhU4jULc ya procesado
-[Yt] yt_QbqgJIgEcRc ya procesado
 [Yt] Canal: Punto de vista
 [Yt] yt_OgEHS9AcXrQ ya procesado
 [Yt] yt_K5Fn_2cfbxg más de 5 días
 [Yt] Canal: LordDraugr
 [Yt] yt_NPkHJmrzUS0 ya procesado
 [Yt] yt_24MGgIyhbsg ya procesado
+WARNING: [youtube] tdEtFCmMbpM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_tdEtFCmMbpM más de 5 días
 [Tw] Procesando canal: Jordi Llatzer
 [Tw] twt_2670940377 ya procesado
@@ -65,7 +72,7 @@
 [Tw] twt_2667513421 ya procesado
 [Tw] twt_2666560165 ya procesado
 [Fd] generado en /data/feed.xml
-[Fd] Feed ok con 83 episodios
+[Fd] Feed ok con 85 episodios
 [Rc] Feed subido
 [Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
 [Rc] Subida de carpeta audio OK
