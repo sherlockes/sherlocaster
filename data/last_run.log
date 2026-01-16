@@ -46,7 +46,7 @@
 [Yt] yt_73EOY0s15wE ya procesado
 [Yt] yt_lRq2aN1T6zw ya procesado
 [Yt] Canal: La contracronica
-[download] 100% of   76.23MiB in 00:00:08 at 9.49MiB/s                                                         [Yt] Añadido: La contracronica — Los mitos de Troya
+[Yt] yt_zC5s4q2LBvM ya procesado
 [Yt] yt_ytxW7QdQGCU ya procesado
 [Yt] yt_rL_7Zsg5Rak ya procesado
 [Yt] yt_MUmEhU4jULc ya procesado
@@ -59,10 +59,7 @@
 [Yt] yt_24MGgIyhbsg ya procesado
 [Yt] yt_tdEtFCmMbpM más de 5 días
 [Tw] Procesando canal: Jordi Llatzer
-[Tw] Bajando audio: twt_2670940377
-[Tw] Ejecutando: twitch-dl download 2670940377 -q audio_only --output /data/audio/twt_2670940377.mkv --auth-token t2xgoiw1neylxeyplvip74wpb69rwj
-[Tw] Convirtiendo a MP3: ffmpeg -y -i /data/audio/twt_2670940377.mkv -acodec libmp3lame -b:a 64k /data/audio/twt_2670940377.mp3
-[Tw] Añadido: Jordi Llatzer — ¿VAMOS Hacia otra CATÁSTROFE en bolsa como la del año 2000?
+[Tw] twt_2670940377 ya procesado
 [Tw] twt_2669203496 ya procesado
 [Tw] twt_2668340551 ya procesado
 [Tw] twt_2667513421 ya procesado
