@@ -6,7 +6,7 @@ from app.downloader.twitch import process_twitch_source
 from app.uploader.rclone import upload_feed, rclone_cleanup, flush_pending_audio, upload_audio_dir
 from pathlib import Path
 from app.uploader.rclone import rclone_upload
-from app.core.public import publish_status
+from app.core.public import publish_status, publish_logs, archive_last_run
 import sys
 import shutil
 import os
@@ -86,7 +86,10 @@ def run():
         meta.write(f"duration={duration.total_seconds():.2f}\n")
 
     # Publicar contenido en nginx
+    archive_last_run()
     publish_status("Sherlocaster")
+    publish_logs()
+
 
        
 if __name__ == "__main__":

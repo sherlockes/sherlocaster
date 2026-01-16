@@ -1,2 +1,2 @@
-secrets/*
-config/*
+config/rclone.conf
+config/twitch_token.env
