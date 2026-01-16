@@ -1,0 +1,74 @@
+sources:
+  youtube:
+    enabled: true
+    channels:
+      - name: "Oliver Nabani"
+        url: "https://www.youtube.com/@OliverNabani/videos"
+      - name: "Jordi LLatzer"
+        url: "https://www.youtube.com/@jordillatzer/videos"
+      - name: "Wall Street Wolverine"
+        url: "https://www.youtube.com/@WallStreetWolverine/videos"
+      - name: "Solo Fonseca"
+        url: "https://www.youtube.com/@SoloFonseca/videos"
+      - name: "Marc Vidal"
+        url: "https://www.youtube.com/@marc_vidal/videos"
+      - name: "WorldCast"
+        url: "https://www.youtube.com/@worldcast_/videos"
+      - name: "Dross Rotzank"
+        url: "https://www.youtube.com/@DrossRotzank/videos"
+      - name: "The Wild Project"
+        url: "https://www.youtube.com/@TheWildProject/videos"
+      - name: "Red Pill"
+        url: "https://www.youtube.com/@redpillpodcast_/streams"
+      - name: "La contracronica"
+        url: "https://www.youtube.com/@diazvillanueva/videos"
+      - name: "Punto de vista"
+        url: "https://www.youtube.com/@chemapuntodevista5674/videos"
+      - name: "LordDraugr"
+        url: "https://www.youtube.com/@LordDraugr/videos"
+    min_minutes: 5  # ejemplo: ignorar vídeos de menos de 5 minutos
+    limit_days: 5
+    limit: 1
+    format: mp3
+    audio_bitrate: "64k"
+
+  twitch:
+    enabled: true
+    channels:
+      - channel: "jordillatzer"
+        name: "Jordi Llatzer"
+    content: vods
+    limit_days: 10
+    limit: 5
+    format: mp3
+    audio_bitrate: "64k"
+
+storage:
+  base_path: "/data"
+  audio_dir: "audio"
+  temp_dir: "tmp"
+  state_file: "state/episodes.json"
+
+feed:
+  file_name: "feed.xml"
+  url_base: "http://homezgz.ddns.net:5005/sherlocaster/"
+  image: "http://homezgz.ddns.net:5005/sherlocaster/artwork.jpg"
+  title: "SherloCaster2"
+  link: "https://www.sherblog.es"
+  copyright: "2026 Sherlockes"
+  author: "Sherlockes"
+
+rclone:
+  remote: "Sherlockes78_GD"
+  path: "/sherlocaster"
+  retention_days: 15
+
+retention:
+  days: 300
+  max_items: 300
+  purge_audio: false
+
+days_limit: 5
+feed_limit: 500
+
+

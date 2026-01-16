@@ -1,0 +1,17 @@
+services:
+  sherlocaster:
+    build: .
+    container_name: sherlocaster
+    env_file:
+      - ./secrets/twitch_token.env
+    entrypoint: ["python", "-m", "app.main"]
+    ports:
+      - "8085:8085"
+    volumes:
+      - /home/sherlockes/dockers/nginx/data/sherlocaster2:/data/html
+      - ./secrets/twitch_token.env:/secrets/twitch_token.env:ro
+      - ./config.yaml:/app/config.yaml:ro
+      - ./data:/data
+      - ./logs:/logs
+    environment:
+      - TZ=Europe/Madrid
