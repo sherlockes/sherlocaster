@@ -27,8 +27,8 @@ sources:
       - name: "LordDraugr"
         url: "https://www.youtube.com/@LordDraugr/videos"
     min_minutes: 5  # ejemplo: ignorar vídeos de menos de 5 minutos
-    limit_days: 5
-    limit: 1
+    limit_days: 10
+    limit: 5
     format: mp3
     audio_bitrate: "64k"
 
@@ -40,6 +40,17 @@ sources:
     content: vods
     limit_days: 10
     limit: 5
+    format: mp3
+    audio_bitrate: "64k"
+
+  kick:
+    enabled: false
+    channels:
+      - channel: "jordillatzer"
+        name: "Jordi Llatzer"
+    content: vods
+    limit_days: 3
+    limit: 1
     format: mp3
     audio_bitrate: "64k"
 

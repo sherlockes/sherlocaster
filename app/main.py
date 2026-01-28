@@ -1,8 +1,6 @@
 from app.core.config import load_config
 from app.core.state import load_state, save_state
 from app.core.rss import generate_feed
-from app.downloader.youtube import process_youtube_source
-from app.downloader.twitch import process_twitch_source
 from app.uploader.rclone import upload_feed, rclone_cleanup, flush_pending_audio, upload_audio_dir
 from pathlib import Path
 from app.uploader.rclone import rclone_upload
@@ -57,15 +55,41 @@ def run():
     base_path = storage_cfg.get("base_path","/data")
     audio_dir = storage_cfg.get("audio_dir","audio")
 
+
+    src = config.get("sources", {})
+    yt_cfg = src.get("youtube", {})
+    yt_enabled = yt_cfg.get("enabled", True)
+    tw_cfg = src.get("twitch", {})
+    tw_enabled = tw_cfg.get("enabled", True)
+    kc_cfg = src.get("kick", {})
+    kc_enabled = kc_cfg.get("enabled", True)
+
     new_episodes = []
 
     # YouTube
-    yt_eps = process_youtube_source(config, state)
-    new_episodes.extend(yt_eps)
+    if yt_enabled:
+        from app.downloader.youtube import process_youtube_source
+        yt_eps = process_youtube_source(config, state)
+        new_episodes.extend(yt_eps)
+    else:
+        print(f"[Yt] Disabled → saltando")
 
     # Twitch
-    tw_eps = process_twitch_source(config, state)
-    new_episodes.extend(tw_eps)
+    if tw_enabled:
+        from app.downloader.twitch import process_twitch_source
+        tw_eps = process_twitch_source(config, state)
+        new_episodes.extend(tw_eps)
+    else:
+        print(f"[Tw] Disabled → saltando")
+
+    # Kick
+    if kc_enabled:
+        from app.downloader.kick import process_kick_source
+        kick_eps = process_kick_source(config, state)
+        new_episodes.extend(kick_eps)
+    else:
+        print(f"[Kc] Disabled → saltando")
+
 
     # Añadir nuevos
     if new_episodes:
