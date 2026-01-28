@@ -86,7 +86,7 @@ def run():
     if kc_enabled:
         from app.downloader.kick import process_kick_source
         kick_eps = process_kick_source(config, state)
-        new_episodes.extend(kick_eps)
+        #new_episodes.extend(kick_eps)
     else:
         print(f"[Kc] Disabled → saltando")
 

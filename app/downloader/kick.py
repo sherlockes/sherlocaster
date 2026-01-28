@@ -1,13 +1,8 @@
 import datetime
-import subprocess
-import requests
-import os
 from curl_cffi import requests as cf
-
 
 def fetch_vods(channel, limit=30, limit_days=0):
     url = f"https://kick.com/api/v2/channels/{channel}/videos?limit={limit}"
-
     headers = {
         "accept": "application/json",
         "referer": f"https://kick.com/{channel}/videos",
@@ -15,9 +10,7 @@ def fetch_vods(channel, limit=30, limit_days=0):
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": '"Linux"',
     }
-
     r = cf.get(url, headers=headers, impersonate="chrome120")
-
     if r.status_code != 200:
         print(f"[Kick] HTTP {r.status_code}: {r.text[:200]}")
         return []
@@ -32,114 +25,69 @@ def fetch_vods(channel, limit=30, limit_days=0):
     for v in vods:
         m3u8 = v.get("source")
         if not m3u8:
-            print(f"[Kick] VOD {v.get('id')} sin m3u8, saltando")
             continue
 
-        ts = v.get("start_time")
-        if cutoff and ts:
+        title = v.get("session_title") or v.get("slug") or str(v.get("id"))
+        date = v.get("start_time")
+        vid = v.get("id")
+
+        if cutoff and date:
             try:
-                dt = datetime.datetime.strptime(ts, "%Y-%m-%d %H:%M:%S")
+                dt = datetime.datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
                 if dt < cutoff:
                     continue
             except:
                 pass
 
         results.append({
-            "id": v.get("id"),
-            "title": v.get("session_title") or v.get("slug") or str(v.get("id")),
-            "date": ts,
+            "id": vid,
+            "title": title,
+            "date": date,
             "m3u8": m3u8,
         })
 
     return results
 
 
-
-
-def download_mp3(m3u8_url, output_path, bitrate="64k"):
-    cmd = [
-        "ffmpeg", "-y",
-        "-i", m3u8_url,
-        "-vn",
-        "-acodec", "libmp3lame",
-        "-b:a", bitrate,
-        output_path
-    ]
-    print("[Kick] Ejecutando ffmpeg…")
-    subprocess.run(cmd, check=True)
-
-
-def process_kick_source(config, state):
+def process_kick_source(config: dict, state: dict) -> dict:
     """
-    Procesa VODs de Kick estilo Twitch
+    Firma CORRECTA, igual que youtube.py y twitch.py
+    Por ahora solo imprime la lista de VODs sin modificar el state.
     """
+
     kick_cfg = config.get("sources", {}).get("kick", {})
-    if not kick_cfg.get("enabled", True):
+    if not kick_cfg.get("enabled", False):
         print("[Kick] Disabled → saltando")
-        return []
+        return state
 
     channels = kick_cfg.get("channels", [])
+    content = kick_cfg.get("content", "vods")
+    limit_days = kick_cfg.get("limit_days", 0)
+    limit = kick_cfg.get("limit", 30)
+
+    print(f"[Kick] Config → content={content}, limit={limit}, limit_days={limit_days}")
+
     if not channels:
         print("[Kick] No hay canales definidos en config")
-        return []
-
-    limit_days = kick_cfg.get("limit_days", 0)
-    limit = kick_cfg.get("limit", 10)
-    bitrate = kick_cfg.get("audio_bitrate", "64k")
-
-    # Estado tipo twitch/youtube
-    downloaded_ids = {ep["id"] for ep in state.get("episodes", [])}
-
-    new_episodes = []
+        return state
 
     for ch in channels:
-        channel = ch.get("channel")
-        name = ch.get("name", channel)
-        print(f"[Kick] Procesando canal: {name}")
+        # Soporta tanto string como dict con keys
+        if isinstance(ch, str):
+            channel = ch
+            name = ch
+        elif isinstance(ch, dict):
+            channel = ch.get("channel") or ch.get("name")
+            name = ch.get("name", channel)
+        else:
+            print("[Kick] Entrada no válida en channels:", ch)
+            continue
+
+        print(f"[Kick] Listando VODs → {name} ({channel})")
 
         vods = fetch_vods(channel, limit=limit, limit_days=limit_days)
-
         for v in vods:
-            vod_id = f"kick_{v['id']}"
-            title = v.get("session_title") or v.get("slug") or f"VOD {v['id']}"
-            created = v.get("created_at")
+            print(f"  - {v['id']} | {v['title']} | {v['date']}")
+            print(f"    m3u8: {v['m3u8']}")
 
-            if vod_id in downloaded_ids:
-                print(f"[Kick] {vod_id} ya procesado")
-                continue
-
-            # Kick da directamente la URL del m3u8 en "source"
-            m3u8_url = v.get("source")
-            if not m3u8_url:
-                print("[Kick] VOD sin source m3u8, saltando")
-                continue
-
-            # Prepara ruta de salida
-            base_path = config.get("storage", {}).get("base_path", "/data")
-            audio_dir = config.get("storage", {}).get("audio_dir", "audio")
-            os.makedirs(os.path.join(base_path, audio_dir), exist_ok=True)
-
-            filename = f"{vod_id}.mp3"
-            output_path = os.path.join(base_path, audio_dir, filename)
-
-            print(f"[Kick] Descargando audio → {filename}")
-            try:
-                download_mp3(m3u8_url, output_path, bitrate=bitrate)
-            except Exception as e:
-                print(f"[Kick] Error descargando {vod_id}: {e}")
-                continue
-
-            # Añadir al state
-            entry = {
-                "id": vod_id,
-                "title": title,
-                "date": created,
-                "path": filename,
-                "source": "kick",
-                "channel": name
-            }
-
-            state.setdefault("episodes", []).append(entry)
-            new_episodes.append(entry)
-
-    return new_episodes
+    return state

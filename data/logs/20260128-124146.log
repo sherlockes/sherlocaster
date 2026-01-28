@@ -1,0 +1,15 @@
+[Yt] Disabled → saltando
+[Tw] Disabled → saltando
+[Kick] Config → content=vods, limit=1, limit_days=3
+[Kick] Listando VODs → Jordi Llatzer (jordillatzer)
+  - 93849166 | MUCHO PELIGRO: HACER TRADING en BOLSA es UNA RUINA | 2026-01-26 21:04:55
+    m3u8: https://stream.kick.com/3c81249a5ce0/ivs/v1/196233775518/wTUM7vhoNiLL/2026/1/26/21/4/Tk0slBcu7T0J/media/hls/master.m3u8
+  - 93703334 | EL FUTURO DEL MUNDO: EL DAVOS MÁS IMPORTANTE DEL SIGLO XXI | 2026-01-25 21:04:58
+    m3u8: https://stream.kick.com/3c81249a5ce0/ivs/v1/196233775518/wTUM7vhoNiLL/2026/1/25/21/4/IGcShsnTFKRF/media/hls/master.m3u8
+[Fd] generado en /data/feed.xml
+[Fd] Feed ok con 79 episodios
+[Rc] Feed subido
+[Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
+[Rc] Subida de carpeta audio OK
+[Rc] Borrando > 15 días
+[Rc] Limpieza remota OK
