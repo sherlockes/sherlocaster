@@ -12,14 +12,3 @@ services:
       - ./logs:/logs
     environment:
       - TZ=Europe/Madrid
-
-  sherlocaster-ui:
-    container_name: sherlocaster-ui
-    build: ./ui
-    ports:
-      - "8085:8085"
-    volumes:
-      - ./config.yaml:/config/config.yaml
-      - /var/run/docker.sock:/var/run/docker.sock
-    depends_on:
-      - sherlocaster

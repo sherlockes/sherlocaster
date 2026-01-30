@@ -1,8 +1,11 @@
 [Yt] Disabled → saltando
 [Tw] Disabled → saltando
-[Kick] No hay canales definidos en config
+[Kc] Config → content=vods, limit=1, limit_days=3, audio_bitrate=64k
+[Kc] Procesando canal: Jordi Llatzer (jordillatzer)
+[Kc] Ya existe episodio kck_93849166, saltando
+[Kc] Ya existe episodio kck_93703334, saltando
 [Fd] generado en /data/feed.xml
-[Fd] Feed ok con 79 episodios
+[Fd] Feed ok con 81 episodios
 [Rc] Feed subido
 [Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
 [Rc] Subida de carpeta audio OK

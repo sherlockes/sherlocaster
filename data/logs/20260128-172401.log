@@ -1,0 +1,15 @@
+[Yt] Disabled → saltando
+[Tw] Disabled → saltando
+[Kc] Config → content=vods, limit=1, limit_days=3, audio_bitrate=64k
+[Kick] Procesando canal: Jordi Llatzer (jordillatzer)
+[Kick] Ya existe episodio kck_93849166, saltando
+[Kick] Ya existe episodio kck_93703334, saltando
+[DEBUG kick_eps] []
+[DEBUG types] []
+[Fd] generado en /data/feed.xml
+[Fd] Feed ok con 81 episodios
+[Rc] Feed subido
+[Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
+[Rc] Subida de carpeta audio OK
+[Rc] Borrando > 15 días
+[Rc] Limpieza remota OK

@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-
+import subprocess
 from yt_dlp import YoutubeDL
 
 
@@ -8,6 +8,27 @@ def _get_bitrate_kbps(bitrate_str: str) -> str:
     if not bitrate_str:
         return "64"
     return ''.join(ch for ch in bitrate_str if ch.isdigit()) or "64"
+
+
+def _convert_mp3_to_mono(src: Path, bitrate: str):
+    tmp_path = src.with_suffix(".mono_tmp.mp3")
+
+    cmd = [
+        "ffmpeg", "-y",
+        "-i", str(src),
+        "-ac", "1",                # mono
+        "-acodec", "libmp3lame",
+        "-b:a", bitrate,
+        str(tmp_path)
+    ]
+
+    print(f"[Yt] Convirtiendo a mono: {' '.join(cmd)}")
+    subprocess.run(cmd, check=True)
+
+    # reemplazar archivo original
+    src.unlink()
+    tmp_path.rename(src)
+
 
 
 def fetch_videos(channel_url: str, limit: int) -> list:
@@ -69,7 +90,12 @@ def download_audio(video_url: str, video_id: str, audio_dir: Path, bitrate: str)
         with YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(video_url, download=True)
         final_path = Path(ydl.prepare_filename(info)).with_suffix(".mp3")
-        return final_path if final_path.exists() else None
+        if final_path.exists():
+            _convert_mp3_to_mono(final_path, bitrate)
+            return final_path
+                
+        return None
+            
     except Exception as e:
         print(f"[Yt] Error descargando {video_url}: {e}")
         return None

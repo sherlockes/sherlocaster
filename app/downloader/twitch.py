@@ -25,6 +25,7 @@ def _convert_to_mp3(mkv_path: Path, mp3_path: Path, bitrate: str):
     ffmpeg_cmd = [
         "ffmpeg", "-y",
         "-i", str(mkv_path),
+        "-ac", "1",
         "-acodec", "libmp3lame",
         "-b:a", bitrate,
         str(mp3_path)

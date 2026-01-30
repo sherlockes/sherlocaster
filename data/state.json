@@ -868,6 +868,127 @@
       "downloaded_at": "2026-01-28T10:47:04.697681Z",
       "file_path": "/data/audio/twt_2681945473.mp3",
       "duration_sec": 7948
+    },
+    {
+      "id": "kck_93849166",
+      "source": "kick",
+      "title": "Jordi Llatzer \u2014 MUCHO PELIGRO: HACER TRADING en BOLSA es UNA RUINA",
+      "channel": "Jordi Llatzer",
+      "original_url": "https://kick.com/video/93849166",
+      "published_at": "2026-01-26T21:04:55Z",
+      "downloaded_at": "2026-01-28T16:02:00.973030Z",
+      "file_path": "/data/audio/kck_93849166.mp3",
+      "duration_sec": 7921
+    },
+    {
+      "id": "kck_93703334",
+      "source": "kick",
+      "title": "Jordi Llatzer \u2014 EL FUTURO DEL MUNDO: EL DAVOS M\u00c1S IMPORTANTE DEL SIGLO XXI",
+      "channel": "Jordi Llatzer",
+      "original_url": "https://kick.com/video/93703334",
+      "published_at": "2026-01-25T21:04:58Z",
+      "downloaded_at": "2026-01-28T16:04:02.538180Z",
+      "file_path": "/data/audio/kck_93703334.mp3",
+      "duration_sec": 8398
+    },
+    {
+      "id": "yt_nquCsbDJV6s",
+      "source": "youtube",
+      "title": "Wall Street Wolverine \u2014 \"THEY ARE HYPOCRITES\" RickyEdit's criticism of left-wing influencers",
+      "channel": "Wall Street Wolverine",
+      "original_url": "https://www.youtube.com/watch?v=nquCsbDJV6s",
+      "published_at": "2026-01-27T18:37:23Z",
+      "downloaded_at": "2026-01-28T16:42:25.743185Z",
+      "file_path": "/data/audio/yt_nquCsbDJV6s.mp3",
+      "duration_sec": 543.0
+    },
+    {
+      "id": "yt_uhc8OuY26VI",
+      "source": "youtube",
+      "title": "Solo Fonseca \u2014 TRUMP quiere manejar el PRECIO del PETR\u00d3LEO (y Venezuela es el comienzo) - @SoloFonseca",
+      "channel": "Solo Fonseca",
+      "original_url": "https://www.youtube.com/watch?v=uhc8OuY26VI",
+      "published_at": "2026-01-26T18:44:57Z",
+      "downloaded_at": "2026-01-28T16:42:54.236700Z",
+      "file_path": "/data/audio/yt_uhc8OuY26VI.mp3",
+      "duration_sec": 1199.0
+    },
+    {
+      "id": "yt_KYS8LDiiSBs",
+      "source": "youtube",
+      "title": "The Wild Project \u2014 The worst thing this war reporter has seen in the war (and it doesn't make the news)",
+      "channel": "The Wild Project",
+      "original_url": "https://www.youtube.com/watch?v=KYS8LDiiSBs",
+      "published_at": "2026-01-28T15:00:43Z",
+      "downloaded_at": "2026-01-28T16:43:51.467508Z",
+      "file_path": "/data/audio/yt_KYS8LDiiSBs.mp3",
+      "duration_sec": 1000.0
+    },
+    {
+      "id": "yt_1DExMfzd7mY",
+      "source": "youtube",
+      "title": "The Wild Project \u2014 THIS IS WHAT AL-ASAD'S TERRIBLE SYRIA WAS LIKE - Journalist witnessed it firsthand and was horrified",
+      "channel": "The Wild Project",
+      "original_url": "https://www.youtube.com/watch?v=1DExMfzd7mY",
+      "published_at": "2026-01-27T15:00:04Z",
+      "downloaded_at": "2026-01-28T16:44:13.424252Z",
+      "file_path": "/data/audio/yt_1DExMfzd7mY.mp3",
+      "duration_sec": 614.0
+    },
+    {
+      "id": "yt_lNO5nJcAt0E",
+      "source": "youtube",
+      "title": "The Wild Project \u2014 This is what the Taliban regime is like on the inside: a journalist's firsthand experience",
+      "channel": "The Wild Project",
+      "original_url": "https://www.youtube.com/watch?v=lNO5nJcAt0E",
+      "published_at": "2026-01-27T14:22:01Z",
+      "downloaded_at": "2026-01-28T16:53:46.258842Z",
+      "file_path": "/data/audio/yt_lNO5nJcAt0E.mp3",
+      "duration_sec": 804.0
+    },
+    {
+      "id": "yt__-zRAY5lzac",
+      "source": "youtube",
+      "title": "Punto de vista \u2014 Medio mill\u00f3n de regularizados,y ya!",
+      "channel": "Punto de vista",
+      "original_url": "https://www.youtube.com/watch?v=_-zRAY5lzac",
+      "published_at": "2026-01-28T19:00:38Z",
+      "downloaded_at": "2026-01-28T20:01:08.496797Z",
+      "file_path": "/data/audio/yt__-zRAY5lzac.mp3",
+      "duration_sec": 1032.0
+    },
+    {
+      "id": "yt_NFipm-uCEO8",
+      "source": "youtube",
+      "title": "LordDraugr \u2014 The World's Deadliest Hacker Unit | Unit 8 200",
+      "channel": "LordDraugr",
+      "original_url": "https://www.youtube.com/watch?v=NFipm-uCEO8",
+      "published_at": "2026-01-28T16:59:54Z",
+      "downloaded_at": "2026-01-28T20:01:42.969133Z",
+      "file_path": "/data/audio/yt_NFipm-uCEO8.mp3",
+      "duration_sec": 1113.0
+    },
+    {
+      "id": "twt_2683702060",
+      "source": "twitch",
+      "title": "Jordi Llatzer \u2014 ERES m\u00e1s POBRE que TU PADRE. El mercado DESTROZA a la bolsa",
+      "channel": "Jordi Llatzer",
+      "original_url": "https://www.twitch.tv/videos/2683702060",
+      "published_at": "2026-01-29T20:55:49Z",
+      "downloaded_at": "2026-01-30T09:17:27.247973Z",
+      "file_path": "/data/audio/twt_2683702060.mp3",
+      "duration_sec": 7949
+    },
+    {
+      "id": "twt_2682831077",
+      "source": "twitch",
+      "title": "Jordi Llatzer \u2014 TRUMP y el NACIMIENTO del NUEVO ORDEN MUNDIAL",
+      "channel": "Jordi Llatzer",
+      "original_url": "https://www.twitch.tv/videos/2682831077",
+      "published_at": "2026-01-28T21:05:45Z",
+      "downloaded_at": "2026-01-30T09:19:31.853624Z",
+      "file_path": "/data/audio/twt_2682831077.mp3",
+      "duration_sec": 9756
     }
   ]
 }

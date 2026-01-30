@@ -54,19 +54,13 @@ def run():
     storage_cfg = config.get("storage", {})
     base_path = storage_cfg.get("base_path","/data")
     audio_dir = storage_cfg.get("audio_dir","audio")
-
-
     src = config.get("sources", {})
-    yt_cfg = src.get("youtube", {})
-    yt_enabled = yt_cfg.get("enabled", True)
-    tw_cfg = src.get("twitch", {})
-    tw_enabled = tw_cfg.get("enabled", True)
-    kc_cfg = src.get("kick", {})
-    kc_enabled = kc_cfg.get("enabled", True)
-
+    
     new_episodes = []
 
     # YouTube
+    yt_cfg = src.get("youtube", {})
+    yt_enabled = yt_cfg.get("enabled", True)
     if yt_enabled:
         from app.downloader.youtube import process_youtube_source
         yt_eps = process_youtube_source(config, state)
@@ -75,6 +69,8 @@ def run():
         print(f"[Yt] Disabled → saltando")
 
     # Twitch
+    tw_cfg = src.get("twitch", {})
+    tw_enabled = tw_cfg.get("enabled", True)
     if tw_enabled:
         from app.downloader.twitch import process_twitch_source
         tw_eps = process_twitch_source(config, state)
@@ -83,13 +79,14 @@ def run():
         print(f"[Tw] Disabled → saltando")
 
     # Kick
+    kc_cfg = src.get("kick", {})
+    kc_enabled = kc_cfg.get("enabled", True)
     if kc_enabled:
         from app.downloader.kick import process_kick_source
         kick_eps = process_kick_source(config, state)
-        #new_episodes.extend(kick_eps)
+        new_episodes.extend(kick_eps)
     else:
         print(f"[Kc] Disabled → saltando")
-
 
     # Añadir nuevos
     if new_episodes:

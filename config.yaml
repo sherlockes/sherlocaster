@@ -1,6 +1,6 @@
 sources:
   youtube:
-    enabled: false
+    enabled: true
     channels:
       - name: "Oliver Nabani"
         url: "https://www.youtube.com/@OliverNabani/videos"
@@ -33,7 +33,7 @@ sources:
     audio_bitrate: "64k"
 
   twitch:
-    enabled: false
+    enabled: true
     channels:
       - channel: "jordillatzer"
         name: "Jordi Llatzer"
