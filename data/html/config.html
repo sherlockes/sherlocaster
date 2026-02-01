@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sherlocaster Config</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: #111;
+      color: #eee;
+    }
+
+    textarea {
+      width: 100%;
+      height: 70vh;
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      padding: 10px;
+      border: 1px solid #333;
+    }
+
+    .CodeMirror {
+	height: 90vh;
+    }
+
+
+    button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #status {
+      margin-top: 10px;
+      color: #0f0;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5/lib/codemirror.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5/theme/dracula.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5/lib/codemirror.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5/mode/yaml/yaml.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+
+</head>
+
+<body>
+<nav style="margin-bottom: 15px;">
+  <a href="/config" style="margin-right: 15px; color:#6cf; text-decoration:none;">Config</a>
+  <a href="/logs" style="margin-right: 15px; color:#6cf; text-decoration:none;">Última ejecución</a>
+  <a href="/logs/list" style="color:#6cf; text-decoration:none;">Histórico</a>
+</nav>
+<hr style="border-color:#333; margin-bottom:15px;">
+
+
+<h1>Config.yaml Editor</h1>
+
+<textarea id="editor"></textarea>
+
+<br><br>
+
+<button onclick="loadConfig()">Reload</button>
+<button id="btnSave" onclick="saveConfig()">Save</button>
+
+
+<div id="status"></div>
+
+<script>
+let editor
+
+window.onload = function() {
+
+  editor = CodeMirror.fromTextArea(
+    document.getElementById("editor"),
+    {
+      mode: "yaml",
+      theme: "dracula",
+      lineNumbers: true
+    }
+  )
+
+  editor.setSize(null, "80vh")
+  editor.on("change", validateYaml)
+
+  loadConfig()
+}
+
+function validateYaml() {
+  const btn = document.getElementById("btnSave")
+
+  try {
+    jsyaml.load(editor.getValue())
+    document.getElementById("status").innerText = "YAML OK"
+    document.getElementById("status").style.color = "#0f0"
+    btn.disabled = false
+    return true
+  }
+  catch(e) {
+    document.getElementById("status").innerText = "YAML ERROR: " + e.message
+    document.getElementById("status").style.color = "#f55"
+    btn.disabled = true
+    return false
+  }
+}
+
+
+async function loadConfig() {
+  document.getElementById("status").innerText = "Loading..."
+
+  const res = await fetch("/api/config")
+  const data = await res.json()
+
+  editor.setValue(data.content)
+}
+
+async function saveConfig() {
+
+  if (!validateYaml()) return
+
+  const res = await fetch("/api/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ content: editor.getValue() })
+  })
+
+  if(res.ok) {
+    document.getElementById("status").innerText = "Saved OK"
+  }
+  else {
+    const err = await res.json()
+    document.getElementById("status").innerText = err.detail
+  }
+}
+</script>
+
+</body>
+</html>

@@ -5,6 +5,16 @@ WARNING: [youtube] IM-WDOL4q60: Some web client https formats have been skipped 
 WARNING: [youtube] UDZUuJYz3l4: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_UDZUuJYz3l4 más de 10 días
 [Yt] Canal: Wall Street Wolverine
+WARNING: [youtube] yDhHnANQt7M: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] yDhHnANQt7M: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=yDhHnANQt7M: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_yDhHnANQt7M
+WARNING: [youtube] -MV-9tYC35g: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] -MV-9tYC35g: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=-MV-9tYC35g: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_-MV-9tYC35g
 WARNING: [youtube] QA5M3mTxmlQ: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 WARNING: [youtube] QA5M3mTxmlQ: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 ERROR: unable to download video data: HTTP Error 403: Forbidden
@@ -28,6 +38,16 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 WARNING: [youtube] rHMJyVNUzsA: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_rHMJyVNUzsA más de 10 días
 [Yt] Canal: Solo Fonseca
+WARNING: [youtube] Sb_Bh1xiQsM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] Sb_Bh1xiQsM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=Sb_Bh1xiQsM: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_Sb_Bh1xiQsM
+WARNING: [youtube] wZH56qBD5jI: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] wZH56qBD5jI: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=wZH56qBD5jI: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_wZH56qBD5jI
 WARNING: [youtube] wO2NxGjb4Sw: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 WARNING: [youtube] wO2NxGjb4Sw: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 ERROR: unable to download video data: HTTP Error 403: Forbidden
@@ -66,6 +86,11 @@ WARNING: [youtube] Mymv-n8lV2s: Some web client https formats have been skipped 
 WARNING: [youtube] DvtWvB5H85g: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_DvtWvB5H85g más de 10 días
 [Yt] Canal: Dross Rotzank
+WARNING: [youtube] Pu9Aw_fExJ8: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] Pu9Aw_fExJ8: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=Pu9Aw_fExJ8: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_Pu9Aw_fExJ8
 WARNING: [youtube] nowTdanUdnk: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 WARNING: [youtube] nowTdanUdnk: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 ERROR: unable to download video data: HTTP Error 403: Forbidden
@@ -80,6 +105,32 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 WARNING: [youtube] T-e-zNC8S0Y: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_T-e-zNC8S0Y más de 10 días
 [Yt] Canal: The Wild Project
+WARNING: [youtube] FaHr5oSWQSs: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] FaHr5oSWQSs: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=FaHr5oSWQSs: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_FaHr5oSWQSs
+WARNING: [youtube] UYTLcLYvGzY: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] UYTLcLYvGzY: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=UYTLcLYvGzY: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_UYTLcLYvGzY
+WARNING: [youtube] 8BCK2PjjD9c: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] 8BCK2PjjD9c: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=8BCK2PjjD9c: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_8BCK2PjjD9c
+WARNING: [youtube] zJrY4pfTVyI: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] zJrY4pfTVyI: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=zJrY4pfTVyI: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_zJrY4pfTVyI
+WARNING: [youtube] ClYjWTnI2HU: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] ClYjWTnI2HU: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=ClYjWTnI2HU: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_ClYjWTnI2HU
+[Yt] yt_6i5_ZQw9UPo ya procesado
 WARNING: [youtube] HbLuVt7z8Cw: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 WARNING: [youtube] HbLuVt7z8Cw: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 ERROR: unable to download video data: HTTP Error 403: Forbidden
@@ -104,12 +155,6 @@ WARNING: [youtube] K2HbeHRcJu8: Some web client https formats have been skipped 
 [Yt] yt_9OcuBZ1a6ps ya procesado
 [Yt] yt_SRj2Vl-AFzE ya procesado
 [Yt] yt_X08Tmm703Ko ya procesado
-[Yt] yt_rIhGbhagFOU ya procesado
-[Yt] yt_OrqaE76fsxw ya procesado
-[Yt] yt_8bXfkKTJ7e0 ya procesado
-[Yt] yt_VeY0SNdI-x0 ya procesado
-[Yt] yt_7kOE_RJeZfE ya procesado
-[Yt] yt_Mgn4Tbqopbw ya procesado
 [Yt] Canal: Red Pill
 WARNING: [youtube] FsyCdAJpopM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 WARNING: [youtube] FsyCdAJpopM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
@@ -120,6 +165,19 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 WARNING: [youtube] 1tpXqVxrkoY: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_1tpXqVxrkoY más de 10 días
 [Yt] Canal: La contracronica
+WARNING: [youtube] _TBL_IYCy_w: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] _TBL_IYCy_w: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=_TBL_IYCy_w: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt__TBL_IYCy_w
+ERROR: [youtube] B7OnAIIN4Nc: Join this channel to get access to members-only content like this video, and other exclusive perks.
+[Yt] Error metadata https://www.youtube.com/watch?v=B7OnAIIN4Nc: ERROR: [youtube] B7OnAIIN4Nc: Join this channel to get access to members-only content like this video, and other exclusive perks.
+[Yt] yt_B7OnAIIN4Nc sin datos, saltando
+WARNING: [youtube] 5lz0oR5cN9c: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] 5lz0oR5cN9c: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=5lz0oR5cN9c: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_5lz0oR5cN9c
 WARNING: [youtube] ZquJmroqG6c: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 WARNING: [youtube] ZquJmroqG6c: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 ERROR: unable to download video data: HTTP Error 403: Forbidden
@@ -154,6 +212,9 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 WARNING: [youtube] 1bnlmpStWtU: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_1bnlmpStWtU más de 10 días
 [Yt] Canal: Punto de vista
+ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando https://www.youtube.com/watch?v=eAmfAart2-0: ERROR: unable to download video data: HTTP Error 403: Forbidden
+[Yt] Error descargando yt_eAmfAart2-0
 [Yt] yt__-zRAY5lzac ya procesado
 [Yt] yt_FbCauQa6f3M ya procesado
 [Yt] yt_8v-tf_3wkmg ya procesado
@@ -166,17 +227,11 @@ WARNING: [youtube] OgEHS9AcXrQ: Some web client https formats have been skipped 
 WARNING: [youtube] NPkHJmrzUS0: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
 [Yt] yt_NPkHJmrzUS0 más de 10 días
 [Tw] Procesando canal: Jordi Llatzer
-[Tw] Bajando audio: twt_2683702060
-[Tw] Ejecutando: twitch-dl download 2683702060 -q audio_only --output /data/audio/twt_2683702060.mkv --auth-token t2xgoiw1neylxeyplvip74wpb69rwj
-[Tw] Convirtiendo a MP3: ffmpeg -y -i /data/audio/twt_2683702060.mkv -ac 1 -acodec libmp3lame -b:a 64k /data/audio/twt_2683702060.mp3
-[Tw] Añadido: Jordi Llatzer — ERES más POBRE que TU PADRE. El mercado DESTROZA a la bolsa
-[Tw] Bajando audio: twt_2682831077
-[Tw] Ejecutando: twitch-dl download 2682831077 -q audio_only --output /data/audio/twt_2682831077.mkv --auth-token t2xgoiw1neylxeyplvip74wpb69rwj
-[Tw] Convirtiendo a MP3: ffmpeg -y -i /data/audio/twt_2682831077.mkv -ac 1 -acodec libmp3lame -b:a 64k /data/audio/twt_2682831077.mp3
-[Tw] Añadido: Jordi Llatzer — TRUMP y el NACIMIENTO del NUEVO ORDEN MUNDIAL
+[Tw] twt_2684620069 ya procesado
+[Tw] twt_2683702060 ya procesado
+[Tw] twt_2682831077 ya procesado
 [Tw] twt_2681945473 ya procesado
 [Tw] twt_2681050644 ya procesado
-[Tw] twt_2680161881 ya procesado
 [Kc] Config → content=vods, limit=1, limit_days=3, audio_bitrate=64k
 [Kc] Procesando canal: Jordi Llatzer (jordillatzer)
 [Kick] Descargando audio desde: https://stream.kick.com/3c81249a5ce0/ivs/v1/196233775518/wTUM7vhoNiLL/2026/1/29/20/55/ONa7TKd3eT8Y/media/hls/160p30/playlist.m3u8
@@ -186,7 +241,7 @@ WARNING: [youtube] NPkHJmrzUS0: Some web client https formats have been skipped 
 [Kick] ffmpeg falló con código 234
 [Kick] No se pudo descargar kck_94158080
 [Fd] generado en /data/feed.xml
-[Fd] Feed ok con 90 episodios
+[Fd] Feed ok con 92 episodios
 [Rc] Feed subido
 [Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
 [Rc] Subida de carpeta audio OK

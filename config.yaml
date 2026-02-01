@@ -26,7 +26,7 @@ sources:
         url: "https://www.youtube.com/@chemapuntodevista5674/videos"
       - name: "LordDraugr"
         url: "https://www.youtube.com/@LordDraugr/videos"
-    min_minutes: 5  # ejemplo: ignorar vídeos de menos de 5 minutos
+    min_minutes: 5
     limit_days: 10
     limit: 5
     format: mp3
