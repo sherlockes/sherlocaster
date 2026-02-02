@@ -7,11 +7,16 @@
   <style>
     body {
       font-family: Arial;
+      margin: 0;
+      padding: 0;
       background: #111;
       color: #eee;
-      margin: 0;
-      padding: 20px;
+      height: 100vh;
+      overflow: hidden;
     }
+
+
+
 
     h1 {
       margin-top: 0;
@@ -21,13 +26,16 @@
       background: #000;
       color: #0f0;
       padding: 15px;
-      height: 80vh;
-      overflow-y: scroll;
-      border: 1px solid #333;
       font-family: monospace;
       font-size: 14px;
       white-space: pre-wrap;
+
+      height: calc(100vh - 160px);
+      overflow-y: auto;
     }
+
+
+
 
     button {
       padding: 10px 20px;
@@ -35,24 +43,42 @@
       cursor: pointer;
       margin-bottom: 10px;
     }
+
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      z-index: 100;
+      padding: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+
+    #header hr {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
-<body>
-<nav style="margin-bottom: 15px;">
-  <a href="/config" style="margin-right: 15px; color:#6cf; text-decoration:none;">Config</a>
-  <a href="/logs" style="margin-right: 15px; color:#6cf; text-decoration:none;">Última ejecución</a>
-  <a href="/logs/list" style="color:#6cf; text-decoration:none;">Histórico</a>
-</nav>
-<hr style="border-color:#333; margin-bottom:15px;">
+<div id="header">
+  <nav style="margin-bottom: 15px;">
+    <a href="/config" style="margin-right: 15px; color:#6cf; text-decoration:none;">Config</a>
+    <a href="/logs" style="margin-right: 15px; color:#6cf; text-decoration:none;">Última ejecución</a>
+    <a href="/logs/list" style="margin-right: 15px; color:#6cf; text-decoration:none;">Histórico</a>
+  </nav>
 
+  <hr style="border-color:#333; margin-bottom:15px;">
+  
+  <h1 id="title">Última ejecución</h1>
+  <div id="summary"></div>
+</div>
 
-<h1>Última ejecución</h1>
-<div id="summary" style="margin-bottom: 10px; color: #aaa; font-family: monospace; white-space: pre-wrap;"></div>
+<div>
+  <pre id="log">Cargando...</pre>
+</div>
 
-<button onclick="loadLog()">Recargar</button>
-
-<pre id="log">Cargando...</pre>
 
 <script>
 async function loadLog() {
@@ -60,7 +86,15 @@ async function loadLog() {
   pre.textContent = "Cargando..."
 
   try {
-    const res = await fetch("/api/logs/last")
+    const params = new URLSearchParams(window.location.search)
+    const file = params.get("file")
+
+    let url = "/api/logs/last"
+    if (file) {
+      url = "/api/logs/" + encodeURIComponent(file)
+    }
+
+    const res = await fetch(url)
     const data = await res.json()
 
     let header = ""
@@ -145,6 +179,13 @@ function parseMeta(metaRaw) {
   return { pretty: prettyLines.join(" · "), kv }
 }
 
+const params = new URLSearchParams(window.location.search)
+const file = params.get("file")
+
+if (file) {
+  const title = document.getElementById("title")
+  if (title) title.style.display = "none"
+}
   
 loadLog()
 </script>
