@@ -1,2 +1,3 @@
 config/rclone.conf
 config/twitch_token.env
+data/audio/*.mkv
