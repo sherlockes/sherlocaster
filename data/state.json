@@ -1,28 +1,6 @@
 {
   "episodes": [
     {
-      "id": "yt_E2s8ee3PIt0",
-      "source": "youtube",
-      "title": "La contracronica \u2014 The example of Adamuz",
-      "channel": "La contracronica",
-      "original_url": "https://www.youtube.com/watch?v=E2s8ee3PIt0",
-      "published_at": "2026-01-20T23:30:05Z",
-      "downloaded_at": "2026-01-21T00:02:05.974270Z",
-      "file_path": "/data/audio/yt_E2s8ee3PIt0.mp3",
-      "duration_sec": 2982.0
-    },
-    {
-      "id": "yt_u_bnQvnx9YM",
-      "source": "youtube",
-      "title": "Dross Rotzank \u2014 Querido Dross: EL MONSTRUO ROTO (DEFINITIVO)",
-      "channel": "Dross Rotzank",
-      "original_url": "https://www.youtube.com/watch?v=u_bnQvnx9YM",
-      "published_at": "2026-01-21T14:59:57Z",
-      "downloaded_at": "2026-01-21T16:00:56.824631Z",
-      "file_path": "/data/audio/yt_u_bnQvnx9YM.mp3",
-      "duration_sec": 2014.0
-    },
-    {
       "id": "yt_SRj2Vl-AFzE",
       "source": "youtube",
       "title": "The Wild Project \u2014 THE EXERCISE THAT CHANGED IBAI'S LIFE",
@@ -1099,6 +1077,28 @@
       "downloaded_at": "2026-02-01T20:03:52.697660Z",
       "file_path": "/data/audio/yt_isJp7sXKsiQ.mp3",
       "duration_sec": 580.0
+    },
+    {
+      "id": "yt_7mF01dtE8uo",
+      "source": "youtube",
+      "title": "La contracronica \u2014 Why is the dollar falling?",
+      "channel": "La contracronica",
+      "original_url": "https://www.youtube.com/watch?v=7mF01dtE8uo",
+      "published_at": "2026-02-01T23:30:05Z",
+      "downloaded_at": "2026-02-02T10:41:31.229275Z",
+      "file_path": "/data/audio/yt_7mF01dtE8uo.mp3",
+      "duration_sec": 3135.0
+    },
+    {
+      "id": "twt_2686535268",
+      "source": "twitch",
+      "title": "Jordi Llatzer \u2014 IR\u00c1N CONTRA LAS CUERDAS y USA DOMINA VENEZUELA",
+      "channel": "Jordi Llatzer",
+      "original_url": "https://www.twitch.tv/videos/2686535268",
+      "published_at": "2026-02-01T20:57:33Z",
+      "downloaded_at": "2026-02-02T10:43:53.584637Z",
+      "file_path": "/data/audio/twt_2686535268.mp3",
+      "duration_sec": 10925
     }
   ]
 }
