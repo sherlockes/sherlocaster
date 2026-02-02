@@ -1,12 +1,17 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import yaml
 from pathlib import Path
-from fastapi.responses import FileResponse
 import shutil
 
 
 app = FastAPI()
+
+
+app.mount("/static", StaticFiles(directory="/data/html"), name="static")
+
 
 CONFIG_PATH = Path("config.yaml")
 
