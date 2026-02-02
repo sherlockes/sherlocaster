@@ -6,7 +6,6 @@ services:
       - ./config/twitch_token.env
     entrypoint: ["python", "-m", "app.main"]
     volumes:
-      - /home/sherlockes/dockers/nginx/data/sherlocaster2:/data/html
       - ./config.yaml:/app/config.yaml
       - ./data:/data
       - ./logs:/logs

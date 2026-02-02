@@ -120,12 +120,6 @@ def run():
     sys.stdout = sys.__stdout__
     sys.stderr = sys.__stderr__
 
-    # Publicar contenido en nginx
-    archive_last_run()
-    publish_status("Sherlocaster")
-    publish_logs()
-
-
        
 if __name__ == "__main__":
     run()

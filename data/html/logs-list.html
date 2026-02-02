@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Sherlocaster - Histórico de logs</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
@@ -15,7 +17,7 @@
   <hr>
 </nav>
 
-<h1>Histórico de ejecuciones</h1>
+<h1>Histórico</h1>
 
 <div id="list">Cargando...</div>
 
@@ -52,11 +54,9 @@ async function loadLogs() {
 
       const eps = document.createElement("span")
       eps.className = "episodes"
-      eps.textContent = "Episodios: " + log.episodes_added
+      eps.textContent = "Eps: " + log.episodes_added
 
       div.appendChild(link)
-      div.appendChild(date)
-      div.appendChild(time)
       div.appendChild(eps)
 
       container.appendChild(div)
