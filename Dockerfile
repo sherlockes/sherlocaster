@@ -45,6 +45,6 @@ COPY app /app/app
 # Config
 COPY config.yaml /app/
 
-EXPOSE 8085
+EXPOSE 8000
 
 ENTRYPOINT ["python", "-m", "app.main"]

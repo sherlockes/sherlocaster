@@ -44,7 +44,7 @@ sources:
     audio_bitrate: "64k"
 
   kick:
-    enabled: true
+    enabled: false
     channels:
       - channel: "jordillatzer"
         name: "Jordi Llatzer"

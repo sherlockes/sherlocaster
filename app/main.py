@@ -114,6 +114,8 @@ def run():
         meta.write(f"timestamp={end_time.isoformat()}Z\n")
         meta.write(f"duration={duration.total_seconds():.2f}\n")
 
+    # Guardar en histórico de logs
+    archive_last_run()
 
     # Cerrar TeeLogger antes de rotar logs
     sys.stdout.close()

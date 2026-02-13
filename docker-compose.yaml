@@ -4,14 +4,16 @@ services:
     container_name: sherlocaster
     env_file:
       - ./config/twitch_token.env
-    entrypoint: ["python", "-m", "app.main"]
+    entrypoint:
+      - python
+      - -m
+      - app.main
     volumes:
       - ./config.yaml:/app/config.yaml
       - ./data:/data
       - ./logs:/logs
     environment:
       - TZ=Europe/Madrid
-
   sherlocaster-web:
     build: .
     container_name: sherlocaster-web
@@ -24,5 +26,6 @@ services:
     environment:
       - TZ=Europe/Madrid
     ports:
-      - "8000:8000"
-
+      - 8000:8000
+    restart: unless-stopped
+networks: {}
