@@ -159,3 +159,52 @@ def get_log_by_name(filename: str):
         "meta": meta,
         "episodes_added": episodes_added
     }
+
+
+import xml.etree.ElementTree as ET
+import json
+
+@app.get("/api/feed/info")
+def get_feed_info():
+    xml_path = Path("/data/feed.xml")
+    state_path = Path("/data/state.json")
+    
+    if not xml_path.exists():
+        return {"error": "Feed no generado"}
+
+    try:
+        # Parseamos el XML
+        tree = ET.parse(xml_path)
+        root = tree.getroot()
+        channel = root.find('channel')
+        
+        # Namespace de iTunes por si quieres sacar más info
+        itunes_ns = {'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'}
+        
+        info = {
+            "title": channel.findtext('title'),
+            "description": channel.findtext('description'),
+            "link": channel.findtext('link'), # Esta es la URL del feed
+            "last_build": channel.findtext('lastBuildDate'),
+            "episodes_count": len(channel.findall('item')),
+            "image": channel.find('image/url').text if channel.find('image/url') is not None else None
+        }
+        
+        # Opcional: Sacar los últimos 20 episodios del state.json para mostrar detalles
+        recent_episodes = []
+        if state_path.exists():
+            state = json.loads(state_path.read_text())
+            recent_episodes = state.get("episodes", [])[-20:]
+            recent_episodes.reverse() # Los más nuevos primero
+
+        return {
+            "info": info,
+            "recent": recent_episodes
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+# Endpoint para devolver la página HTML
+@app.get("/feed")
+def feed_page():
+    return FileResponse("/data/html/feed.html")
