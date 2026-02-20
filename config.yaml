@@ -8,6 +8,7 @@ sources:
         url: "https://www.youtube.com/@jordillatzer/videos"
       - name: "Wall Street Wolverine"
         url: "https://www.youtube.com/@WallStreetWolverine/videos"
+        min_minutes: 20
       - name: "Solo Fonseca"
         url: "https://www.youtube.com/@SoloFonseca/videos"
       - name: "Marc Vidal"
@@ -18,6 +19,7 @@ sources:
         url: "https://www.youtube.com/@DrossRotzank/videos"
       - name: "The Wild Project"
         url: "https://www.youtube.com/@TheWildProject/videos"
+        min_minutes: 25
       - name: "Red Pill"
         url: "https://www.youtube.com/@redpillpodcast_/streams"
       - name: "La contracronica"

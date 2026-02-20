@@ -182,10 +182,12 @@ def process_youtube_source(config: dict, state: dict) -> list:
     for ch in channels:
         name = ch.get("name", "Canal")
         url = ch.get("url")
+        ch_min_minutes = ch.get("min_minutes", min_minutes)
+        
         if not url:
             continue
 
-        print(f"[Yt] Canal: {name}")
+        print(f"[Yt] Canal: {name} (Min: {ch_min_minutes}m)")
         entries = fetch_videos(url, limit=limit_items * 5 or 10)  # escaneamos algo más de margen
 
         added_for_channel = 0
@@ -230,15 +232,16 @@ def process_youtube_source(config: dict, state: dict) -> list:
                 continue
 
             # Filtro por duración
-            #duration_sec = details.get("duration") or entry.get("duration", 0)
-
             duration_sec = details.get("duration") or entry.get("duration") or 0
             duration_sec = int(duration_sec)
-            min_seconds = int(min_minutes) * 60
 
-            if duration_sec < min_seconds:
-                print(f"[Yt] {ep_id}. {duration_sec//60}m < {min_minutes}m")
-                downloaded_ids.add(ep_id)  # opción B: marcar como visto/descartado
+            # Convertimos el umbral de este canal a segundos
+            min_seconds_threshold = int(ch_min_minutes) * 60
+
+            if duration_sec < min_seconds_threshold:
+                # Mostramos en el log qué límite se ha aplicado
+                print(f"[Yt] {ep_id} descartado: {duration_sec//60}m < {ch_min_minutes}m")
+                downloaded_ids.add(ep_id)
                 continue
 
             # Descarga de audio
