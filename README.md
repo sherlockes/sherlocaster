@@ -31,9 +31,9 @@ Stack Tecnológico:
 
 # Instalación y Despliegue
 1. Requisitos previos
- - Docker y Docker Compose instalados.
- - Un archivo de configuración de rclone (usualmente en ~/.config/rclone/rclone.conf).
- - Un token de Twitch (si vas a usar esa fuente).
+  - Docker y Docker Compose instalados.
+  - Un archivo de configuración de rclone (usualmente en ~/.config/rclone/rclone.conf).
+  - Un token de Twitch (si vas a usar esa fuente).
 
 2. Estructura de carpetas
 Se recomienda la siguiente estructura en el servidor:
@@ -110,6 +110,6 @@ Local: Se rige por retention en el config.yaml.
 
 Remoto: Rclone borra los archivos que superen los retention_days.
 
-Desarrollado por: Sherlockes
+Desarrollado por: [Sherlockes](https://github.com/sherlockes)
 
-Licencia: MIT
+Más artículos en: www.sherblog.es
