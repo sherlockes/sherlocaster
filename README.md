@@ -31,9 +31,9 @@ Stack Tecnológico:
 
 # Instalación y Despliegue
 1. Requisitos previos
-  - Docker y Docker Compose instalados.
-  - Un archivo de configuración de rclone (usualmente en ~/.config/rclone/rclone.conf).
-  - Un token de Twitch (si vas a usar esa fuente).
+   - Docker y Docker Compose instalados.
+   - Un archivo de configuración de rclone (usualmente en ~/.config/rclone/rclone.conf).
+   - Un token de Twitch (si vas a usar esa fuente).
 
 2. Estructura de carpetas
 Se recomienda la siguiente estructura en el servidor:
@@ -92,9 +92,8 @@ El proceso de actualización
 El contenedor sherlocaster (worker) está diseñado para ejecutarse y cerrarse. Se recomienda programar su ejecución mediante un Cron en el host o un orquestador:
 
 ```Bash
-# Ejemplo: Ejecutar cada 6 horas
-0 */6 * * * cd /ruta/a/sherlocaster && docker-compose start sherlocaster
-
+# Ejemplo: Ejecutar cada 4 horas
+0 */4 * * * cd ~/dockers/sherlocaster && docker compose run --rm sherlocaster
 ```
 # Variables de Entorno
 En el archivo ./config/twitch_token.env:
