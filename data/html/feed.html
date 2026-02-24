@@ -6,6 +6,7 @@
 
   <title>Sherlocaster - Feed Info</title>
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/jpeg" href="http://homezgz.ddns.net:5005/sherlocaster/artwork.jpg">
   <style>
     table {
       width: 100%;
@@ -38,7 +39,7 @@
 
 <h1>Feed Status</h1>
 
-<h3>Últimos 20 episodios procesados</h3>
+<h3>Últimos 100 episodios procesados</h3>
 <table id="episodesTable">
   <thead>
     <tr>
@@ -73,7 +74,7 @@ async function loadFeedData() {
 
     // data.recent ya viene limitado o invertido desde la API (web.py)
     // Mostramos los 20 primeros que lleguen
-    const toShow = data.recent.slice(0, 20);
+    const toShow = data.recent.slice(0, 100);
 
     toShow.forEach(ep => {
       // split(/[T ]/) corta por "T" o por " " (espacio)

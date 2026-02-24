@@ -1,28 +1,6 @@
 {
   "episodes": [
     {
-      "id": "yt_ywXCAuEySlk",
-      "source": "youtube",
-      "title": "Solo Fonseca \u2014 LOS KURDOS CONTRA TODOS la historia que siempre se repite - @SoloFonseca",
-      "channel": "Solo Fonseca",
-      "original_url": "https://www.youtube.com/watch?v=ywXCAuEySlk",
-      "published_at": "2026-02-09T19:03:12Z",
-      "downloaded_at": "2026-02-09T20:00:54.043583Z",
-      "file_path": "/data/audio/yt_ywXCAuEySlk.mp3",
-      "duration_sec": 1337.0
-    },
-    {
-      "id": "yt_Ig_kdbLSppo",
-      "source": "youtube",
-      "title": "Marc Vidal \u2014 Nvidia, Meta and China: the battle no one sees but in which Europe loses",
-      "channel": "Marc Vidal",
-      "original_url": "https://www.youtube.com/watch?v=Ig_kdbLSppo",
-      "published_at": "2026-02-09T18:00:28Z",
-      "downloaded_at": "2026-02-09T20:01:38.550201Z",
-      "file_path": "/data/audio/yt_Ig_kdbLSppo.mp3",
-      "duration_sec": 1353.0
-    },
-    {
       "id": "yt_wd3wB_c0ef0",
       "source": "youtube",
       "title": "WorldCast \u2014 #243 - Se Juega la Vida Escoltando a Narcos, Mafiosos y Millonarios - Hicham Bukhari",
@@ -1099,6 +1077,28 @@
       "downloaded_at": "2026-02-24T04:03:22.673217Z",
       "file_path": "/data/audio/twt_2705895770.mp3",
       "duration_sec": 8713
+    },
+    {
+      "id": "yt_hOmBqBDPjQA",
+      "source": "youtube",
+      "title": "Dross Rotzank \u2014 Los 7 secretos m\u00e1s perturbadores del \u00c1rtico (Polo Norte)",
+      "channel": "Dross Rotzank",
+      "original_url": "https://www.youtube.com/watch?v=hOmBqBDPjQA",
+      "published_at": "2026-02-24T15:00:03Z",
+      "downloaded_at": "2026-02-24T15:29:44.305978Z",
+      "file_path": "/data/audio/yt_hOmBqBDPjQA.mp3",
+      "duration_sec": 1338.0
+    },
+    {
+      "id": "yt_pb7LTq_DZHU",
+      "source": "youtube",
+      "title": "La contracronica \u2014 Cinco mitos del Antiguo Egipto",
+      "channel": "La contracronica",
+      "original_url": "https://www.youtube.com/watch?v=pb7LTq_DZHU",
+      "published_at": "2026-02-24T14:27:43Z",
+      "downloaded_at": "2026-02-24T15:31:02.543200Z",
+      "file_path": "/data/audio/yt_pb7LTq_DZHU.mp3",
+      "duration_sec": 1063.0
     }
   ]
 }

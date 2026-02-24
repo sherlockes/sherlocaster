@@ -22,16 +22,16 @@ def load_state() -> dict:
 
 
 def save_state(state: dict, config=None):
-    """
-    Guarda el estado y aplica retención.
-    """
+    # Intentamos leer feed_limit, si no retention.max_items, si no 100
     max_items = 100
     if config:
-        max_items = config.get("max_items", max_items)
+        # Buscamos primero feed_limit que es lo que quieres usar
+        max_items = config.get("feed_limit", config.get("retention", {}).get("max_items", 100))
 
-    # aplicar retención
     episodes = state.get("episodes", [])
-    episodes = episodes[-max_items:]
+    if len(episodes) > max_items:
+        episodes = episodes[-max_items:]
+    
     state["episodes"] = episodes
 
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)

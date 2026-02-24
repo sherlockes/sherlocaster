@@ -9,20 +9,31 @@ services:
       - -m
       - app.main
     volumes:
-      - ./config.yaml:/app/config.yaml
+      - .:/app
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/app/config
+      #- ./config.yaml:/app/config.yaml
       - ./data:/data
       - ./logs:/logs
     environment:
+      - PYTHONPATH=/app
       - TZ=Europe/Madrid
+    command: python3 -m app.main
   sherlocaster-web:
     build: .
     container_name: sherlocaster-web
+    user: root
     entrypoint: []
     command: uvicorn app.web:app --host 0.0.0.0 --port 8000
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/app
       - ./config.yaml:/app/config.yaml
       - ./data:/data
       - ./logs:/logs
+    working_dir: /app # <--- Esto le dice al contenedor que "viva" en esa carpeta
     environment:
       - TZ=Europe/Madrid
     ports:

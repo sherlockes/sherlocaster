@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sherlocaster Home</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
   <link rel="stylesheet" href="/static/style.css?v=1.1">
 </head>
 <body>
@@ -15,12 +16,11 @@
     <a href="/feed">Feed</a>
   </nav>
   <hr>
-
    <div class="dashboard-grid">
     <div class="card">
       <div id="system-info">Cargando...</div>
     </div>
-    <div class="card">
+     <div class="card">
       <div style="display: flex; gap: 10px; font-family: monospace;">
         <div style="background:#1a1a1a; padding:10px; flex:1; text-align:center; border: 1px solid #333;">
           <div style="color:#888; font-size:0.8em; margin-bottom:5px;">YT</div>
@@ -35,7 +35,7 @@
           <div id="count-kc" style="color:#9f9; font-weight:bold; font-size:1.2em;">0</div>
         </div>
       </div>
-      </br>
+      <br>
       <h2>Últimos añadidos</h2>
       <div id="recent-episodes" style="font-family: monospace; font-size: 0.85em;">Cargando episodios...</div>
     </div>
@@ -55,7 +55,7 @@
     
     async function loadDashboard() {
       try {
-        // 1. Obtener Info del Feed y del Log en paralelo
+        // 1. Obtener Info en paralelo
         const [resFeed, resLog, resSys] = await Promise.all([
             fetch('/api/feed/info'),
             fetch('/api/logs/last'),
@@ -74,6 +74,12 @@
             const eps = dataLog.episodes_added || "0";
             runStats = ` <span style="color:#f1fa8c">(+${eps}ep, ${Math.round(duration)}s)</span>`;
         }
+          
+        // --- Cálculos de Feed (NUEVO) ---
+        const info = dataFeed.info || {};
+        const count = info.episodes_count || 0;
+        const max = info.max_limit || 100;
+        const isFull = count >= max;
 
         // --- Pintar Info de Sistema combinada ---
         document.getElementById('system-info').innerHTML = `
@@ -81,13 +87,15 @@
                 <span class="stat-label">Inicio:</span> ${formatRelativeDate(dataSys.uptime)}
             </div>
             <div class="stat-row">
-                <span class="stat-label">Busqueda:</span> ${formatRelativeDate(dataFeed.info ? dataFeed.info.last_build : null)}${runStats}
+                <span class="stat-label">Busqueda:</span> ${formatRelativeDate(info.last_build)}${runStats}
             </div>
             <div class="stat-row">
                 <span class="stat-label">Montaje:</span> ${formatRelativeDate(dataSys.build_date)}
             </div>
             <div class="stat-row">
-                <span class="stat-label">Feed XML: </span><a href="/feed.xml" style="color:#ff79c6" target="_blank">ver archivo</a>
+                <span class="stat-label">Feed XML:</span> 
+                <span style="color: ${isFull ? '#ff5555' : '#888'}">(${count}/${max})</span> - 
+                <a href="/feed.xml" style="color:#ff79c6" target="_blank">archivo</a>
             </div> 
         `;
 
