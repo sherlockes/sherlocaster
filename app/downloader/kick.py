@@ -92,11 +92,8 @@ def _build_variant_m3u8(master_url: str, text: str) -> str:
 
 
 def download_kick_audio(m3u8_master_url: str, output_path: str, audio_bitrate: str = "64k") -> bool:
-    """
-    Descarga el audio desde un master.m3u8 de Kick y lo convierte a MP3
-    usando ffmpeg. Devuelve True si todo va bien.
-    """
     try:
+        # Usamos cloudscraper/curl_cffi para obtener el m3u8 inicial
         r = cf.get(m3u8_master_url, impersonate="chrome120")
         if r.status_code != 200:
             print(f"[Kick] Error al obtener master.m3u8 ({r.status_code})")
@@ -108,33 +105,37 @@ def download_kick_audio(m3u8_master_url: str, output_path: str, audio_bitrate: s
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
+        # --- MEJORAS CLAVE AQUÍ ---
         cmd = [
-            "ffmpeg",
-            "-y",
-            "-hide_banner",
-            "-loglevel", "error",
-            "-headers",
-            "User-Agent: Mozilla/5.0",
-            "-i",
-            variant_url,
-            "-map",
+            "ffmpeg", "-y",
+            "-hide_banner", "-loglevel", "error",
+            # 1. Flags de reconexión (Crucial para el error 234)
+            "-reconnect", "1",
+            "-reconnect_streamed", "1",
+            "-reconnect_delay_max", "5",
+            # 2. Header completo (Debe ir antes de -i)
+            "-headers", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n",
+            "-i", variant_url,
+            # 3. Corrección del mapa: -map 0:a:0 indica "del primer input, el primer stream de audio"
+            "-map", "0:a:0", 
             "-ac", "1",
-            "0:a:0",
-            "-acodec",
-            "libmp3lame",
-            "-b:a",
-            audio_bitrate,
-            output_path,
+            "-acodec", "libmp3lame",
+            "-b:a", audio_bitrate,
+            output_path
         ]
 
+        # 4. Capturamos stderr para debuggear si vuelve a fallar
         res = subprocess.run(
             cmd,
             stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
+            stderr=subprocess.PIPE, # Cambiado de DEVNULL a PIPE para ver el error si falla
+            text=True
         )
 
         if res.returncode != 0:
             print(f"[Kick] ffmpeg falló con código {res.returncode}")
+            if res.stderr:
+                print(f"[Kick] Error ffmpeg: {res.stderr.strip()}")
             return False
 
         return True

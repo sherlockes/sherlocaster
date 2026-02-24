@@ -1,41 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sherlocaster</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-pre {
-    white-space: pre-wrap;
-    background: #f4f4f4;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-.metric {
-    margin: 10px 0;
-}
-.err {
-    color: red;
-    font-weight: bold;
-}
-.warn {
-    color: orange;
-    font-weight: bold;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sherlocaster Home</title>
+  <link rel="stylesheet" href="/static/style.css?v=1.1">
 </head>
 <body>
-<h1>Sherlocaster</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/config">Cfg</a>
+    <a href="/logs">Last</a>
+    <a href="/logs/list">All</a>
+    <a href="/feed">Feed</a>
+  </nav>
+  <hr>
 
-<div class="metric"><b>Última ejecución:</b> 2026-02-03 a las 01:02 (133.8 s)</div>
+   <div class="dashboard-grid">
+    <div class="card">
+      <div id="system-info">Cargando...</div>
+    </div>
+    <div class="card">
+      <div style="display: flex; gap: 10px; font-family: monospace;">
+        <div style="background:#1a1a1a; padding:10px; flex:1; text-align:center; border: 1px solid #333;">
+          <div style="color:#888; font-size:0.8em; margin-bottom:5px;">YT</div>
+          <div id="count-yt" style="color:#9f9; font-weight:bold; font-size:1.2em;">0</div>
+        </div>
+        <div style="background:#1a1a1a; padding:10px; flex:1; text-align:center; border: 1px solid #333;">
+          <div style="color:#888; font-size:0.8em; margin-bottom:5px;">TW</div>
+          <div id="count-tw" style="color:#9f9; font-weight:bold; font-size:1.2em;">0</div>
+        </div>
+        <div style="background:#1a1a1a; padding:10px; flex:1; text-align:center; border: 1px solid #333;">
+          <div style="color:#888; font-size:0.8em; margin-bottom:5px;">KC</div>
+          <div id="count-kc" style="color:#9f9; font-weight:bold; font-size:1.2em;">0</div>
+        </div>
+      </div>
+      </br>
+      <h2>Últimos añadidos</h2>
+      <div id="recent-episodes" style="font-family: monospace; font-size: 0.85em;">Cargando episodios...</div>
+    </div>
+  </div>
 
-<h2>Log <small><a href="logs.html">(Últimas ejecuciones)</a></small></h2>
-<pre></pre>
+  <script>
+    function formatRelativeDate(dateString) {
+        if (!dateString) return 'N/A';
+        const date = new Date(dateString);
+        return date.toLocaleString('es-ES', { 
+            day: '2-digit', 
+            month: '2-digit', 
+            hour: '2-digit', 
+            minute: '2-digit' 
+        });
+    }
+    
+    async function loadDashboard() {
+      try {
+        // 1. Obtener Info del Feed y del Log en paralelo
+        const [resFeed, resLog, resSys] = await Promise.all([
+            fetch('/api/feed/info'),
+            fetch('/api/logs/last'),
+            fetch('/api/system/status')
+        ]);
 
+        const dataFeed = await resFeed.json();
+        const dataLog = await resLog.json();
+        const dataSys = await resSys.json();
+
+        // --- Procesar Meta de la última ejecución ---
+        let runStats = "";
+        if (dataLog.meta) {
+            const metaLines = dataLog.meta.split('\n');
+            const duration = metaLines.find(l => l.startsWith('duration'))?.split('=')[1] || "?";
+            const eps = dataLog.episodes_added || "0";
+            runStats = ` <span style="color:#f1fa8c">(+${eps}ep, ${Math.round(duration)}s)</span>`;
+        }
+
+        // --- Pintar Info de Sistema combinada ---
+        document.getElementById('system-info').innerHTML = `
+            <div class="stat-row">
+                <span class="stat-label">Inicio:</span> ${formatRelativeDate(dataSys.uptime)}
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Busqueda:</span> ${formatRelativeDate(dataFeed.info ? dataFeed.info.last_build : null)}${runStats}
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Montaje:</span> ${formatRelativeDate(dataSys.build_date)}
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Feed XML: </span><a href="/feed.xml" style="color:#ff79c6" target="_blank">ver archivo</a>
+            </div> 
+        `;
+
+        // --- Pintar Lista de Episodios ---
+        const recentContainer = document.getElementById('recent-episodes');
+        if (dataFeed.recent && dataFeed.recent.length > 0) {
+            recentContainer.innerHTML = dataFeed.recent.slice(0, 8).map(ep => 
+                `<div class="recent-item" title="${ep.title}">
+                    <span class="source-tag">[${ep.source.toUpperCase().substring(0,2)}]</span> ${ep.title}
+                </div>`
+            ).join('');
+        } else {
+            recentContainer.innerHTML = "No hay episodios en el feed.";
+        }
+
+        // --- Actualizar Contadores ---
+        if (dataFeed.recent) {
+            const counts = { youtube: 0, twitch: 0, kick: 0 };
+            dataFeed.recent.forEach(ep => {
+                if (counts.hasOwnProperty(ep.source)) counts[ep.source]++;
+            });
+            document.getElementById('count-yt').innerText = counts.youtube;
+            document.getElementById('count-tw').innerText = counts.twitch;
+            document.getElementById('count-kc').innerText = counts.kick;
+        }
+
+      } catch (e) {
+        console.error("Error cargando dashboard:", e);
+        document.getElementById('system-info').innerText = "Error de conexión con la API.";
+      }
+    }
+
+    window.onload = loadDashboard;
+  </script>
 </body>
 </html>

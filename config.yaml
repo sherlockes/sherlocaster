@@ -46,12 +46,12 @@ sources:
     audio_bitrate: "64k"
 
   kick:
-    enabled: false
+    enabled: true
     channels:
       - channel: "jordillatzer"
         name: "Jordi Llatzer"
     content: vods
-    limit_days: 3
+    limit_days: 5
     limit: 1
     format: mp3
     audio_bitrate: "64k"

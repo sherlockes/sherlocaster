@@ -3,8 +3,17 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import yaml
-from pathlib import Path
 import shutil
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+
+# Capturamos el momento en que arranca el proceso de la API
+START_TIME = datetime.now(timezone.utc)
+
+# Obtenemos la fecha de modificación de un archivo del código para saber la "Build"
+# Usamos el propio archivo web.py como referencia de la última actualización del código
+LAST_CODE_UPDATE = datetime.fromtimestamp(os.path.getmtime(__file__), tz=timezone.utc)
 
 
 app = FastAPI()
@@ -19,6 +28,13 @@ CONFIG_PATH = Path("config.yaml")
 class ConfigPayload(BaseModel):
     content: str
 
+@app.get("/api/system/status")
+def get_system_status():
+    return {
+        "uptime": START_TIME.isoformat(),
+        "build_date": LAST_CODE_UPDATE.isoformat(),
+        "server_time": datetime.now(timezone.utc).isoformat()
+    }
 
 @app.get("/api/config")
 def get_config():
@@ -192,9 +208,15 @@ def get_feed_info():
         
         # Opcional: Sacar los últimos 20 episodios del state.json para mostrar detalles
         recent_episodes = []
+
+        stats = {"youtube": 0, "twitch": 0, "kick": 0}
+
         if state_path.exists():
             state = json.loads(state_path.read_text())
-            recent_episodes = state.get("episodes", [])[-20:]
+            all_episodes = state.get("episodes", [])
+
+            # Sacamos los últimos 20 para mostrar en la lista
+            recent_episodes = all_episodes
             recent_episodes.reverse() # Los más nuevos primero
 
         return {
@@ -204,7 +226,20 @@ def get_feed_info():
     except Exception as e:
         return {"error": str(e)}
 
+# Endpoint para devolver el archivo del feed
+@app.get("/feed.xml")
+def get_xml_file():
+    xml_path = Path("/data/feed.xml")
+    if not xml_path.exists():
+        raise HTTPException(status_code=404, detail="Archivo feed.xml no encontrado")
+    return FileResponse(xml_path, media_type="application/xml")
+
 # Endpoint para devolver la página HTML
 @app.get("/feed")
 def feed_page():
     return FileResponse("/data/html/feed.html")
+
+# Endpoint para dashboard principal
+@app.get("/")
+def index_page():
+    return FileResponse("/data/html/index.html")
