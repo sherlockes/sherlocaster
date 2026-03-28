@@ -187,75 +187,81 @@ def process_youtube_source(config: dict, state: dict) -> list:
         if not url:
             continue
 
-        print(f"[Yt] Canal: {name} (Min: {ch_min_minutes}m)")
-        entries = fetch_videos(url, limit=limit_items * 5 or 10)  # escaneamos algo más de margen
+        try:
+            print(f"[Yt] Canal: {name} (Min: {ch_min_minutes}m)")
+            entries = fetch_videos(url, limit=limit_items * 5 or 10)  # escaneamos algo más de margen
 
-        added_for_channel = 0
+            added_for_channel = 0
 
-        for entry in entries:
-            vid_id = entry.get("id") or entry.get("url")
-            if not vid_id:
-                continue
+            for entry in entries:
+                vid_id = entry.get("id") or entry.get("url")
+                if not vid_id:
+                    continue
 
-            ep_id = f"yt_{vid_id}"
-            if ep_id in downloaded_ids:
-                print(f"[Yt] {ep_id} ya procesado")
-                continue
+                ep_id = f"yt_{vid_id}"
+                if ep_id in downloaded_ids:
+                    print(f"[Yt] {ep_id} ya procesado")
+                    continue
 
-            # Si ya hemos añadido suficientes episodios de este canal, paramos.
-            if added_for_channel >= limit_items:
-                print(f"[Yt] Ya {limit_items} episodios {name}, stop")
-                break
-
-            video_url = entry.get("url") or entry.get("webpage_url") or f"https://www.youtube.com/watch?v={vid_id}"
-
-            # Metadata completa del vídeo
-            details = fetch_video_details(video_url)
-            if not details:
-                print(f"[Yt] {ep_id} sin datos, saltando")
-                downloaded_ids.add(ep_id)  # lo marcamos como visto para no insistir
-                continue
-
-            published_dt = _get_published_datetime(details)
-
-            # Límite temporal: si hay cutoff y la fecha es anterior → marcar visto y detener escaneo en este canal
-            if cutoff is not None and published_dt is not None:
-                if published_dt < cutoff:
-                    print(f"[Yt] {ep_id} más de {limit_days} días")
-                    downloaded_ids.add(ep_id)
+                # Si ya hemos añadido suficientes episodios de este canal, paramos.
+                if added_for_channel >= limit_items:
+                    print(f"[Yt] Ya {limit_items} episodios {name}, stop")
                     break
 
-            # Sin fecha fiable y hay límite de días: lo marcamos como visto y seguimos con el siguiente
-            if cutoff is not None and published_dt is None:
-                print(f"[Yt] {ep_id} sin fecha")
+                video_url = entry.get("url") or entry.get("webpage_url") or f"https://www.youtube.com/watch?v={vid_id}"
+
+                # Metadata completa del vídeo
+                details = fetch_video_details(video_url)
+                if not details:
+                    print(f"[Yt] {ep_id} sin datos, saltando")
+                    downloaded_ids.add(ep_id)  # lo marcamos como visto para no insistir
+                    continue
+
+                published_dt = _get_published_datetime(details)
+
+                # Límite temporal: si hay cutoff y la fecha es anterior → marcar visto y detener escaneo en este canal
+                if cutoff is not None and published_dt is not None:
+                    if published_dt < cutoff:
+                        print(f"[Yt] {ep_id} más de {limit_days} días")
+                        downloaded_ids.add(ep_id)
+                        break
+
+                # Sin fecha fiable y hay límite de días: lo marcamos como visto y seguimos con el siguiente
+                if cutoff is not None and published_dt is None:
+                    print(f"[Yt] {ep_id} sin fecha")
+                    downloaded_ids.add(ep_id)
+                    continue
+
+                # Filtro por duración
+                duration_sec = details.get("duration") or entry.get("duration") or 0
+                duration_sec = int(duration_sec)
+
+                # Convertimos el umbral de este canal a segundos
+                min_seconds_threshold = int(ch_min_minutes) * 60
+
+                if duration_sec < min_seconds_threshold:
+                    # Mostramos en el log qué límite se ha aplicado
+                    print(f"[Yt] {ep_id} descartado: {duration_sec//60}m < {ch_min_minutes}m")
+                    downloaded_ids.add(ep_id)
+                    continue
+
+                # Descarga de audio
+                audio_path = download_audio(video_url, vid_id, audio_dir, bitrate)
+                if not audio_path:
+                    print(f"[Yt] Error descargando {ep_id}")
+                    downloaded_ids.add(ep_id)
+                    continue
+
+                episode = build_episode(entry, name, audio_path, published_dt)
+                new_episodes.append(episode)
                 downloaded_ids.add(ep_id)
-                continue
+                added_for_channel += 1
 
-            # Filtro por duración
-            duration_sec = details.get("duration") or entry.get("duration") or 0
-            duration_sec = int(duration_sec)
-
-            # Convertimos el umbral de este canal a segundos
-            min_seconds_threshold = int(ch_min_minutes) * 60
-
-            if duration_sec < min_seconds_threshold:
-                # Mostramos en el log qué límite se ha aplicado
-                print(f"[Yt] {ep_id} descartado: {duration_sec//60}m < {ch_min_minutes}m")
-                downloaded_ids.add(ep_id)
-                continue
-
-            # Descarga de audio
-            audio_path = download_audio(video_url, vid_id, audio_dir, bitrate)
-            if not audio_path:
-                print(f"[Yt] Error descargando {ep_id}")
-                downloaded_ids.add(ep_id)
-                continue
-
-            episode = build_episode(entry, name, audio_path, published_dt)
-            new_episodes.append(episode)
-            downloaded_ids.add(ep_id)
-            added_for_channel += 1
-
-            print(f"[Yt] Añadido: {episode['title']}")
+                print(f"[Yt] Añadido: {episode['title']}")
+        except Exception as e:
+            # Capturamos cualquier error en este canal específico
+            print(f"!!! [Yt] ERROR CRÍTICO procesando canal '{name}': {e}")
+            # Al no hacer 'raise', el bucle for sigue con el siguiente 'ch'
+            continue
 
     return new_episodes

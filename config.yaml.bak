@@ -5,7 +5,7 @@ sources:
       - name: "Oliver Nabani"
         url: "https://www.youtube.com/@OliverNabani/videos"
       - name: "Jordi LLatzer"
-        url: "https://www.youtube.com/@ESPURNAjordillatzer/videos"
+        url: "https://www.youtube.com/@jordillatzer/videos"
       - name: "Jordi LLatzer Inversion"
         url: "https://www.youtube.com/@JordiLlatzerINVERSIÓN/videos"
       - name: "Wall Street Wolverine"
@@ -33,6 +33,7 @@ sources:
     min_minutes: 5
     limit_days: 10
     limit: 5
+    format: mp3
     audio_bitrate: "64k"
 
   twitch:
@@ -43,6 +44,7 @@ sources:
     content: vods
     limit_days: 10
     limit: 5
+    format: mp3
     audio_bitrate: "64k"
 
   kick:
@@ -53,6 +55,7 @@ sources:
     content: vods
     limit_days: 5
     limit: 1
+    format: mp3
     audio_bitrate: "64k"
 
 storage:
@@ -80,4 +83,5 @@ retention:
   max_items: 300
   purge_audio: false
 
+days_limit: 5
 feed_limit: 500

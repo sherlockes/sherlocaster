@@ -112,15 +112,12 @@
         }
 
         // --- Actualizar Contadores ---
-        if (dataFeed.recent) {
-            const counts = { youtube: 0, twitch: 0, kick: 0 };
-            dataFeed.recent.forEach(ep => {
-                if (counts.hasOwnProperty(ep.source)) counts[ep.source]++;
-            });
-            document.getElementById('count-yt').innerText = counts.youtube;
-            document.getElementById('count-tw').innerText = counts.twitch;
-            document.getElementById('count-kc').innerText = counts.kick;
-        }
+	if (dataFeed.info && dataFeed.info.stats) {
+	    // Usamos los datos calculados por el servidor
+	    document.getElementById('count-yt').innerText = dataFeed.info.stats.youtube;
+	    document.getElementById('count-tw').innerText = dataFeed.info.stats.twitch;
+	    document.getElementById('count-kc').innerText = dataFeed.info.stats.kick;
+	}
 
       } catch (e) {
         console.error("Error cargando dashboard:", e);

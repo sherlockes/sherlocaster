@@ -89,6 +89,31 @@ def list_logs():
         })
     return result
 
+@app.get("/api/logs/{filename}")
+def get_specific_log(filename: str):
+    # Si por alguna razón el front pide "last", redirigimos a la lógica de último log
+    if filename == "last":
+        # ... lógica de buscar el último log que ya tienes en tu código ...
+        logs = sorted(LOGS_DIR.glob("*.log"), key=lambda p: p.name, reverse=True)
+        if not logs: return {"content": "No hay logs"}
+        log_path = logs[0]
+    else:
+        log_path = LOGS_DIR / filename
+
+    if not log_path.exists() or ".." in filename:
+        raise HTTPException(status_code=404, detail="Log no encontrado")
+
+    meta_path = log_path.with_suffix(".meta")
+    meta = meta_path.read_text(encoding="utf-8", errors="ignore") if meta_path.exists() else None
+    content = log_path.read_text(encoding="utf-8", errors="ignore")
+    
+    return {
+        "filename": log_path.name,
+        "content": content,
+        "meta": meta,
+        "episodes_added": content.count("Añadido")
+    }
+
 @app.get("/api/feed/info")
 def get_feed_info():
     xml_path = Path("/data/feed.xml")
@@ -101,20 +126,38 @@ def get_feed_info():
             with open(CONFIG_PATH, "r") as f:
                 cfg = yaml.safe_load(f)
                 max_limit = cfg.get("feed_limit", 100)
+        
         tree = ET.parse(xml_path)
         channel = tree.getroot().find('channel')
-        info = {
-            "title": channel.findtext('title'),
-            "episodes_count": len(channel.findall('item')),
-            "max_limit": max_limit,
-            "last_build": channel.findtext('lastBuildDate')
-        }
-        recent_episodes = []
+        
+        # --- NUEVA LÓGICA DE CONTEO TOTAL ---
+        stats = {"youtube": 0, "twitch": 0, "kick": 0}
+        all_episodes = []
+        
         if state_path.exists():
             state = json.loads(state_path.read_text())
-            recent_episodes = state.get("episodes", [])[-100:] 
-            recent_episodes.reverse()
+            all_episodes = state.get("episodes", [])
+            
+            # Contamos sobre el TOTAL de episodios antes de recortar
+            for ep in all_episodes:
+                source = ep.get("source")
+                if source in stats:
+                    stats[source] += 1
+        
+        info = {
+            "title": channel.findtext('title'),
+            "episodes_count": len(all_episodes), # Ahora es el total real
+            "max_limit": max_limit,
+            "last_build": channel.findtext('lastBuildDate'),
+            "stats": stats  # Enviamos el desglose total al frontend
+        }
+
+        # Preparamos los recientes (solo para la lista visual)
+        recent_episodes = all_episodes[-100:] 
+        recent_episodes.reverse()
+
         return {"info": info, "recent": recent_episodes}
+    
     except Exception as e:
         return {"error": str(e)}
 
