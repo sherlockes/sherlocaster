@@ -4,6 +4,7 @@ services:
     container_name: sherlocaster
     env_file:
       - ./config/twitch_token.env
+      - ./config/telegram.env
     entrypoint:
       - python
       - -m
@@ -14,7 +15,6 @@ services:
       - ./logs:/app/logs
       - /var/run/docker.sock:/var/run/docker.sock
       - ./config:/app/config
-      #- ./config.yaml:/app/config.yaml
       - ./data:/data
       - ./logs:/logs
     environment:

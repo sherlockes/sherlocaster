@@ -48,7 +48,7 @@ def fetch_videos(channel_url: str, limit: int) -> list:
     return info.get("entries", [])[:limit]
 
 
-def fetch_video_details(video_url: str) -> dict | None:
+def fetch_video_details_bak(video_url: str) -> dict | None:
     """
     Extrae metadata completa de un vídeo individual (timestamp real, duración, etc.).
     """
@@ -64,6 +64,21 @@ def fetch_video_details(video_url: str) -> dict | None:
     except Exception as e:
         print(f"[Yt] Error metadata {video_url}: {e}")
         return None
+
+def fetch_video_details(video_url: str) -> dict | None:
+    """
+    Extrae metadata completa de un vídeo individual.
+    """
+    ydl_opts = {
+        "quiet": True,
+        "skip_download": True,
+        "no_warnings": True, # Esto ayuda a callar un poco a yt-dlp
+    }
+
+    # Quitamos el try/except para que el error suba al bucle principal
+    with YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(video_url, download=False)
+    return info
 
 
 def download_audio(video_url: str, video_id: str, audio_dir: Path, bitrate: str) -> Path | None:
@@ -219,11 +234,38 @@ def process_youtube_source(config: dict, state: dict) -> list:
                 video_url = entry.get("url") or entry.get("webpage_url") or f"https://www.youtube.com/watch?v={vid_id}"
 
                 # Metadata completa del vídeo
-                details = fetch_video_details(video_url)
+                #details = fetch_video_details(video_url)
+                #if not details:
+                #    print(f"[Yt] {ep_id} sin datos, saltando")
+                #    downloaded_ids.add(ep_id)  # lo marcamos como visto para no insistir
+                #    continue
+
+                # --- NUEVO BLOQUE DE METADATA CON GESTIÓN DE MIEMBROS ---
+                try:
+                    details = fetch_video_details(video_url)
+                except Exception as e:
+                    error_msg = str(e)
+                    # Si el error es de contenido para miembros, lo metemos en ignorados
+                    if "members-only" in error_msg.lower():
+                        print(f"[Yt] {ep_id} es solo para miembros. Ignorando para siempre...")
+                        if "ignored" not in state:
+                            state["ignored"] = []
+                        if ep_id not in state["ignored"]:
+                            state["ignored"].append(ep_id)
+                        
+                        downloaded_ids.add(ep_id)
+                        continue
+                    else:
+                        print(f"[Yt] Error metadata {video_url}: {e}")
+                        downloaded_ids.add(ep_id)
+                        continue
+
+                # Si no dio error pero tampoco devolvió detalles
                 if not details:
                     print(f"[Yt] {ep_id} sin datos, saltando")
-                    downloaded_ids.add(ep_id)  # lo marcamos como visto para no insistir
+                    downloaded_ids.add(ep_id)
                     continue
+                # --------------------------------------------------------
 
                 published_dt = _get_published_datetime(details)
 
@@ -252,7 +294,7 @@ def process_youtube_source(config: dict, state: dict) -> list:
                     print(f"[Yt] {ep_id} descartado: {duration_sec//60}m < {ch_min_minutes}m")
                     if "ignored" not in state:
                         state["ignored"] = []
-                    
+                        
                     if ep_id not in state["ignored"]:
                         state["ignored"].append(ep_id)
                     

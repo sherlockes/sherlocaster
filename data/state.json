@@ -3222,6 +3222,17 @@
       "downloaded_at": "2026-03-29T16:07:28.143254Z",
       "file_path": "/data/audio/yt_SxPS9LU8hwk.mp3",
       "duration_sec": 4437.0
+    },
+    {
+      "id": "yt_Wz_3Z5zIKZg",
+      "source": "youtube",
+      "title": "Jordi LLatzer Inversion \u2014 \u00bfQui\u00e9n se puede permitir una casa de 500.000\u20ac en Espa\u00f1a?",
+      "channel": "Jordi LLatzer Inversion",
+      "original_url": "https://www.youtube.com/watch?v=Wz_3Z5zIKZg",
+      "published_at": "2026-03-29T18:00:29Z",
+      "downloaded_at": "2026-03-29T18:02:45.718744Z",
+      "file_path": "/data/audio/yt_Wz_3Z5zIKZg.mp3",
+      "duration_sec": 987.0
     }
   ],
   "ignored": [
@@ -3251,6 +3262,14 @@
     "yt_Jkg9QyJnZfw",
     "yt_Q9jaJk51yo8",
     "yt_Ig1zK0y7EvQ",
-    "yt_dq-NbzBAFpk"
+    "yt_dq-NbzBAFpk",
+    "yt_MYX7Y_Yjbbs",
+    "yt_zybSQdejUl4",
+    "yt_ncy-vBRMxFE",
+    "yt_fhyWz9247xY",
+    "yt_nqMC7P2Iw-Q",
+    "yt_QGYLAtwJwKk",
+    "yt_9GQ3N1L34bE",
+    "yt_tcX6uCJ7Cf0"
   ]
 }

@@ -10,6 +10,7 @@ from app.core.config import load_config
 from app.core.state import load_state, save_state
 from app.core.rss import generate_feed
 from app.core.public import archive_last_run
+from app.core.notifications import send_telegram_msg
 
 # Imports de subida y limpieza
 from app.uploader.rclone import upload_feed, rclone_cleanup, upload_audio_dir
@@ -76,6 +77,9 @@ def run():
         
         base_path = storage_cfg.get("base_path", "/data")
         audio_dir = storage_cfg.get("audio_dir", "audio")
+
+        # --- NUEVO: Contadores para el informe ---
+        stats = {"youtube": 0, "twitch": 0, "kick": 0}
         
         new_episodes = []
 
@@ -115,6 +119,18 @@ def run():
         # Generar XML local
         generate_feed(config, state)
         print(f"[Fd] Feed ok con {len(state.get('episodes', []))} episodios")
+
+        # --- EL MAYORDOMO INFORMA (Novedades) ---
+        if len(new_episodes) > 0:
+            print(f"[Tg] Intentando enviar notificación de {len(new_episodes)} episodios...")
+            msg = f"🎙 <b>SherloCaster: ¡Novedades!</b>\n\n"
+            msg += f"✅ Se han añadido <b>{len(new_episodes)}</b> episodios nuevos.\n"
+            msg += f"\nÚltimo: <i>{new_episodes[-1]['title']}</i>"
+            
+            send_telegram_msg(msg)
+            print("[Tg] Notificación enviada.")
+        else:
+            print("[Tg] No hay episodios nuevos. El Mayordomo guarda silencio.")
         
         # Subir XML
         upload_feed(config)
@@ -139,6 +155,9 @@ def run():
     except Exception as e:
         # 1. Avisamos en el log de forma clara
         print(f"\n[!] ERROR CRÍTICO durante la ejecución: {e}")
+
+        # AVISO DE ERROR
+        send_telegram_msg(f"⚠️ <b>SherloCaster Error</b>\nHubo un fallo crítico: <code>{str(e)}</code>")
         
         # 2. Relanzamos el error para ver el "Traceback" (el rastro del error)
         # Esto es lo que permite que veas en qué línea exacta falló.
