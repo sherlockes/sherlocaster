@@ -1,26 +1,35 @@
-# Sherlocaster
+# SherloCaster 🎙️
 
-Estamos frente a una solución automatizada y dockerizada en Python diseñada para convertir contenido de video de plataformas populares (YouTube, Twitch y Kick) en un feed de podcast (RSS) privado y optimizado.
+SherloCaster es una solución automatizada y dockerizada diseñada para convertir contenido de vídeo de plataformas populares (YouTube, Twitch y Kick) en un feed de podcast (RSS) privado y optimizado. 
 
-Ideal para usuarios que prefieren consumir contenido de plataformas de video en formato audio, ahorrando ancho de banda y datos móviles.
+Ideal para consumir contenido de vídeo en formato audio, ahorrando ancho de banda y permitiendo la escucha offline en cualquier app de podcasts.
 
-# Características principales
-- Multi-plataforma: Soporte nativo para YouTube (vía yt-dlp), Twitch (vía twitch-dl) y Kick.
--  Optimización de Audio: Procesa automáticamente el audio a formato MP3 Mono (64kbps) para minimizar el tamaño del archivo sin sacrificar la claridad de la voz.
-- Sincronización Remota: Integración con rclone para subir los audios y el feed RSS a proveedores de almacenamiento en la nube (Google Drive, S3, Dropbox, etc.).
-- Gestión de Estados: Mantiene un historial de episodios procesados para evitar duplicados.
-- Interfaz Web: Incluye una API y una pequeña interfaz web (FastAPI) para:
-- Editar la configuración (config.yaml) en vivo.
-- Visualizar logs de las últimas ejecuciones.
-- Consultar el estado del feed y los episodios recientes.
-- Limpieza Automática: Motor de retención que borra archivos antiguos tanto localmente como en el almacenamiento remoto.
+## 🚀 Características principales
 
-# Arquitectura del Sistema
-La aplicación se divide en dos componentes principales mediante Docker:
+- **Multi-plataforma:** Soporte nativo para YouTube (vía yt-dlp), Twitch (vía twitch-dl) y Kick.
+- **Optimización de Audio:** Conversión automática a MP3 Mono (64kbps) para minimizar el tamaño sin perder calidad de voz.
+- **Sincronización Remota:** Integración con `rclone` para subir audios y el feed RSS a la nube (Google Drive, S3, etc.).
+- **Gestión de Estado Inteligente:** - Evita duplicados comparando IDs procesados.
+    - **Caché de descartes:** Recuerda vídeos que no cumplen la duración mínima para no volver a analizar su metadata, acelerando las ejecuciones sucesivas.
+- **Seguridad de Ejecución:** Sistema de **bloqueo (Lock)** mediante `fcntl` que impide que dos instancias del worker se solapen y corrompan los archivos.
+- **Logs Limpios:** Procesamiento de salida que elimina códigos de color ANSI, generando archivos `.log` legibles y ligeros.
+- **Interfaz Web (FastAPI):** - Editor de configuración (`config.yaml`) integrado.
+    - Visualizador de logs en tiempo real y registro histórico.
 
-- Worker (sherlocaster): El motor que se encarga de escanear canales, descargar, procesar audio, generar el XML del feed y subirlo a la nube.
+## 🛠️ Arquitectura del Sistema
 
-- Web (sherlocaster-web): Servidor FastAPI que expone la API y sirve la interfaz de administración y los archivos estáticos.
+La aplicación utiliza dos componentes principales en Docker:
+
+1. **Worker (`sherlocaster`):** El motor que escanea, descarga y procesa. 
+   - Utiliza `/data/sherlocaster.lock` para garantizar exclusividad.
+   - Actualiza el `state.json` con episodios nuevos y vídeos ignorados.
+2. **Web (`sherlocaster-web`):** Servidor FastAPI que expone la interfaz de administración y sirve el feed.
+
+## 📦 Instalación y Configuración
+
+1. **Clonar el repositorio** y entrar en la carpeta.
+2. **Configurar Rclone:** Coloca tu `rclone.conf` en `./config/`.
+3. **Editar Configuración:** Puedes editar el `config.yaml` inicial.
 
 Stack Tecnológico:
 - Lenguaje: Python 3.12

@@ -1,4 +1,7 @@
 import sys
+import os
+import fcntl
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -14,34 +17,51 @@ from app.uploader.rclone import upload_feed, rclone_cleanup, upload_audio_dir
 # Clase para duplicar la salida a consola y a archivo de log
 class TeeLogger(object):
     def __init__(self, filepath):
-        self.file = open(filepath, "w", buffering=1)
+        self.file = open(filepath, "w", buffering=1, encoding="utf-8")
         self.stdout = sys.stdout
         self.stderr = sys.stderr
+        # Detecta códigos de escape ANSI (colores y barras de progreso)
+        self.ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 
     def write(self, data):
         self.stdout.write(data)
-        self.file.write(data)
+        # Limpiamos los códigos antes de escribir al archivo .log
+        clean_data = self.ansi_escape.sub('', data)
+        self.file.write(clean_data)
 
     def flush(self):
         self.stdout.flush()
         self.file.flush()
 
     def close(self):
-        try:
-            self.flush()
-            self.file.close()
-        except:
-            pass
+        self.file.close()
 
 def run():
+    # --- BLOQUEO DE SEGURIDAD (LOCK) ---
+    lock_file_path = "/data/sherlocaster.lock"
+    # Abrimos (o creamos) el archivo de lock
+    lock_file = open(lock_file_path, "w")
+    
+    try:
+        # Intentamos obtener un bloqueo exclusivo sin esperar (LOCK_NB)
+        fcntl.flock(lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        # Si falla, es que otro proceso ya tiene el cerrojo
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] AVISO: SherloCaster ya está en ejecución. Abortando instancia duplicada.")
+        sys.exit(0)
+
+    # --- INICIO NORMAL DEL SCRIPT ---
     start_time = datetime.now(timezone.utc)
     
-    # Activamos el logger inmediatamente
-    tee = TeeLogger("/data/last_run.log")
+    # Activamos el logger mejorado
+    log_path = "/data/last_run.log"
+    tee = TeeLogger(log_path)
     sys.stdout = tee
     sys.stderr = tee
 
     try:
+        print(f"=== Inicio de ejecución: {start_time} ===")
+        
         config = load_config()
         state = load_state()
 
@@ -88,8 +108,9 @@ def run():
             if "episodes" not in state:
                 state["episodes"] = []
             state["episodes"].extend(new_episodes)
-            # Pasamos config para que respete el feed_limit que arreglamos
-            save_state(state, config)
+
+        # ¡CRÍTICO: Fuera del if! Guardamos siempre para conservar los "ignorados"
+        save_state(state, config)
 
         # Generar XML local
         generate_feed(config, state)
@@ -113,15 +134,35 @@ def run():
         # Rotar logs al histórico
         archive_last_run()
 
+        print("Ejecución finalizada con éxito.")
+
     except Exception as e:
-        print(f"\n[ERROR CRÍTICO] La ejecución ha fallado: {e}")
-        raise e # Re-lanzamos para que Docker sepa que ha fallado
+        # 1. Avisamos en el log de forma clara
+        print(f"\n[!] ERROR CRÍTICO durante la ejecución: {e}")
         
+        # 2. Relanzamos el error para ver el "Traceback" (el rastro del error)
+        # Esto es lo que permite que veas en qué línea exacta falló.
+        raise e 
+
     finally:
-        # Restauramos siempre los streams originales y cerramos archivo
-        sys.stdout = sys.__stdout__
-        sys.stderr = sys.__stderr__
+        print("Limpiando recursos y liberando bloqueo...")
+        
+        # 1. DEVOLVER LAS SALIDAS ORIGINALES (Vital para evitar el error)
+        # tee.stdout y tee.stderr guardan los valores originales de la consola
+        sys.stdout = tee.stdout
+        sys.stderr = tee.stderr
+        
+        # 2. LIBERAR EL BLOQUEO
+        try:
+            fcntl.flock(lock_file, fcntl.LOCK_UN)
+            lock_file.close()
+        except Exception as e:
+            print(f"No se pudo liberar el archivo de lock: {e}")
+
+        # 3. CERRAR EL LOGGER (Ahora que ya no es la salida principal)
         tee.close()
+        
+        print("Cierre de proceso limpio.")
 
 if __name__ == "__main__":
     run()

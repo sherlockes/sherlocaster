@@ -1,3 +1,4 @@
+=== Inicio de ejecución: 2026-03-29 15:59:39.094596+00:00 ===
 [Yt] Canal: Oliver Nabani (Min: 5m)
 [Yt] yt_yw4mzu-Nyj0 ya procesado
 [Yt] yt_IM-WDOL4q60 más de 10 días
@@ -24,8 +25,7 @@
 [Yt] yt_YY5572Xm3ks descartado: 11m < 20m
 [Yt] yt_nW28DlUhZ3A descartado: 8m < 20m
 [Yt] yt_d6mc-4pMFpQ descartado: 10m < 20m
-[Yt] yt_bDUSejCbVb4 descartado: 9m < 20m
-[Yt] yt_GbhAgj2iQgQ más de 10 días
+[Yt] yt_bDUSejCbVb4 más de 10 días
 [Yt] Canal: Solo Fonseca (Min: 5m)
 [Yt] yt_AD-vqHdh6wI ya procesado
 [Yt] yt_4NjV2HAxQqE ya procesado
@@ -101,6 +101,8 @@ ERROR: [youtube] fhyWz9247xY: Join this channel to get access to members-only co
 [Yt] yt_wd3wB_c0ef0 ya procesado
 [Yt] yt_boFSbRoi9pM más de 10 días
 [Yt] Canal: Dross Rotzank (Min: 5m)
+[download]   0.0% of   16.04MiB at  Unknown B/s ETA Unknown[download]   0.0% of   16.04MiB at    2.09MiB/s ETA 00:07  [download]   0.0% of   16.04MiB at    3.68MiB/s ETA 00:04[download]   0.1% of   16.04MiB at    6.47MiB/s ETA 00:02[download]   0.2% of   16.04MiB at    4.49MiB/s ETA 00:03[download]   0.4% of   16.04MiB at    5.26MiB/s ETA 00:03[download]   0.8% of   16.04MiB at    7.15MiB/s ETA 00:02[download]   1.6% of   16.04MiB at   10.26MiB/s ETA 00:01[download]   3.1% of   16.04MiB at   15.26MiB/s ETA 00:01[download]   6.2% of   16.04MiB at   21.35MiB/s ETA 00:00[download]  12.5% of   16.04MiB at   26.60MiB/s ETA 00:00[download]  24.9% of   16.04MiB at   30.36MiB/s ETA 00:00[download]  49.9% of   16.04MiB at   32.69MiB/s ETA 00:00[download]  60.3% of   16.04MiB at   33.23MiB/s ETA 00:00[download]  60.3% of   16.04MiB at  Unknown B/s ETA Unknown[download]  60.3% of   16.04MiB at    2.30MiB/s ETA 00:02  [download]  60.4% of   16.04MiB at    3.15MiB/s ETA 00:02[download]  60.4% of   16.04MiB at    4.83MiB/s ETA 00:01[download]  60.5% of   16.04MiB at    7.57MiB/s ETA 00:00[download]  60.7% of   16.04MiB at   12.27MiB/s ETA 00:00[download]  61.1% of   16.04MiB at   20.39MiB/s ETA 00:00[download]  61.9% of   16.04MiB at   33.34MiB/s ETA 00:00[download]  63.4% of   16.04MiB at   16.12MiB/s ETA 00:00[download]  66.5% of   16.04MiB at   22.16MiB/s ETA 00:00[download]  72.8% of   16.04MiB at   27.17MiB/s ETA 00:00[download]  85.2% of   16.04MiB at   30.68MiB/s ETA 00:00[download] 100.0% of   16.04MiB at   28.01MiB/s ETA 00:00[download] 100% of   16.04MiB in 00:00:00 at 24.15MiB/s                                                         [Yt] Convirtiendo a mono: ffmpeg -y -i /data/audio/yt_Wi5SOTzAKuo.mp3 -ac 1 -acodec libmp3lame -b:a 64k /data/audio/yt_Wi5SOTzAKuo.mono_tmp.mp3
+[Yt] Añadido: Dross Rotzank — 7 historias terroríficas (contadas por doctores) 2
 [Yt] yt_GGUXf5iFnbg ya procesado
 [Yt] yt_LANJywmkHK4 ya procesado
 [Yt] yt_Yw37KeRmQSA ya procesado
@@ -126,6 +128,11 @@ ERROR: [youtube] fhyWz9247xY: Join this channel to get access to members-only co
 [Yt] yt_iCznjSPkpA8 ya procesado
 [Yt] yt_IhIIgqo8YYM más de 10 días
 [Yt] Canal: The Wild Project (Min: 25m)
+[download]   0.0% of   24.09MiB at  Unknown B/s ETA Unknown[download]   0.0% of   24.09MiB at    1.34MiB/s ETA 00:18  [download]   0.0% of   24.09MiB at    2.05MiB/s ETA 00:11[download]   0.1% of   24.09MiB at    3.35MiB/s ETA 00:07[download]   0.1% of   24.09MiB at    5.57MiB/s ETA 00:04[download]   0.3% of   24.09MiB at    5.43MiB/s ETA 00:04[download]   0.5% of   24.09MiB at    7.29MiB/s ETA 00:03[download]   1.0% of   24.09MiB at   10.37MiB/s ETA 00:02[download]   2.1% of   24.09MiB at   15.54MiB/s ETA 00:01[download]   4.1% of   24.09MiB at   15.24MiB/s ETA 00:01[download]   8.3% of   24.09MiB at    5.24MiB/s ETA 00:04[download]  16.6% of   24.09MiB at    7.00MiB/s ETA 00:02[download]  33.2% of   24.09MiB at    7.37MiB/s ETA 00:02[download]  40.3% of   24.09MiB at    7.08MiB/s ETA 00:02[download]  40.3% of   24.09MiB at  Unknown B/s ETA Unknown[download]  40.3% of   24.09MiB at    2.05MiB/s ETA 00:07  [download]  40.3% of   24.09MiB at    2.77MiB/s ETA 00:05[download]  40.3% of   24.09MiB at    4.30MiB/s ETA 00:03[download]  40.4% of   24.09MiB at    6.88MiB/s ETA 00:02[download]  40.5% of   24.09MiB at   11.34MiB/s ETA 00:01[download]  40.8% of   24.09MiB at   19.02MiB/s ETA 00:00[download]  41.3% of   24.09MiB at   31.99MiB/s ETA 00:00[download]  42.3% of   24.09MiB at    2.06MiB/s ETA 00:06[download]  44.4% of   24.09MiB at    3.36MiB/s ETA 00:03[download]  48.6% of   24.09MiB at    5.45MiB/s ETA 00:02[download]  56.9% of   24.09MiB at    5.13MiB/s ETA 00:02[download]  73.5% of   24.09MiB at    6.27MiB/s ETA 00:01[download]  79.8% of   24.09MiB at    5.60MiB/s ETA 00:00[download]  79.8% of   24.09MiB at  Unknown B/s ETA Unknown[download]  79.8% of   24.09MiB at    2.18MiB/s ETA 00:02  [download]  79.9% of   24.09MiB at    2.98MiB/s ETA 00:01[download]  79.9% of   24.09MiB at    4.59MiB/s ETA 00:01[download]  80.0% of   24.09MiB at    7.26MiB/s ETA 00:00[download]  80.1% of   24.09MiB at   11.83MiB/s ETA 00:00[download]  80.3% of   24.09MiB at   19.75MiB/s ETA 00:00[download]  80.9% of   24.09MiB at   32.80MiB/s ETA 00:00[download]  81.9% of   24.09MiB at   38.19MiB/s ETA 00:00[download]  84.0% of   24.09MiB at    3.37MiB/s ETA 00:01[download]  88.1% of   24.09MiB at    5.45MiB/s ETA 00:00[download]  96.4% of   24.09MiB at    8.60MiB/s ETA 00:00[download] 100.0% of   24.09MiB at    6.14MiB/s ETA 00:00[download] 100% of   24.09MiB in 00:00:04 at 5.98MiB/s                                                         [Yt] Convirtiendo a mono: ffmpeg -y -i /data/audio/yt_vq41o3bVx54.mp3 -ac 1 -acodec libmp3lame -b:a 64k /data/audio/yt_vq41o3bVx54.mono_tmp.mp3
+[Yt] Añadido: The Wild Project — BAR ESPAÑA CASE: Fact or Urban Legend? - Rimembah investigated all the secrets of the story
+[Yt] yt_8LAi86kNj-I descartado: 19m < 25m
+[Yt] yt_rHfiDxAJr5o descartado: 15m < 25m
+[Yt] yt_l-uBdNIbSNg descartado: 15m < 25m
 [Yt] yt_P31kzd18-pc descartado: 9m < 25m
 [Yt] yt_-UOhwOvjO9s descartado: 16m < 25m
 [Yt] yt_As1CSUuqq1k ya procesado
@@ -142,8 +149,7 @@ ERROR: [youtube] fhyWz9247xY: Join this channel to get access to members-only co
 [Yt] yt_Ig1zK0y7EvQ descartado: 13m < 25m
 [Yt] yt_dq-NbzBAFpk descartado: 12m < 25m
 [Yt] yt_pB6RkfblNeY ya procesado
-[Yt] yt_XIxlZeYJjnQ descartado: 12m < 25m
-[Yt] yt__vwkTWZXwUY más de 10 días
+[Yt] yt_XIxlZeYJjnQ más de 10 días
 [Yt] Canal: Red Pill (Min: 5m)
 [Yt] yt_vgPFsQAfRfo ya procesado
 [Yt] yt_YoXZUwW4YgI ya procesado
@@ -153,6 +159,7 @@ ERROR: [youtube] fhyWz9247xY: Join this channel to get access to members-only co
 [Yt] yt_UxwdeHhUJzE ya procesado
 [Yt] yt__RdT1teizS0 más de 10 días
 [Yt] Canal: La contracronica (Min: 5m)
+[Yt] yt_URB7J2BnlcQ ya procesado
 ERROR: [youtube] nqMC7P2Iw-Q: Join this channel to get access to members-only content like this video, and other exclusive perks.
 [Yt] Error metadata https://www.youtube.com/watch?v=nqMC7P2Iw-Q: ERROR: [youtube] nqMC7P2Iw-Q: Join this channel to get access to members-only content like this video, and other exclusive perks.
 [Yt] yt_nqMC7P2Iw-Q sin datos, saltando
@@ -185,7 +192,6 @@ ERROR: [youtube] tcX6uCJ7Cf0: Join this channel to get access to members-only co
 [Yt] yt_tcX6uCJ7Cf0 sin datos, saltando
 [Yt] yt_Mu072Ld6uz4 ya procesado
 [Yt] yt_WyrwNPDMXBU ya procesado
-[Yt] yt_-68wwCnGEaM ya procesado
 [Yt] Canal: Punto de vista (Min: 5m)
 [Yt] yt_4FUWVSSxdHE ya procesado
 [Yt] yt_AylOF1qTMz0 ya procesado
@@ -202,17 +208,16 @@ ERROR: [youtube] tcX6uCJ7Cf0: Join this channel to get access to members-only co
 [Yt] yt_OqqZkiguIKo ya procesado
 [Yt] yt_NFipm-uCEO8 más de 10 días
 [Tw] Procesando canal: Jordi Llatzer
+[Tw] twt_2734195408 ya procesado
 [Tw] twt_2733322087 ya procesado
 [Tw] twt_2730042622 ya procesado
 [Tw] twt_2729264259 ya procesado
 [Tw] twt_2728389963 ya procesado
-[Tw] twt_2725792380 ya procesado
 [Kc] Config → content=vods, limit=1, limit_days=5, audio_bitrate=64k
 [Kc] Procesando canal: Jordi Llatzer (jordillatzer)
 [Kc] Ya existe episodio kck_102450309, saltando
-[Kc] Ya existe episodio kck_101919960, saltando
 [Fd] generado en /data/feed.xml
-[Fd] Feed ok con 288 episodios
+[Fd] Feed ok con 292 episodios
 [Rc] Feed subido
 [Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
 [Rc] Subida de carpeta audio OK

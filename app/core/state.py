@@ -21,7 +21,7 @@ def load_state() -> dict:
         return {"episodes": []}
 
 
-def save_state(state: dict, config=None):
+def save_state_bak(state: dict, config=None):
     # Intentamos leer feed_limit, si no retention.max_items, si no 100
     max_items = 100
     if config:
@@ -33,6 +33,28 @@ def save_state(state: dict, config=None):
         episodes = episodes[-max_items:]
     
     state["episodes"] = episodes
+
+    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with STATE_FILE.open("w") as f:
+        json.dump(state, f, indent=2)
+
+def save_state(state: dict, config=None):
+    # --- Gestión de Episodios Reales ---
+    max_items = 100
+    if config:
+        max_items = config.get("feed_limit", config.get("retention", {}).get("max_items", 100))
+
+    episodes = state.get("episodes", [])
+    if len(episodes) > max_items:
+        episodes = episodes[-max_items:]
+    state["episodes"] = episodes
+
+    # --- NUEVO: Gestión de IDs Ignorados (para no repetir comprobaciones) ---
+    ignored = state.get("ignored", [])
+    # Limitamos la lista a los últimos 1000 descartes para que el JSON no pese megas
+    if len(ignored) > 1000:
+        ignored = ignored[-1000:]
+    state["ignored"] = ignored
 
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     with STATE_FILE.open("w") as f:

@@ -172,7 +172,15 @@ def process_youtube_source(config: dict, state: dict) -> list:
     data_dir = Path("/data")
     audio_dir = data_dir / "audio"
 
+    ## Antiguo
+    #downloaded_ids = {e["id"] for e in state.get("episodes", [])}
+    #new_episodes = []
+
+    # Combinamos IDs de episodios descargados e IDs de vídeos ya ignorados
     downloaded_ids = {e["id"] for e in state.get("episodes", [])}
+    if "ignored" in state:
+        downloaded_ids.update(state["ignored"])
+    
     new_episodes = []
 
     cutoff = None
@@ -239,10 +247,16 @@ def process_youtube_source(config: dict, state: dict) -> list:
                 # Convertimos el umbral de este canal a segundos
                 min_seconds_threshold = int(ch_min_minutes) * 60
 
+                #if duration_sec < min_seconds_threshold:
                 if duration_sec < min_seconds_threshold:
-                    # Mostramos en el log qué límite se ha aplicado
                     print(f"[Yt] {ep_id} descartado: {duration_sec//60}m < {ch_min_minutes}m")
-                    downloaded_ids.add(ep_id)
+                    if "ignored" not in state:
+                        state["ignored"] = []
+                    
+                    if ep_id not in state["ignored"]:
+                        state["ignored"].append(ep_id)
+                    
+                    downloaded_ids.add(ep_id) 
                     continue
 
                 # Descarga de audio
