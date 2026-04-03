@@ -3552,6 +3552,28 @@
       "downloaded_at": "2026-04-02T20:04:58.449813Z",
       "file_path": "/data/audio/twt_2737469537.mp3",
       "duration_sec": 8708
+    },
+    {
+      "id": "yt_ez9_d5SU250",
+      "source": "youtube",
+      "title": "The Wild Project \u2014 Jordi Wild presenta lo m\u00e1s BESTIA que ha hecho nunca - DWT 4: TOKYO BLOOD",
+      "channel": "The Wild Project",
+      "original_url": "https://www.youtube.com/watch?v=ez9_d5SU250",
+      "published_at": "2026-04-03T16:09:33Z",
+      "downloaded_at": "2026-04-03T17:38:32.448673Z",
+      "file_path": "/data/audio/yt_ez9_d5SU250.mp3",
+      "duration_sec": 1762.0
+    },
+    {
+      "id": "yt_DPCzC51CmnQ",
+      "source": "youtube",
+      "title": "La contracronica \u2014 Apolo, el gran salto",
+      "channel": "La contracronica",
+      "original_url": "https://www.youtube.com/watch?v=DPCzC51CmnQ",
+      "published_at": "2026-04-02T22:30:03Z",
+      "downloaded_at": "2026-04-03T17:41:09.381268Z",
+      "file_path": "/data/audio/yt_DPCzC51CmnQ.mp3",
+      "duration_sec": 5754.0
     }
   ],
   "ignored": [
@@ -3601,6 +3623,10 @@
     "yt_kmLXeykemME",
     "yt_FC4QRH6qOdI",
     "yt_RpBWCl75KGI",
-    "yt_5HB-Tu2m0AI"
+    "yt_5HB-Tu2m0AI",
+    "yt_NUSm0PztqaM",
+    "yt_MrDNRk6nO2c",
+    "yt_A9tAyZSnKS4",
+    "yt_DXQN8DWwM3Q"
   ]
 }
