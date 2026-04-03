@@ -20,7 +20,7 @@ def _download_mkv(video_id: str, out_path: Path, token: str):
     _run(cmd)
 
 
-def _convert_to_mp3(mkv_path: Path, mp3_path: Path, bitrate: str):
+def _convert_to_mp3_old(mkv_path: Path, mp3_path: Path, bitrate: str):
     """Convierte MKV -> MP3 usando ffmpeg."""
     ffmpeg_cmd = [
         "ffmpeg", "-y",
@@ -31,6 +31,29 @@ def _convert_to_mp3(mkv_path: Path, mp3_path: Path, bitrate: str):
         str(mp3_path)
     ]
     print(f"[Tw] Convirtiendo a MP3: {' '.join(ffmpeg_cmd)}")
+    _run(ffmpeg_cmd)
+
+def _convert_to_mp3(mkv_path: Path, mp3_path: Path, bitrate: str, speed: float = 1.0):
+    """Convierte MKV -> MP3 usando ffmpeg con bitrate y velocidad personalizados."""
+    
+    # Aseguramos que el bitrate tenga la 'k'
+    bitrate_ffmpeg = f"{bitrate}k" if not str(bitrate).endswith('k') else bitrate
+
+    ffmpeg_cmd = [
+        "ffmpeg", "-y",
+        "-i", str(mkv_path),
+        "-ac", "1",                # mono
+        "-acodec", "libmp3lame",
+        "-b:a", bitrate_ffmpeg
+    ]
+
+    # Aplicamos la velocidad si es distinta a 1.0
+    if speed != 1.0:
+        ffmpeg_cmd.extend(["-af", f"atempo={speed}"])
+
+    ffmpeg_cmd.append(str(mp3_path))
+
+    print(f"[Tw] Convirtiendo a MP3 (bitrate: {bitrate_ffmpeg}, speed: {speed}x)")
     _run(ffmpeg_cmd)
 
 
@@ -71,6 +94,17 @@ def process_twitch_source(config: dict, state: dict) -> list:
             continue
 
         print(f"[Tw] Procesando canal: {name}")
+
+        # --- NUEVA LÓGICA DE CONFIGURACIÓN ---
+        # Bitrate: Canal > Fuente Twitch > Global > 64k
+        bitrate = (ch.get("bitrate") or 
+                   tw_cfg.get("audio_bitrate") or 
+                   global_settings.get("audio_bitrate") or 
+                   "64k")
+
+        # Velocidad: Canal > Global > 1.0
+        speed = float(ch.get("speed") or global_settings.get("global_speed") or 1.0)
+        # --------------------------------------
 
         # obtenemos la lista de vídeos desde twitch-dl
         cmd = ["twitch-dl", "videos", channel, "--json"]
@@ -149,7 +183,7 @@ def process_twitch_source(config: dict, state: dict) -> list:
 
             try:
                 _download_mkv(vid, mkv_path, token)
-                _convert_to_mp3(mkv_path, mp3_path, bitrate)
+                _convert_to_mp3(mkv_path, mp3_path, bitrate, speed)
                 mkv_path.unlink(missing_ok=True)
             except Exception as e:
                 print(f"[Tw] Error descargando {ep_id}: {e}")

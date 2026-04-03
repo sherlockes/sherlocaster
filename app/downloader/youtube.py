@@ -10,7 +10,7 @@ def _get_bitrate_kbps(bitrate_str: str) -> str:
     return ''.join(ch for ch in bitrate_str if ch.isdigit()) or "64"
 
 
-def _convert_mp3_to_mono(src: Path, bitrate: str):
+def _convert_mp3_to_mono_old(src: Path, bitrate: str):
     tmp_path = src.with_suffix(".mono_tmp.mp3")
 
     cmd = [
@@ -26,6 +26,32 @@ def _convert_mp3_to_mono(src: Path, bitrate: str):
     subprocess.run(cmd, check=True)
 
     # reemplazar archivo original
+    src.unlink()
+    tmp_path.rename(src)
+
+def _convert_mp3_to_mono(src: Path, bitrate: str, speed: float = 1.0):
+    tmp_path = src.with_suffix(".mono_tmp.mp3")
+    bitrate_ffmpeg = f"{bitrate}k" if not str(bitrate).endswith('k') else bitrate
+
+    # Construimos el comando base
+    cmd = [
+        "ffmpeg", "-y",
+        "-i", str(src),
+        "-ac", "1",                # mono
+        "-acodec", "libmp3lame",
+    "-b:a", bitrate_ffmpeg
+    ]
+
+    # SI la velocidad es distinta a 1.0, añadimos el filtro atempo
+    if speed != 1.0:
+        # Nota: atempo soporta de 0.5 a 2.0. 
+        cmd.extend(["-af", f"atempo={speed}"])
+
+    cmd.append(str(tmp_path))
+
+    print(f"[Yt] Procesando audio (bitrate: {bitrate}, speed: {speed}x): {' '.join(cmd)}")
+    subprocess.run(cmd, check=True)
+
     src.unlink()
     tmp_path.rename(src)
 
@@ -81,7 +107,7 @@ def fetch_video_details(video_url: str) -> dict | None:
     return info
 
 
-def download_audio(video_url: str, video_id: str, audio_dir: Path, bitrate: str) -> Path | None:
+def download_audio(video_url: str, video_id: str, audio_dir: Path, bitrate: str, speed: float = 1.0) -> Path | None:
     """
     Descarga el audio del vídeo como mp3.
     """
@@ -106,7 +132,7 @@ def download_audio(video_url: str, video_id: str, audio_dir: Path, bitrate: str)
             info = ydl.extract_info(video_url, download=True)
         final_path = Path(ydl.prepare_filename(info)).with_suffix(".mp3")
         if final_path.exists():
-            _convert_mp3_to_mono(final_path, bitrate)
+            _convert_mp3_to_mono(final_path, bitrate, speed)
             return final_path
                 
         return None
@@ -187,10 +213,6 @@ def process_youtube_source(config: dict, state: dict) -> list:
     data_dir = Path("/data")
     audio_dir = data_dir / "audio"
 
-    ## Antiguo
-    #downloaded_ids = {e["id"] for e in state.get("episodes", [])}
-    #new_episodes = []
-
     # Combinamos IDs de episodios descargados e IDs de vídeos ya ignorados
     downloaded_ids = {e["id"] for e in state.get("episodes", [])}
     if "ignored" in state:
@@ -206,7 +228,21 @@ def process_youtube_source(config: dict, state: dict) -> list:
         name = ch.get("name", "Canal")
         url = ch.get("url")
         ch_min_minutes = ch.get("min_minutes", min_minutes)
+
+        # --- NUEVO: Mueve la lógica de configuración aquí dentro ---
+        global_settings = config.get("settings", {})
         
+        # Prioridad: 1. Canal -> 2. Fuente YouTube -> 3. Global -> 4. "64k"
+        bitrate_str = (ch.get("audio_bitrate") or 
+                       yt_cfg.get("audio_bitrate") or 
+                       global_settings.get("audio_bitrate") or 
+                       "64k")
+        bitrate = _get_bitrate_kbps(bitrate_str)
+
+        # Prioridad: 1. Canal -> 2. Global -> 3. 1.0
+        speed = float(ch.get("speed") or global_settings.get("speed") or 1.0)
+        # ----------------------------------------------------------
+    
         if not url:
             continue
 
@@ -302,7 +338,7 @@ def process_youtube_source(config: dict, state: dict) -> list:
                     continue
 
                 # Descarga de audio
-                audio_path = download_audio(video_url, vid_id, audio_dir, bitrate)
+                audio_path = download_audio(video_url, vid_id, audio_dir, bitrate, speed)
                 if not audio_path:
                     print(f"[Yt] Error descargando {ep_id}")
                     downloaded_ids.add(ep_id)

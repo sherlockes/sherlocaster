@@ -91,7 +91,7 @@ def _build_variant_m3u8(master_url: str, text: str) -> str:
     return f"{base}/{variant}"
 
 
-def download_kick_audio(m3u8_master_url: str, output_path: str, audio_bitrate: str = "64k") -> bool:
+def download_kick_audio_old(m3u8_master_url: str, output_path: str, audio_bitrate: str = "64k") -> bool:
     try:
         # Usamos cloudscraper/curl_cffi para obtener el m3u8 inicial
         r = cf.get(m3u8_master_url, impersonate="chrome120")
@@ -143,7 +143,66 @@ def download_kick_audio(m3u8_master_url: str, output_path: str, audio_bitrate: s
         print(f"[Kick] Excepción en download_kick_audio: {e}")
         return False
 
+def download_kick_audio(m3u8_master_url: str, output_path: str, audio_bitrate: str = "64k", speed: float = 1.0) -> bool:
+    try:
+        # Usamos cloudscraper/curl_cffi para obtener el m3u8 inicial
+        r = cf.get(m3u8_master_url, impersonate="chrome120")
+        if r.status_code != 200:
+            print(f"[Kick] Error al obtener master.m3u8 ({r.status_code})")
+            return False
 
+        text = r.text
+        variant_url = _build_variant_m3u8(m3u8_master_url, text)
+        
+        # --- CORRECCIÓN DE BITRATE ---
+        # Aseguramos la 'k' para evitar el error de ffmpeg (64 -> 64k)
+        bitrate_ffmpeg = f"{audio_bitrate}k" if not str(audio_bitrate).endswith('k') else audio_bitrate
+        
+        print(f"[Kick] Descargando audio (bitrate: {bitrate_ffmpeg}, speed: {speed}x) desde: {variant_url}")
+
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+        # --- COMANDO FFMPEG CON TODA LA MIGA + FILTRO DE VELOCIDAD ---
+        cmd = [
+            "ffmpeg", "-y",
+            "-hide_banner", "-loglevel", "error",
+            "-reconnect", "1",
+            "-reconnect_streamed", "1",
+            "-reconnect_delay_max", "5",
+            "-headers", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\n",
+            "-i", variant_url,
+            "-map", "0:a:0", 
+            "-ac", "1",
+            "-acodec", "libmp3lame",
+            "-b:a", bitrate_ffmpeg,
+        ]
+
+        # Inyectamos el filtro de velocidad si es necesario
+        if float(speed) != 1.0:
+            cmd.extend(["-af", f"atempo={speed}"])
+
+        # El output siempre al final
+        cmd.append(output_path)
+
+        # Ejecución con captura de errores para debug
+        res = subprocess.run(
+            cmd,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.PIPE, 
+            text=True
+        )
+
+        if res.returncode != 0:
+            print(f"[Kick] ffmpeg falló con código {res.returncode}")
+            if res.stderr:
+                print(f"[Kick] Error ffmpeg: {res.stderr.strip()}")
+            return False
+
+        return True
+    except Exception as e:
+        print(f"[Kick] Excepción en download_kick_audio: {e}")
+        return False
+    
 def get_audio_duration_sec(path: str) -> int:
     """
     Usa ffprobe para obtener la duración del audio en segundos (entero).
@@ -247,6 +306,19 @@ def process_kick_source(config: dict, state: dict) -> dict:
 
         print(f"[Kc] Procesando canal: {channel_name} ({channel_slug})")
 
+        # Dentro de process_kick_source, en el bucle de canales:
+        global_settings = config.get("settings", {})
+        kick_cfg = config.get("sources", {}).get("kick", {})
+
+        # Jerarquía de bitrate
+        bitrate = (ch.get("bitrate") or 
+                   kick_cfg.get("audio_bitrate") or 
+                   global_settings.get("audio_bitrate") or 
+                   "64k")
+
+        # Jerarquía de velocidad (usando la clave 'global_speed' de tu yaml)
+        speed = float(ch.get("speed") or global_settings.get("global_speed") or 1.0)
+
         vods = fetch_vods(channel_slug, limit=limit, limit_days=limit_days)
         if not vods:
             print(f"[Kick] Sin VODs para {channel_slug}")
@@ -271,7 +343,7 @@ def process_kick_source(config: dict, state: dict) -> dict:
             file_path = os.path.join("/data/audio", filename)
 
             # descargar audio
-            ok = download_kick_audio(m3u8_url, file_path, audio_bitrate=audio_bitrate)
+            ok = download_kick_audio(m3u8_url, file_path, audio_bitrate=bitrate, speed=speed)
             if not ok:
                 print(f"[Kick] No se pudo descargar {episode_id}")
                 continue
