@@ -55,6 +55,10 @@ sources:
     limit: 1
     audio_bitrate: "64k"
 
+settings:
+  global_speed: 1.5
+  audio_bitrate: "64k"
+
 storage:
   base_path: "/data"
   audio_dir: "audio"
