@@ -3,3 +3,5 @@ config/twitch_token.env
 config/telegram.env
 data/audio/*.mkv
 data/audio/*.*
+__pycache__/
+*.pyc
