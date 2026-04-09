@@ -3805,6 +3805,72 @@
       "downloaded_at": "2026-04-08T16:00:49.088744Z",
       "file_path": "/data/audio/yt_O7fOOS751qg.mp3",
       "duration_sec": 948.0
+    },
+    {
+      "id": "yt_lUVpBe3wXNk",
+      "source": "youtube",
+      "title": "Jordi LLatzer Inversion \u2014 Por qu\u00e9 es Importante Aparentar ser POBRE",
+      "channel": "Jordi LLatzer Inversion",
+      "original_url": "https://www.youtube.com/watch?v=lUVpBe3wXNk",
+      "published_at": "2026-04-08T18:00:53Z",
+      "downloaded_at": "2026-04-09T09:57:31.260650Z",
+      "file_path": "/data/audio/yt_lUVpBe3wXNk.mp3",
+      "duration_sec": 568.0
+    },
+    {
+      "id": "yt_mKGWQOds0UQ",
+      "source": "youtube",
+      "title": "Solo Fonseca \u2014 TRUMP'S BIGGEST MISTAKE: This is how he ended up giving in to Iran - @SoloFonseca",
+      "channel": "Solo Fonseca",
+      "original_url": "https://www.youtube.com/watch?v=mKGWQOds0UQ",
+      "published_at": "2026-04-08T18:32:06Z",
+      "downloaded_at": "2026-04-09T09:58:20.264245Z",
+      "file_path": "/data/audio/yt_mKGWQOds0UQ.mp3",
+      "duration_sec": 1440.0
+    },
+    {
+      "id": "yt_-tBwjzlwqYs",
+      "source": "youtube",
+      "title": "Marc Vidal \u2014 Alto el fuego entre Ir\u00e1n y EE.UU.: \u00bfuna trampa peligrosa?",
+      "channel": "Marc Vidal",
+      "original_url": "https://www.youtube.com/watch?v=-tBwjzlwqYs",
+      "published_at": "2026-04-08T17:45:00Z",
+      "downloaded_at": "2026-04-09T09:58:58.248034Z",
+      "file_path": "/data/audio/yt_-tBwjzlwqYs.mp3",
+      "duration_sec": 1026.0
+    },
+    {
+      "id": "yt_iVQy_NoaSy8",
+      "source": "youtube",
+      "title": "Red Pill \u2014 \u00bfDiversi\u00f3n o Autodestrucci\u00f3n? Dopamina BARATA! | REDPILL PODCAST #95",
+      "channel": "Red Pill",
+      "original_url": "https://www.youtube.com/watch?v=iVQy_NoaSy8",
+      "published_at": "2026-04-08T20:57:03Z",
+      "downloaded_at": "2026-04-09T10:06:53.407253Z",
+      "file_path": "/data/audio/yt_iVQy_NoaSy8.mp3",
+      "duration_sec": 8071.0
+    },
+    {
+      "id": "yt_rKOScaQuuxk",
+      "source": "youtube",
+      "title": "La contracronica \u2014 Dos semanas de margen",
+      "channel": "La contracronica",
+      "original_url": "https://www.youtube.com/watch?v=rKOScaQuuxk",
+      "published_at": "2026-04-08T22:30:30Z",
+      "downloaded_at": "2026-04-09T10:08:16.087214Z",
+      "file_path": "/data/audio/yt_rKOScaQuuxk.mp3",
+      "duration_sec": 3279.0
+    },
+    {
+      "id": "yt_ZTezx0B3NPQ",
+      "source": "youtube",
+      "title": "La contracronica \u2014 We the Hispanics... premiere",
+      "channel": "La contracronica",
+      "original_url": "https://www.youtube.com/watch?v=ZTezx0B3NPQ",
+      "published_at": "2026-04-08T18:31:11Z",
+      "downloaded_at": "2026-04-09T10:08:45.058866Z",
+      "file_path": "/data/audio/yt_ZTezx0B3NPQ.mp3",
+      "duration_sec": 1085.0
     }
   ],
   "ignored": [
@@ -3876,6 +3942,7 @@
     "yt_zXd7K3_CLtM",
     "yt_wRF8hKiIh98",
     "yt_fSVkpZ_rVZ8",
-    "yt_M-CEX7y19Gs"
+    "yt_M-CEX7y19Gs",
+    "yt_wW_vg5-VFq8"
   ]
 }
