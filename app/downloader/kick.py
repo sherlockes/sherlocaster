@@ -317,7 +317,7 @@ def process_kick_source(config: dict, state: dict) -> dict:
                    "64k")
 
         # Jerarquía de velocidad (usando la clave 'global_speed' de tu yaml)
-        speed = float(ch.get("speed") or global_settings.get("global_speed") or 1.0)
+        speed = float(ch.get("speed") or global_settings.get("speed") or 1.0)
 
         vods = fetch_vods(channel_slug, limit=limit, limit_days=limit_days)
         if not vods:

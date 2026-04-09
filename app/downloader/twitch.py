@@ -96,6 +96,7 @@ def process_twitch_source(config: dict, state: dict) -> list:
         print(f"[Tw] Procesando canal: {name}")
 
         # --- NUEVA LÓGICA DE CONFIGURACIÓN ---
+        global_settings = config.get("settings", {})
         # Bitrate: Canal > Fuente Twitch > Global > 64k
         bitrate = (ch.get("bitrate") or 
                    tw_cfg.get("audio_bitrate") or 
@@ -103,7 +104,7 @@ def process_twitch_source(config: dict, state: dict) -> list:
                    "64k")
 
         # Velocidad: Canal > Global > 1.0
-        speed = float(ch.get("speed") or global_settings.get("global_speed") or 1.0)
+        speed = float(ch.get("speed") or global_settings.get("speed") or 1.0)
         # --------------------------------------
 
         # obtenemos la lista de vídeos desde twitch-dl

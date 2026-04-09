@@ -1,0 +1,232 @@
+=== Inicio de ejecución: 2026-04-05 20:00:01.987039+00:00 ===
+[Yt] Canal: Oliver Nabani (Min: 5m)
+[Yt] yt_mCgQ1jGcWMQ ya procesado
+[Yt] yt_yEd55cqSfk4 ya procesado
+[Yt] yt_yw4mzu-Nyj0 ya procesado
+[Yt] yt_IM-WDOL4q60 más de 10 días
+[Yt] Canal: Jordi LLatzer (Min: 5m)
+[Yt] yt_ofexGbwwSYw ya procesado
+[Yt] yt_UDZUuJYz3l4 más de 10 días
+[Yt] Canal: Jordi LLatzer Inversion (Min: 5m)
+[download]   0.0% of   14.95MiB at  Unknown B/s ETA Unknown[download]   0.0% of   14.95MiB at    1.78MiB/s ETA 00:08  [download]   0.0% of   14.95MiB at    2.52MiB/s ETA 00:05[download]   0.1% of   14.95MiB at    4.22MiB/s ETA 00:03[download]   0.2% of   14.95MiB at    5.70MiB/s ETA 00:02[download]   0.4% of   14.95MiB at    5.65MiB/s ETA 00:02[download]   0.8% of   14.95MiB at    6.92MiB/s ETA 00:02[download]   1.7% of   14.95MiB at    9.83MiB/s ETA 00:01[download]   3.3% of   14.95MiB at   14.77MiB/s ETA 00:00[download]   6.7% of   14.95MiB at   20.83MiB/s ETA 00:00[download]  13.4% of   14.95MiB at   26.13MiB/s ETA 00:00[download]  26.7% of   14.95MiB at   29.98MiB/s ETA 00:00[download]  53.5% of   14.95MiB at   32.38MiB/s ETA 00:00[download]  66.9% of   14.95MiB at   32.98MiB/s ETA 00:00[download]  66.9% of   14.95MiB at  Unknown B/s ETA Unknown[download]  66.9% of   14.95MiB at    1.03MiB/s ETA 00:04  [download]  66.9% of   14.95MiB at    1.94MiB/s ETA 00:02[download]  67.0% of   14.95MiB at    3.75MiB/s ETA 00:01[download]  67.1% of   14.95MiB at    7.03MiB/s ETA 00:00[download]  67.3% of   14.95MiB at   12.94MiB/s ETA 00:00[download]  67.7% of   14.95MiB at   23.64MiB/s ETA 00:00[download]  68.5% of   14.95MiB at   42.55MiB/s ETA 00:00[download]  70.2% of   14.95MiB at   41.64MiB/s ETA 00:00[download]  73.6% of   14.95MiB at   38.03MiB/s ETA 00:00[download]  80.2% of   14.95MiB at   36.63MiB/s ETA 00:00[download]  93.6% of   14.95MiB at   35.90MiB/s ETA 00:00[download] 100.0% of   14.95MiB at   36.01MiB/s ETA 00:00[download] 100% of   14.95MiB in 00:00:00 at 22.61MiB/s                                                         [Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_dntiidM5TjQ.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_dntiidM5TjQ.mono_tmp.mp3
+[Yt] Añadido: Jordi LLatzer Inversion — ¿Comprar o Alquilar una Vivienda? La regla del 6,5%
+[Yt] yt_RSe_1C6Tuyo ya procesado
+[Yt] yt_Wz_3Z5zIKZg ya procesado
+[Yt] yt_9X6pGbgHigU ya procesado
+[Yt] yt_l5KJ0t0JxZo ya procesado
+[Yt] yt_g0iyFyR4d-I ya procesado
+[Yt] yt_2SpNqJSqT4o ya procesado
+[Yt] yt_klaRjPDVs-c ya procesado
+[Yt] yt_Md9gEOMY4Ko ya procesado
+[Yt] yt_g2OvVTRF7cs ya procesado
+[Yt] Canal: Wall Street Wolverine (Min: 20m)
+[download]   0.0% of  117.09MiB at  Unknown B/s ETA Unknown[download]   0.0% of  117.09MiB at    2.02MiB/s ETA 00:58  [download]   0.0% of  117.09MiB at    3.06MiB/s ETA 00:38[download]   0.0% of  117.09MiB at    4.89MiB/s ETA 00:24[download]   0.0% of  117.09MiB at    4.95MiB/s ETA 00:23[download]   0.1% of  117.09MiB at    5.27MiB/s ETA 00:22[download]   0.1% of  117.09MiB at    6.80MiB/s ETA 00:17[download]   0.2% of  117.09MiB at   10.26MiB/s ETA 00:11[download]   0.4% of  117.09MiB at   15.43MiB/s ETA 00:07[download]   0.9% of  117.09MiB at   21.27MiB/s ETA 00:05[download]   1.7% of  117.09MiB at   26.73MiB/s ETA 00:04[download]   3.4% of  117.09MiB at   30.26MiB/s ETA 00:03[download]   6.8% of  117.09MiB at   32.71MiB/s ETA 00:03[download]   8.3% of  117.09MiB at   33.31MiB/s ETA 00:03[download]   8.3% of  117.09MiB at  Unknown B/s ETA Unknown[download]   8.3% of  117.09MiB at    2.25MiB/s ETA 00:48  [download]   8.3% of  117.09MiB at    3.16MiB/s ETA 00:34[download]   8.3% of  117.09MiB at    4.93MiB/s ETA 00:21[download]   8.3% of  117.09MiB at    7.91MiB/s ETA 00:13[download]   8.3% of  117.09MiB at   12.83MiB/s ETA 00:08[download]   8.4% of  117.09MiB at   21.36MiB/s ETA 00:05[download]   8.5% of  117.09MiB at   35.92MiB/s ETA 00:02[download]   8.7% of  117.09MiB at   38.24MiB/s ETA 00:02[download]   9.1% of  117.09MiB at   36.64MiB/s ETA 00:02[download]  10.0% of  117.09MiB at   35.98MiB/s ETA 00:02[download]  11.7% of  117.09MiB at   35.55MiB/s ETA 00:02[download]  15.1% of  117.09MiB at   35.43MiB/s ETA 00:02[download]  16.7% of  117.09MiB at   35.63MiB/s ETA 00:02[download]  16.7% of  117.09MiB at  Unknown B/s ETA Unknown[download]  16.7% of  117.09MiB at  Unknown B/s ETA Unknown[download]  16.7% of  117.09MiB at    4.89MiB/s ETA 00:20  [download]  16.7% of  117.09MiB at    7.11MiB/s ETA 00:13[download]  16.8% of  117.09MiB at   11.22MiB/s ETA 00:08[download]  16.8% of  117.09MiB at   18.43MiB/s ETA 00:05[download]  16.8% of  117.09MiB at   30.15MiB/s ETA 00:03[download]  16.9% of  117.09MiB at   39.67MiB/s ETA 00:02[download]  17.2% of  117.09MiB at   36.67MiB/s ETA 00:02[download]  17.6% of  117.09MiB at   35.95MiB/s ETA 00:02[download]  18.4% of  117.09MiB at   35.56MiB/s ETA 00:02[download]  20.1% of  117.09MiB at   35.48MiB/s ETA 00:02[download]  23.6% of  117.09MiB at   35.39MiB/s ETA 00:02[download]  25.1% of  117.09MiB at   35.61MiB/s ETA 00:02[download]  25.1% of  117.09MiB at  Unknown B/s ETA Unknown[download]  25.1% of  117.09MiB at    2.91MiB/s ETA 00:30  [download]  25.1% of  117.09MiB at    3.91MiB/s ETA 00:22[download]  25.1% of  117.09MiB at    5.95MiB/s ETA 00:14[download]  25.2% of  117.09MiB at    9.33MiB/s ETA 00:09[download]  25.2% of  117.09MiB at   15.14MiB/s ETA 00:05[download]  25.2% of  117.09MiB at   25.42MiB/s ETA 00:03[download]  25.3% of  117.09MiB at   40.51MiB/s ETA 00:02[download]  25.6% of  117.09MiB at   37.57MiB/s ETA 00:02[download]  26.0% of  117.09MiB at   36.27MiB/s ETA 00:02[download]  26.8% of  117.09MiB at   35.78MiB/s ETA 00:02[download]  28.5% of  117.09MiB at   35.27MiB/s ETA 00:02[download]  32.0% of  117.09MiB at   35.38MiB/s ETA 00:02[download]  33.5% of  117.09MiB at   35.55MiB/s ETA 00:02[download]  33.5% of  117.09MiB at  Unknown B/s ETA Unknown[download]  33.5% of  117.09MiB at    2.02MiB/s ETA 00:38  [download]  33.5% of  117.09MiB at    2.88MiB/s ETA 00:27[download]  33.5% of  117.09MiB at    4.54MiB/s ETA 00:17[download]  33.5% of  117.09MiB at    7.32MiB/s ETA 00:10[download]  33.6% of  117.09MiB at   12.15MiB/s ETA 00:06[download]  33.6% of  117.09MiB at   20.06MiB/s ETA 00:03[download]  33.7% of  117.09MiB at   32.86MiB/s ETA 00:02[download]  33.9% of  117.09MiB at   40.94MiB/s ETA 00:01[download]  34.4% of  117.09MiB at   37.30MiB/s ETA 00:02[download]  35.2% of  117.09MiB at   36.55MiB/s ETA 00:02[download]  36.9% of  117.09MiB at   19.45MiB/s ETA 00:03[download]  40.3% of  117.09MiB at   15.71MiB/s ETA 00:04[download]  41.9% of  117.09MiB at   17.53MiB/s ETA 00:03[download]  41.9% of  117.09MiB at  Unknown B/s ETA Unknown[download]  41.9% of  117.09MiB at    2.05MiB/s ETA 00:33  [download]  41.9% of  117.09MiB at    2.94MiB/s ETA 00:23[download]  41.9% of  117.09MiB at    4.64MiB/s ETA 00:14[download]  41.9% of  117.09MiB at    7.43MiB/s ETA 00:09[download]  41.9% of  117.09MiB at   12.18MiB/s ETA 00:05[download]  42.0% of  117.09MiB at   20.59MiB/s ETA 00:03[download]  42.1% of  117.09MiB at   34.47MiB/s ETA 00:01[download]  42.3% of  117.09MiB at   40.44MiB/s ETA 00:01[download]  42.7% of  117.09MiB at    4.54MiB/s ETA 00:14[download]  43.6% of  117.09MiB at    8.07MiB/s ETA 00:08[download]  45.3% of  117.09MiB at   10.03MiB/s ETA 00:06[download]  48.7% of  117.09MiB at    9.93MiB/s ETA 00:06[download]  50.1% of  117.09MiB at   10.48MiB/s ETA 00:05[download]  50.1% of  117.09MiB at  Unknown B/s ETA Unknown[download]  50.1% of  117.09MiB at    2.59MiB/s ETA 00:22  [download]  50.1% of  117.09MiB at    3.59MiB/s ETA 00:16[download]  50.1% of  117.09MiB at    5.46MiB/s ETA 00:10[download]  50.1% of  117.09MiB at    8.47MiB/s ETA 00:06[download]  50.1% of  117.09MiB at   13.85MiB/s ETA 00:04[download]  50.2% of  117.09MiB at   22.79MiB/s ETA 00:02[download]  50.3% of  117.09MiB at   37.06MiB/s ETA 00:01[download]  50.5% of  117.09MiB at   37.86MiB/s ETA 00:01[download]  50.9% of  117.09MiB at   36.38MiB/s ETA 00:01[download]  51.8% of  117.09MiB at   11.87MiB/s ETA 00:04[download]  53.5% of  117.09MiB at   14.97MiB/s ETA 00:03[download]  56.9% of  117.09MiB at   14.54MiB/s ETA 00:03[download]  58.2% of  117.09MiB at   13.39MiB/s ETA 00:03[download]  58.2% of  117.09MiB at  Unknown B/s ETA Unknown[download]  58.2% of  117.09MiB at  Unknown B/s ETA Unknown[download]  58.2% of  117.09MiB at    4.57MiB/s ETA 00:10  [download]  58.2% of  117.09MiB at    7.00MiB/s ETA 00:07[download]  58.2% of  117.09MiB at   11.07MiB/s ETA 00:04[download]  58.2% of  117.09MiB at   17.68MiB/s ETA 00:02[download]  58.3% of  117.09MiB at   28.88MiB/s ETA 00:01[download]  58.4% of  117.09MiB at   39.43MiB/s ETA 00:01[download]  58.6% of  117.09MiB at   37.15MiB/s ETA 00:01[download]  59.0% of  117.09MiB at   36.13MiB/s ETA 00:01[download]  59.9% of  117.09MiB at   17.09MiB/s ETA 00:02[download]  61.6% of  117.09MiB at    8.96MiB/s ETA 00:05[download]  65.0% of  117.09MiB at   11.57MiB/s ETA 00:03[download]  66.5% of  117.09MiB at   13.20MiB/s ETA 00:02[download]  66.5% of  117.09MiB at  Unknown B/s ETA Unknown[download]  66.5% of  117.09MiB at    2.17MiB/s ETA 00:18  [download]  66.5% of  117.09MiB at    3.11MiB/s ETA 00:12[download]  66.5% of  117.09MiB at    4.89MiB/s ETA 00:08[download]  66.5% of  117.09MiB at    7.80MiB/s ETA 00:05[download]  66.5% of  117.09MiB at   12.72MiB/s ETA 00:03[download]  66.6% of  117.09MiB at   21.43MiB/s ETA 00:01[download]  66.7% of  117.09MiB at    2.18MiB/s ETA 00:17[download]  66.9% of  117.09MiB at    4.12MiB/s ETA 00:09[download]  67.3% of  117.09MiB at    7.37MiB/s ETA 00:05[download]  68.2% of  117.09MiB at   12.21MiB/s ETA 00:03[download]  69.9% of  117.09MiB at   13.81MiB/s ETA 00:02[download]  73.3% of  117.09MiB at    8.09MiB/s ETA 00:03[download]  74.7% of  117.09MiB at    6.90MiB/s ETA 00:04[download]  74.7% of  117.09MiB at  Unknown B/s ETA Unknown[download]  74.7% of  117.09MiB at  Unknown B/s ETA Unknown[download]  74.7% of  117.09MiB at  Unknown B/s ETA Unknown[download]  74.7% of  117.09MiB at   11.25MiB/s ETA 00:02  [download]  74.7% of  117.09MiB at   17.28MiB/s ETA 00:01[download]  74.8% of  117.09MiB at   27.25MiB/s ETA 00:01[download]  74.8% of  117.09MiB at   44.05MiB/s ETA 00:00[download]  74.9% of  117.09MiB at   39.20MiB/s ETA 00:00[download]  75.1% of  117.09MiB at   37.11MiB/s ETA 00:00[download]  75.6% of  117.09MiB at   14.65MiB/s ETA 00:01[download]  76.4% of  117.09MiB at   20.72MiB/s ETA 00:01[download]  78.1% of  117.09MiB at   26.13MiB/s ETA 00:00[download]  81.5% of  117.09MiB at   29.27MiB/s ETA 00:00[download]  82.9% of  117.09MiB at   30.29MiB/s ETA 00:00[download]  82.9% of  117.09MiB at  Unknown B/s ETA Unknown[download]  82.9% of  117.09MiB at  Unknown B/s ETA Unknown[download]  82.9% of  117.09MiB at    2.49MiB/s ETA 00:08  [download]  82.9% of  117.09MiB at    4.26MiB/s ETA 00:04[download]  82.9% of  117.09MiB at    7.68MiB/s ETA 00:02[download]  83.0% of  117.09MiB at   13.84MiB/s ETA 00:01[download]  83.0% of  117.09MiB at   24.95MiB/s ETA 00:00[download]  83.1% of  117.09MiB at   39.16MiB/s ETA 00:00[download]  83.3% of  117.09MiB at   37.04MiB/s ETA 00:00[download]  83.8% of  117.09MiB at    2.64MiB/s ETA 00:07[download]  84.6% of  117.09MiB at    4.91MiB/s ETA 00:03[download]  86.3% of  117.09MiB at    8.31MiB/s ETA 00:01[download]  89.7% of  117.09MiB at   13.46MiB/s ETA 00:00[download]  91.1% of  117.09MiB at   15.06MiB/s ETA 00:00[download]  91.1% of  117.09MiB at  Unknown B/s ETA Unknown[download]  91.1% of  117.09MiB at    2.02MiB/s ETA 00:05  [download]  91.1% of  117.09MiB at    3.14MiB/s ETA 00:03[download]  91.1% of  117.09MiB at    5.04MiB/s ETA 00:02[download]  91.1% of  117.09MiB at    8.10MiB/s ETA 00:01[download]  91.2% of  117.09MiB at   13.32MiB/s ETA 00:00[download]  91.2% of  117.09MiB at   22.32MiB/s ETA 00:00[download]  91.3% of  117.09MiB at   37.13MiB/s ETA 00:00[download]  91.5% of  117.09MiB at   38.69MiB/s ETA 00:00[download]  92.0% of  117.09MiB at   37.00MiB/s ETA 00:00[download]  92.8% of  117.09MiB at   10.81MiB/s ETA 00:00[download]  94.5% of  117.09MiB at   16.57MiB/s ETA 00:00[download]  98.0% of  117.09MiB at   22.59MiB/s ETA 00:00[download]  99.3% of  117.09MiB at   21.87MiB/s ETA 00:00[download]  99.3% of  117.09MiB at  Unknown B/s ETA Unknown[download]  99.3% of  117.09MiB at    1.99MiB/s ETA 00:00  [download]  99.3% of  117.09MiB at    2.40MiB/s ETA 00:00[download]  99.3% of  117.09MiB at    3.93MiB/s ETA 00:00[download]  99.3% of  117.09MiB at    6.52MiB/s ETA 00:00[download]  99.4% of  117.09MiB at   11.02MiB/s ETA 00:00[download]  99.4% of  117.09MiB at   18.52MiB/s ETA 00:00[download]  99.5% of  117.09MiB at   31.30MiB/s ETA 00:00[download]  99.7% of  117.09MiB at   39.97MiB/s ETA 00:00[download] 100.0% of  117.09MiB at   37.98MiB/s ETA 00:00[download] 100% of  117.09MiB in 00:00:07 at 15.74MiB/s                                                         [Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_pBXGq8BuCwA.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_pBXGq8BuCwA.mono_tmp.mp3
+[Yt] Añadido: Wall Street Wolverine — LAS CAUSAS por las que VIVIMOS en una SOCIEDAD CADA VEZ MÁS DECADENTE ❌ LUIS MONGE MALO
+[Yt] yt_tg1Q_IeTunU ya procesado
+[Yt] yt_CwvIK-Ot37Q ya procesado
+[Yt] yt_NUSm0PztqaM ya procesado
+[Yt] yt_MrDNRk6nO2c ya procesado
+[Yt] yt_n5loz0jCeJM ya procesado
+[Yt] yt_z6WOD62e9tw ya procesado
+[Yt] yt_SxPS9LU8hwk ya procesado
+[Yt] yt_EfP7Aw08PGI ya procesado
+[Yt] yt_JG2O3pYGnYQ ya procesado
+[Yt] yt_iJbGdIEUICo ya procesado
+[Yt] yt_s2CVX_MQxO0 ya procesado
+[Yt] yt_k-loSwWlKO8 ya procesado
+[Yt] yt_6ihHnTkRNFg ya procesado
+[Yt] yt_8kJu_2kUYwI ya procesado
+[Yt] yt_R0isiQb9ltI ya procesado
+[Yt] yt_YY5572Xm3ks ya procesado
+[Yt] yt_nW28DlUhZ3A ya procesado
+[Yt] yt_d6mc-4pMFpQ ya procesado
+[Yt] yt_bDUSejCbVb4 más de 10 días
+[Yt] Canal: Solo Fonseca (Min: 5m)
+[Yt] yt_lLaplaYB_Uw ya procesado
+[Yt] yt_7N9OE38SW2A ya procesado
+[Yt] yt_UPsaUob2Lic ya procesado
+[Yt] yt_N0gy8j8RubY ya procesado
+[Yt] yt_n6SrbgeLw4M ya procesado
+[Yt] yt_AD-vqHdh6wI ya procesado
+[Yt] yt_4NjV2HAxQqE ya procesado
+[Yt] yt_BqmPGBtcKu8 ya procesado
+[Yt] yt_CotICHJqRZM ya procesado
+[Yt] yt_dEg5-alogkk ya procesado
+[Yt] yt_Ghs1PpD9utk ya procesado
+[Yt] yt_jFcfGTNSGMQ ya procesado
+[Yt] yt_BwFi-izPKYA ya procesado
+[Yt] yt_ziyI3kEbIac ya procesado
+[Yt] yt_e_lWB3-jQm0 ya procesado
+[Yt] yt_w__qztgNJME ya procesado
+[Yt] yt_TvKRyoIUXn4 ya procesado
+[Yt] yt_h4CQ2un4pGo ya procesado
+[Yt] yt_G131gKXlNTw ya procesado
+[Yt] yt_BXIpNjrjSoQ ya procesado
+[Yt] yt_cDtxGzJfcOs ya procesado
+[Yt] yt_a7f7nys12UU ya procesado
+[Yt] yt_hOUZ1FnA6a0 ya procesado
+[Yt] yt_bsJMg-gf_mo ya procesado
+[Yt] yt_m-AxoVGTNwM ya procesado
+[Yt] Canal: Marc Vidal (Min: 5m)
+[Yt] yt_wVuyQy9boGw ya procesado
+[Yt] yt_SaoQ6bsSjPU ya procesado
+[Yt] yt_RxpJCGoTTUE ya procesado
+[Yt] yt_bTTxoXzSzvI ya procesado
+[Yt] yt_GnRs61U1fJM ya procesado
+[Yt] yt_MYX7Y_Yjbbs ya procesado
+[Yt] yt_zybSQdejUl4 ya procesado
+[Yt] yt_ncy-vBRMxFE ya procesado
+[Yt] yt_fhyWz9247xY ya procesado
+[Yt] yt_MVXjYyRgctc ya procesado
+[Yt] yt_6pPY-GCmTNQ ya procesado
+[Yt] yt_X83TKHbxLd8 ya procesado
+[Yt] yt_grJ2pHwtptE ya procesado
+[Yt] yt_UaDF2wsuA2A ya procesado
+[Yt] yt_543oO15p3HA ya procesado
+[Yt] yt_vNW2FjhdLKo ya procesado
+[Yt] yt_yxpaYjfHWJ8 ya procesado
+[Yt] yt_z8ceKoIT4Ls ya procesado
+[Yt] yt_vaeqM-iP3b0 ya procesado
+[Yt] yt_wWu3aCaWA98 ya procesado
+[Yt] yt_6fejh_pIgNM ya procesado
+[Yt] yt_OP0E7-I9hWU ya procesado
+[Yt] yt_O_PMGpbx7PI ya procesado
+[Yt] yt_Td0ABqgypQU ya procesado
+[Yt] yt_oYzZO6p0f4c ya procesado
+[Yt] Canal: WorldCast (Min: 5m)
+[Yt] yt_NWfMNnZ-C4s ya procesado
+[Yt] yt_QLl2TsaXTg0 ya procesado
+[Yt] yt_u4GpgVoSv2Y ya procesado
+[Yt] yt_2bp35holHKk ya procesado
+[Yt] yt_zYmH-59KakM ya procesado
+[Yt] yt_uNWwdLTCmVc ya procesado
+[Yt] yt_TcBozICjNnw ya procesado
+[Yt] yt_fmRKT-E2mOo ya procesado
+[Yt] yt_N7tl2vaYgtA ya procesado
+[Yt] yt_SBcdEUIooWs ya procesado
+[Yt] yt_PX_DM0UsPXM ya procesado
+[Yt] yt_a79SN79brZM ya procesado
+[Yt] yt_wd3wB_c0ef0 ya procesado
+[Yt] yt_boFSbRoi9pM más de 10 días
+[Yt] Canal: Dross Rotzank (Min: 5m)
+[Yt] yt_vBW6BlcL9Yo ya procesado
+[Yt] yt_o74JBjUusXc ya procesado
+[Yt] yt_2EdJVW24WFU ya procesado
+[Yt] yt_Wi5SOTzAKuo ya procesado
+[Yt] yt_GGUXf5iFnbg ya procesado
+[Yt] yt_LANJywmkHK4 ya procesado
+[Yt] yt_Yw37KeRmQSA ya procesado
+[Yt] yt_nGRcc6GBEO4 ya procesado
+[Yt] yt_Wll8DJIaEHU ya procesado
+[Yt] yt_-9IefebxBgw ya procesado
+[Yt] yt_CMptX_QT7LU ya procesado
+[Yt] yt_MQ5xK7xeb8w ya procesado
+[Yt] yt_XGhQ6TzpX2E ya procesado
+[Yt] yt_QrA4wLF8--Y ya procesado
+[Yt] yt_7OtcHp4NeKA ya procesado
+[Yt] yt_rGEoxKhS_Nc ya procesado
+[Yt] yt_MXUzORtLZdM ya procesado
+[Yt] yt_QF7D1RstpQ0 ya procesado
+[Yt] yt_Qc6UB9HBiGI ya procesado
+[Yt] yt_hOmBqBDPjQA ya procesado
+[Yt] yt_EplNEHQUOUc ya procesado
+[Yt] yt_2KFvdwBEhIM ya procesado
+[Yt] yt_EYSjommv15A ya procesado
+[Yt] yt_xCfl4sO-GDE ya procesado
+[Yt] yt_1quag0soLUI ya procesado
+[Yt] Canal: The Wild Project (Min: 25m)
+[Yt] yt_LhZLH5RiI-g ya procesado
+[Yt] yt_c8zctPJJ0js ya procesado
+[Yt] yt_CtYLgko-mOg ya procesado
+[Yt] yt_ez9_d5SU250 ya procesado
+[Yt] yt_A9tAyZSnKS4 ya procesado
+[Yt] yt_DXQN8DWwM3Q ya procesado
+[Yt] yt_eSCMAPpcZmk ya procesado
+[Yt] yt_3jeZwPpiQ7s ya procesado
+[Yt] yt_LY9UzkA8Tdk ya procesado
+[Yt] yt_IP23vz3fqC0 ya procesado
+[Yt] yt_kmLXeykemME ya procesado
+[Yt] yt_FC4QRH6qOdI ya procesado
+[Yt] yt_RpBWCl75KGI ya procesado
+[Yt] yt_5HB-Tu2m0AI ya procesado
+[Yt] yt_exck-qSikKs ya procesado
+[Yt] yt_V-NgAoazR6Q ya procesado
+[Yt] yt_VlyltN6tgUY ya procesado
+[Yt] yt_eqPxcaRUJvg ya procesado
+[Yt] yt_vq41o3bVx54 ya procesado
+[Yt] yt_8LAi86kNj-I ya procesado
+[Yt] yt_rHfiDxAJr5o ya procesado
+[Yt] yt_l-uBdNIbSNg ya procesado
+[Yt] yt_P31kzd18-pc ya procesado
+[Yt] yt_-UOhwOvjO9s ya procesado
+[Yt] yt_As1CSUuqq1k ya procesado
+[Yt] Canal: Red Pill (Min: 5m)
+[Yt] yt_W1vqWmBpULM ya procesado
+[Yt] yt_vgPFsQAfRfo ya procesado
+[Yt] yt_YoXZUwW4YgI ya procesado
+[Yt] yt_7rvNznbcyh0 ya procesado
+[Yt] yt_YAhdwjyWDaA ya procesado
+[Yt] yt_gG2MvBNVtKk ya procesado
+[Yt] yt_UxwdeHhUJzE ya procesado
+[Yt] yt__RdT1teizS0 más de 10 días
+[Yt] Canal: La contracronica (Min: 5m)
+[download]   0.0% of   28.54MiB at  833.20KiB/s ETA 00:35[download]   0.0% of   28.54MiB at    1.58MiB/s ETA 00:18[download]   0.0% of   28.54MiB at    2.51MiB/s ETA 00:11[download]   0.1% of   28.54MiB at    4.26MiB/s ETA 00:06[download]   0.1% of   28.54MiB at    4.79MiB/s ETA 00:05[download]   0.2% of   28.54MiB at    5.20MiB/s ETA 00:05[download]   0.4% of   28.54MiB at    6.73MiB/s ETA 00:04[download]   0.9% of   28.54MiB at    9.59MiB/s ETA 00:02[download]   1.7% of   28.54MiB at   14.97MiB/s ETA 00:01[download]   3.5% of   28.54MiB at   21.04MiB/s ETA 00:01[download]   7.0% of   28.54MiB at   26.31MiB/s ETA 00:01[download]  14.0% of   28.54MiB at   30.01MiB/s ETA 00:00[download]  28.0% of   28.54MiB at   32.40MiB/s ETA 00:00[download]  34.2% of   28.54MiB at   33.18MiB/s ETA 00:00[download]  34.2% of   28.54MiB at  Unknown B/s ETA Unknown[download]  34.2% of   28.54MiB at    2.27MiB/s ETA 00:08  [download]  34.2% of   28.54MiB at    3.13MiB/s ETA 00:06[download]  34.2% of   28.54MiB at    4.89MiB/s ETA 00:03[download]  34.3% of   28.54MiB at    7.77MiB/s ETA 00:02[download]  34.4% of   28.54MiB at   12.60MiB/s ETA 00:01[download]  34.6% of   28.54MiB at   20.84MiB/s ETA 00:00[download]  35.0% of   28.54MiB at   34.46MiB/s ETA 00:00[download]  35.9% of   28.54MiB at   39.59MiB/s ETA 00:00[download]  37.7% of   28.54MiB at   37.46MiB/s ETA 00:00[download]  41.2% of   28.54MiB at   36.33MiB/s ETA 00:00[download]  48.2% of   28.54MiB at   35.80MiB/s ETA 00:00[download]  62.2% of   28.54MiB at   35.45MiB/s ETA 00:00[download]  68.8% of   28.54MiB at   35.67MiB/s ETA 00:00[download]  68.8% of   28.54MiB at  Unknown B/s ETA Unknown[download]  68.8% of   28.54MiB at    2.70MiB/s ETA 00:03  [download]  68.8% of   28.54MiB at    3.65MiB/s ETA 00:02[download]  68.9% of   28.54MiB at    5.48MiB/s ETA 00:01[download]  68.9% of   28.54MiB at    8.45MiB/s ETA 00:01[download]  69.0% of   28.54MiB at   13.53MiB/s ETA 00:00[download]  69.3% of   28.54MiB at   22.20MiB/s ETA 00:00[download]  69.7% of   28.54MiB at   36.59MiB/s ETA 00:00[download]  70.6% of   28.54MiB at   36.64MiB/s ETA 00:00[download]  72.3% of   28.54MiB at   35.85MiB/s ETA 00:00[download]  75.8% of   28.54MiB at   35.49MiB/s ETA 00:00[download]  82.8% of   28.54MiB at   35.45MiB/s ETA 00:00[download]  96.8% of   28.54MiB at   30.88MiB/s ETA 00:00[download] 100.0% of   28.54MiB at   27.84MiB/s ETA 00:00[download] 100% of   28.54MiB in 00:00:01 at 27.99MiB/s                                                         [Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt__MIfU9WAAsI.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt__MIfU9WAAsI.mono_tmp.mp3
+[Yt] Añadido: La contracronica — Is Trump going senile?
+[Yt] yt_iuf30L1aqxM ya procesado
+[Yt] yt_mT9mtltJxx8 ya procesado
+[Yt] yt_DPCzC51CmnQ ya procesado
+[Yt] yt_DCV0fSuUlxs ya procesado
+[Yt] yt_Q-w3wNiyysw ya procesado
+[Yt] yt_g3J5XqaWbBM ya procesado
+[Yt] yt_MN47nnCp09w ya procesado
+[Yt] yt_URB7J2BnlcQ ya procesado
+[Yt] yt_nqMC7P2Iw-Q ya procesado
+[Yt] yt_Ishfa6t3nNY ya procesado
+[Yt] yt_EEFxlP2bIs8 ya procesado
+[Yt] yt_QGYLAtwJwKk ya procesado
+[Yt] yt_xf1ifpAU8lU ya procesado
+[Yt] yt_U_j_cKJYvBk ya procesado
+[Yt] yt_FDLteBjJtEs ya procesado
+[Yt] yt_Zm8Tm-0lmaM ya procesado
+[Yt] yt_VrDff1C2MWU ya procesado
+[Yt] yt_3-gnzCIJHFk ya procesado
+[Yt] yt_dB9cK394SCY ya procesado
+[Yt] yt_lFIPaWoDHFM ya procesado
+[Yt] yt_9GQ3N1L34bE ya procesado
+[Yt] yt_T5WAbBcU5B0 ya procesado
+[Yt] yt_exVeOGuTuZk ya procesado
+[Yt] yt_aNnr-4hIGTE ya procesado
+[Yt] Canal: Punto de vista (Min: 5m)
+[Yt] yt_4FUWVSSxdHE ya procesado
+[Yt] yt_AylOF1qTMz0 ya procesado
+[Yt] yt_gYinDvsTYjU ya procesado
+[Yt] yt__C5LE5Kg7ms ya procesado
+[Yt] yt_Hko7vDwXWHI ya procesado
+[Yt] yt_ysndiDfnAWk más de 10 días
+[Yt] Canal: LordDraugr (Min: 5m)
+[Yt] yt_MZMxPYirZQ8 ya procesado
+[Yt] yt_GV5C3NYQKPA ya procesado
+[Yt] yt_czaE0cG5d28 ya procesado
+[Yt] yt_F0OU6T9kFWM ya procesado
+[Yt] yt_1EJ9TvaVVTs ya procesado
+[Yt] yt_Yrbq7VRFky8 ya procesado
+[Yt] yt_OqqZkiguIKo ya procesado
+[Yt] yt_NFipm-uCEO8 más de 10 días
+[Tw] Procesando canal: Jordi Llatzer
+[Tw] twt_2739139332 ya procesado
+[Tw] twt_2737469537 ya procesado
+[Tw] twt_2735825894 ya procesado
+[Tw] twt_2735049539 ya procesado
+[Tw] twt_2734195408 ya procesado
+[Kc] Config → content=vods, limit=1, limit_days=5, audio_bitrate=64k
+[Kc] Procesando canal: Jordi Llatzer (jordillatzer)
+[Kc] Ya existe episodio kck_103106153, saltando
+[Fd] generado en /data/feed.xml
+[Fd] Feed ok con 333 episodios
+[Tg] Intentando enviar notificación de 3 episodios...
+[Tg] Notificación enviada.
+[Rc] Feed subido
+[Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
+[Rc] Subida de carpeta audio OK
+[Rc] Borrando > 15 días
+[Rc] Limpieza remota OK
