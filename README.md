@@ -23,7 +23,26 @@ La aplicación utiliza dos componentes principales en Docker:
 1. **Worker (`sherlocaster`):** El motor que escanea, descarga y procesa. 
    - Utiliza `/data/sherlocaster.lock` para garantizar exclusividad.
    - Actualiza el `state.json` con episodios nuevos y vídeos ignorados.
+   - Genera un sitio estático para consultar cuando el contendor no está activo.
 2. **Web (`sherlocaster-web`):** Servidor FastAPI que expone la interfaz de administración y sirve el feed.
+
+## 🌐 Generación de Web Estática (SSG)
+
+Sherlocaster no solo sirve una API; funciona como un generador de contenido estático. Esto significa que la interfaz de usuario es extremadamente ligera, rápida y puede ser servida de forma independiente al backend de procesamiento.
+
+Para que Sherlocaster pueda actualizar automáticamente la web estática en tu repositorio (GitHub Pages), es imprescindible configurar un **Personal Access Token (PAT)**.
+Sin este token, el contenedor no tiene permisos para realizar un `git push` desde el interior de Docker. El token actúa como tu firma digital para autorizar que el sistema suba los nuevos archivos `.xml` y `.html` cada vez que se descarga un episodio.
+
+### Características de la Interfaz:
+* **Desacoplamiento Total:** La web se genera en la carpeta `/docs` (o `/data/html` según configuración). Esto permite que el contenido sea servido por **GitHub Pages**, **Nginx** o cualquier servidor de archivos estáticos sin necesidad de ejecutar Python para cada visita.
+* **Diseño Adaptativo (Dark/Light Mode):** * Implementación nativa mediante `prefers-color-scheme` y variables CSS de **Pico CSS**.
+    * **Optimización Visual:** Uso de transparencias alpha (`rgba(255, 255, 255, 0.05)`) en los contenedores `.stat-box` y `.episode-card`. Esto permite que los elementos se mezclen suavemente con el fondo del tema (claro u oscuro) sin necesidad de cargar múltiples hojas de estilo.
+* **Feed RSS Automatizado:** Generación de `rss.xml` siguiendo los estándares de iTunes/Podcasts, actualizando automáticamente duraciones, tamaños de archivo y carátulas.
+
+### Flujo de Actualización:
+1.  El **Worker** actualiza el `state.json` tras una descarga exitosa.
+2.  La **API/Web** detecta el cambio y regenera el `index.html` y el `rss.xml` estáticos.
+3.  Los archivos se escriben en el volumen persistente, quedando disponibles inmediatamente para el usuario.
 
 ## 📦 Instalación y Configuración
 
@@ -43,17 +62,37 @@ Stack Tecnológico:
    - Docker y Docker Compose instalados.
    - Un archivo de configuración de rclone (usualmente en ~/.config/rclone/rclone.conf).
    - Un token de Twitch (si vas a usar esa fuente).
+   - Un token de telegram y un canal para realizar las notificaciones
+   - Un token de Github para la generación del sitio estático
 
 2. Estructura de carpetas
 Se recomienda la siguiente estructura en el servidor:
 
-```Bash
-sherlocaster/
-├── config.yaml          # Configuración de canales y feed
-├── docker-compose.yaml
-├── config/
-│   └── twitch_token.env # Variables de entorno para Twitch
-└── data/                # (Se crea automáticamente) Audios y estado
+```text
+.
+├── app/                    # Código fuente de la aplicación
+│   ├── core/               # Lógica compartida (configuración, SSG, notificaciones)
+│   ├── downloader/         # Módulos de descarga (YouTube, Twitch, Kick)
+│   ├── uploader/           # Integración con rclone y subida remota
+│   ├── main.py             # Worker: Procesamiento y descargas
+│   └── web.py              # API/Web: FastAPI y gestión de la interfaz
+├── config/                 # Configuración sensible (NO SE SUBE A GIT)
+│   ├── rclone.conf         # Configuración de Rclone para subir los archivos
+│   ├── telegram.env        # Token de Telegram y ID de canal para despliegues
+│   ├── ghtoken.env         # Token de GitHub para despliegues
+│   └── twitch_token.env    # Tokens de API para Twitch/Kick
+├── data/                   # Volumen persistente (Estado y base de datos local)
+│   ├── state.json          # Registro histórico de episodios procesados
+│   ├── feed.xml            # Copia local del RSS
+│   └── sherlocaster.lock   # Archivo de bloqueo de procesos
+├── docs/                   # Web Estática (Generada automáticamente)
+│   ├── index.html          # Interfaz de usuario final
+│   ├── rss.xml             # Feed para podcatchers
+│   └── static-style.css    # Estilos CSS (con soporte Dark Mode)
+├── config.yaml             # Configuración principal del sistema
+├── docker-compose.yaml     # Orquestación de contenedores
+├── Dockerfile              # Definición de la imagen Python 3.12-slim
+└── README.md               # Esta documentación
 ```
 
 3. Configuración (config.yaml)
