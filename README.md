@@ -144,10 +144,20 @@ El contenedor sherlocaster (worker) está diseñado para ejecutarse y cerrarse. 
 0 */4 * * * cd ~/dockers/sherlocaster && docker compose run --rm sherlocaster
 ```
 # Variables de Entorno
-En el archivo ./config/twitch_token.env:
+En el archivo `config/twitch_token.env`
 
 ```txt
 TWITCH_TOKEN: Tu token de acceso para descargas de Twitch.
+```
+
+En el archivo `config/ghtoken.env`
+```env
+GITHUB_TOKEN=ghp_tu_token_de_acceso_personal
+```
+
+En el archivo `config/twitch_token.env`
+``` txt
+TWITCH_TOKEN=tu_oauth_token_de_twitch
 ```
 
 # Mantenimiento
