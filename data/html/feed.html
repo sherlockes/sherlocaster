@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sherlocaster - Feed Info</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/jpeg" href="http://homezgz.ddns.net:5005/sherlocaster/artwork.jpg">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #333;
+    }
+    th { color: #888; text-transform: uppercase; font-size: 0.8em; }
+    
+    #status {
+      margin-top: 20px;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+
+<body>
+<nav>
+  <a href="/">Home</a>
+  <a href="/config">Cfg</a>
+  <a href="/logs">Last</a>
+  <a href="/logs/list">All</a>
+  <a href="/feed">Feed</a>
+</nav>
+<hr>
+
+<h1>Feed Status</h1>
+
+<h3>Últimos 100 episodios procesados</h3>
+<table id="episodesTable">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody id="episodesBody">
+    </tbody>
+</table>
+
+<div id="status"></div>
+
+<script>
+async function loadFeedData() {
+  const status = document.getElementById("status");
+  status.innerText = "Cargando...";
+  status.style.color = "#888";
+  
+  try {
+    const res = await fetch("/api/feed/info");
+    const data = await res.json();
+
+    if(data.error) {
+      status.innerText = "Error: " + data.error;
+      status.style.color = "#f55";
+      return;
+    }
+
+    const tbody = document.getElementById("episodesBody");
+    tbody.innerHTML = "";
+
+    // data.recent ya viene limitado o invertido desde la API (web.py)
+    // Mostramos los 20 primeros que lleguen
+    const toShow = data.recent.slice(0, 100);
+
+    toShow.forEach(ep => {
+      // split(/[T ]/) corta por "T" o por " " (espacio)
+      const dateOnly = ep.published_at ? ep.published_at.split(/[T ]/)[0] : 'N/A';
+      
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${ep.title}</td>
+        <td style="color: #888; white-space: nowrap;">${dateOnly}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    status.innerText = "OK";
+    status.style.color = "#0f0";
+
+  } catch (e) {
+    status.innerText = "Error de conexión";
+    status.style.color = "#f55";
+  }
+}
+
+window.onload = loadFeedData;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+feedgen
+schedule
+PyYAML
+mutagen
+curl_cffi>=0.6.0
+fastapi
+uvicorn
+apscheduler
+pyyaml
+jinja2

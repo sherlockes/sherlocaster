@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sherlocaster - Último log</title>
+  <link rel="icon" type="image/jpeg" href="http://homezgz.ddns.net:5005/sherlocaster/artwork.jpg">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/config">Cfg</a>
+  <a href="/logs">Last</a>
+  <a href="/logs/list">All</a>
+  <a href="/feed">Feed</a>
+</nav>
+<hr>
+
+<div class="page">
+  <h1 id="title">Última ejecución</h1>
+  <div id="summary"></div>
+  <pre id="log">Cargando...</pre>
+</div>
+
+<script>
+async function loadLog() {
+  const pre = document.getElementById("log")
+  pre.textContent = "Cargando..."
+
+  try {
+    const params = new URLSearchParams(window.location.search)
+    const file = params.get("file")
+
+    let url = "/api/logs/last"
+    if (file) {
+      url = "/api/logs/" + encodeURIComponent(file)
+    }
+
+    const res = await fetch(url)
+    const data = await res.json()
+
+    let header = ""
+    if (data.filename) header = "Archivo: " + data.filename
+
+    const parsed = parseMeta(data.meta)
+    const metaLine = parsed.pretty
+
+    let parts = []
+
+    if (data.filename) {
+      parts.push("Archivo: " + data.filename)
+    }
+
+    try {
+      const parsed = parseMeta(data.meta)
+      if (parsed && parsed.pretty) {
+	parts.push(parsed.pretty)
+      }
+    } catch (e) {
+      // Si falla el parseo del meta, no rompemos la UI
+    }
+
+    if (typeof data.episodes_added === "number") {
+      parts.push("Episodios añadidos: " + data.episodes_added)
+    }
+
+    document.getElementById("summary").textContent = parts.join(" · ")
+
+
+
+
+    if (!data.content || data.content.trim() === "") {
+      pre.textContent = "El log está vacío.\nPuede que la ejecución esté en curso o haya fallado."
+    } else {
+      pre.textContent = data.content
+      pre.scrollTop = pre.scrollHeight
+    }
+
+  }
+  catch(e) {
+    pre.textContent = "Error cargando el log"
+  }
+}
+
+function parseMeta(metaRaw) {
+  if (!metaRaw) return { pretty: "Sin metadata disponible", kv: {} }
+
+  const kv = {}
+  const lines = metaRaw.split("\n").map(l => l.trim()).filter(Boolean)
+
+  for (const line of lines) {
+    // Soporta: key=value  |  key: value
+    let m = line.match(/^([^=:]+)\s*[:=]\s*(.*)$/)
+    if (m) {
+      const key = m[1].trim()
+      const val = m[2].trim()
+      kv[key] = val
+    }
+  }
+
+  // Intentamos construir algo “bonito” si existen claves típicas
+  // (si no existen, mostramos el meta completo)
+  const candidates = [
+    ["start", "Inicio"],
+    ["end", "Fin"],
+    ["duration", "Duración"],
+    ["elapsed", "Duración"],
+    ["runtime", "Duración"]
+  ]
+
+  let prettyLines = []
+  for (const [k, label] of candidates) {
+    if (kv[k]) prettyLines.push(`${label}: ${kv[k]}`)
+  }
+
+  if (prettyLines.length === 0) {
+    // No reconocimos claves -> devolvemos el texto crudo
+    return { pretty: metaRaw.trim(), kv }
+  }
+
+  return { pretty: prettyLines.join(" · "), kv }
+}
+
+const params = new URLSearchParams(window.location.search)
+const file = params.get("file")
+
+if (file) {
+  const title = document.getElementById("title")
+  if (title) title.style.display = "none"
+}
+  
+loadLog()
+</script>
+
+</body>
+</html>

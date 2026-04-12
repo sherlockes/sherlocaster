@@ -1,0 +1,27 @@
+ai_context.txt
+
+config/ghtoken.env
+config/rclone.conf
+config/twitch_token.env
+config/telegram.env
+data/audio/*.mkv
+data/audio/*.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs del proyecto (según tu estructura)
+data/logs/
+logs/
+*.log
+*.meta
+
+# Entornos y configuración sensible
+.env
+config/*.env
+
+# Docker
+.docker/

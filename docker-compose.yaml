@@ -1,0 +1,43 @@
+services:
+  sherlocaster:
+    build: .
+    container_name: sherlocaster
+    env_file:
+      - ./config/twitch_token.env
+      - ./config/telegram.env
+      - ./config/ghtoken.env
+    entrypoint:
+      - python
+      - -m
+      - app.main
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/app/config
+      - ./data:/data
+      - ./logs:/logs
+    environment:
+      - PYTHONPATH=/app
+      - TZ=Europe/Madrid
+    command: python3 -m app.main
+  sherlocaster-web:
+    build: .
+    container_name: sherlocaster-web
+    user: root
+    entrypoint: []
+    command: uvicorn app.web:app --host 0.0.0.0 --port 8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/app
+      - ./config.yaml:/app/config.yaml
+      - ./data:/data
+      - ./logs:/logs
+    working_dir: /app # <--- Esto le dice al contenedor que "viva" en esa carpeta
+    environment:
+      - TZ=Europe/Madrid
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+networks: {}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sherlocaster - Histórico de logs</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/config">Cfg</a>
+  <a href="/logs">Last</a>
+  <a href="/logs/list">All</a>
+  <a href="/feed"><b>Feed</b></a>
+</nav>
+<hr>
+
+<h1>Histórico</h1>
+
+<div id="list">Cargando...</div>
+
+<script>
+async function loadLogs() {
+  const container = document.getElementById("list")
+  container.textContent = "Cargando..."
+
+  try {
+    const res = await fetch("/api/logs")
+    const logs = await res.json()
+
+    if (!logs.length) {
+      container.textContent = "No hay logs disponibles"
+      return
+    }
+
+    container.innerHTML = ""
+
+    for (const log of logs) {
+      const div = document.createElement("div")
+      div.className = "log"
+
+      const link = document.createElement("a")
+      link.href = "/logs?file=" + encodeURIComponent(log.filename)
+      link.textContent = log.filename
+      link.className = "file"
+
+      const date = document.createElement("span")
+      date.textContent = log.date || "-"
+
+      const time = document.createElement("span")
+      time.textContent = log.time || "-"
+
+      const eps = document.createElement("span")
+      eps.className = "episodes"
+      eps.textContent = "Eps: " + log.episodes_added
+
+      div.appendChild(link)
+      div.appendChild(eps)
+
+      container.appendChild(div)
+    }
+  }
+  catch (e) {
+    container.textContent = "Error cargando logs"
+  }
+}
+
+loadLogs()
+</script>
+
+</body>
+</html>
