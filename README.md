@@ -10,19 +10,28 @@ Ideal para consumir contenido de vídeo en formato audio, ahorrando ancho de ban
 - **Optimización de Audio:** Conversión automática a MP3 Mono (64kbps) para minimizar el tamaño sin perder calidad de voz.
 - **Sincronización Remota:** Integración con `rclone` para subir audios y el feed RSS a la nube (Google Drive, S3, etc.).
 - **Gestión de Estado Inteligente:** - Evita duplicados comparando IDs procesados.
-    - **Caché de descartes:** Recuerda vídeos que no cumplen la duración mínima para no volver a analizar su metadata, acelerando las ejecuciones sucesivas.
+- **Caché de descartes:** Recuerda vídeos que no cumplen la duración mínima para no volver a analizar su metadata, acelerando las ejecuciones sucesivas.
 - **Seguridad de Ejecución:** Sistema de **bloqueo (Lock)** mediante `fcntl` que impide que dos instancias del worker se solapen y corrompan los archivos.
 - **Logs Limpios:** Procesamiento de salida que elimina códigos de color ANSI, generando archivos `.log` legibles y ligeros.
-- **Interfaz Web (FastAPI):** - Editor de configuración (`config.yaml`) integrado.
-    - Visualizador de logs en tiempo real y registro histórico.
+- **Interfaz Web (FastAPI):**
+  - Dashboard con la info más importante
+  - Editor de configuración (`config.yaml`) integrado.
+  - Visualizador de logs en tiempo real y registro histórico.
+  - Visualizador de los últimos episodios añadidos
+- **Interface Web (Estática):**
+  - Estadísticas de episodios en el feed
+  - Ultima actualización
+  - Listado de últimos episodios
+
 
 ## 🛠️ Arquitectura del Sistema
-
 La aplicación utiliza dos componentes principales en Docker:
 
 1. **Worker (`sherlocaster`):** El motor que escanea, descarga y procesa. 
    - Utiliza `/data/sherlocaster.lock` para garantizar exclusividad.
    - Actualiza el `state.json` con episodios nuevos y vídeos ignorados.
+   - Descarga y convierte nuevos episodios.
+   - Genera el feed y lo sube junto con los episodios a la nube configurada
    - Genera un sitio estático para consultar cuando el contenedor no está activo.
 2. **Web (`sherlocaster-web`):** Servidor FastAPI que expone la interfaz de administración y sirve el feed.
 
@@ -33,6 +42,7 @@ La aplicación utiliza dos componentes principales en Docker:
 1. **Clonar el repositorio** y entrar en la carpeta.
 2. **Configurar Rclone:** Coloca tu `rclone.conf` en `./config/`.
 3. **Editar Configuración:** Puedes editar el `config.yaml` inicial.
+4. **Variables de entorno:** Tendrás que crear los correspondientes archivos.
 
 Stack Tecnológico:
 - Lenguaje: Python 3.12
@@ -50,8 +60,6 @@ Stack Tecnológico:
    - Un token de Github para la generación del sitio estático
 
 2. Estructura de carpetas
-Se recomienda la siguiente estructura en el servidor:
-
 ```text
 .
 ├── app/                    # Código fuente de la aplicación
@@ -113,20 +121,22 @@ Levanta los contenedores:
 ```bash
 docker-compose up -d
 ```
+Con esto se realiza un primera escaneo y se lanza el servidor web. A partir de aquí podemos lanzar nuevos escaneos mediante
+
+``` bash
+docker compose run --rm sherlocaster
+```
+
+> Personalmente lo tengo configurado mediante el crontab para que lance, mediante el comando anterior, un escaneo cada 4 horas.
 
 # Uso y Administración
 Acceso Web
+- Dashboard: http://tu-ip:8000 - Acceso la la info más relevante
 - Configuración: http://tu-ip:8000/config - Edita el YAML directamente desde el navegador.
 - Logs: http://tu-ip:8000/logs - Revisa qué ha pasado en la última descarga.
 - Feed Info: http://tu-ip:8000/feed - Estado actual del RSS generado.
 
-El proceso de actualización
-El contenedor sherlocaster (worker) está diseñado para ejecutarse y cerrarse. Se recomienda programar su ejecución mediante un Cron en el host o un orquestador:
 
-```Bash
-# Ejemplo: Ejecutar cada 4 horas
-0 */4 * * * cd ~/dockers/sherlocaster && docker compose run --rm sherlocaster
-```
 # Variables de Entorno
 En el archivo `config/ghtoken.env`
 ```env
