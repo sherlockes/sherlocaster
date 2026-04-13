@@ -4025,6 +4025,39 @@
       "downloaded_at": "2026-04-12T19:44:24.371805Z",
       "file_path": "/data/audio/yt_YdzF938MDsA.mp3",
       "duration_sec": 2499.0
+    },
+    {
+      "id": "yt_dDO--egrftY",
+      "source": "youtube",
+      "title": "La contracronica \u2014 \u00bfPor qu\u00e9 Ir\u00e1n no se rinde?",
+      "channel": "La contracronica",
+      "original_url": "https://www.youtube.com/watch?v=dDO--egrftY",
+      "published_at": "2026-04-12T22:30:10Z",
+      "downloaded_at": "2026-04-13T07:58:54.014496Z",
+      "file_path": "/data/audio/yt_dDO--egrftY.mp3",
+      "duration_sec": 3278.0
+    },
+    {
+      "id": "twt_2746583093",
+      "source": "twitch",
+      "title": "Jordi Llatzer \u2014 URGENTE:  Estados Unidos AMENZA con CERRAR el ESTRECHO de Ormuz, como respuesta a Ir\u00e1n en la Guerra",
+      "channel": "Jordi Llatzer",
+      "original_url": "https://www.twitch.tv/videos/2746583093",
+      "published_at": "2026-04-12T20:16:13Z",
+      "downloaded_at": "2026-04-13T08:00:20.904590Z",
+      "file_path": "/data/audio/twt_2746583093.mp3",
+      "duration_sec": 9869
+    },
+    {
+      "id": "twt_2746571389",
+      "source": "twitch",
+      "title": "Jordi Llatzer \u2014 ESTADOS UNIDOS amenaza con CERRAR el ESTRECHO de Ormuz, como respuesta a Ir\u00e1n",
+      "channel": "Jordi Llatzer",
+      "original_url": "https://www.twitch.tv/videos/2746571389",
+      "published_at": "2026-04-12T20:01:11Z",
+      "downloaded_at": "2026-04-13T08:00:27.835483Z",
+      "file_path": "/data/audio/twt_2746571389.mp3",
+      "duration_sec": 562
     }
   ],
   "ignored": [
