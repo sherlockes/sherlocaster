@@ -23,26 +23,10 @@ La aplicación utiliza dos componentes principales en Docker:
 1. **Worker (`sherlocaster`):** El motor que escanea, descarga y procesa. 
    - Utiliza `/data/sherlocaster.lock` para garantizar exclusividad.
    - Actualiza el `state.json` con episodios nuevos y vídeos ignorados.
-   - Genera un sitio estático para consultar cuando el contendor no está activo.
+   - Genera un sitio estático para consultar cuando el contenedor no está activo.
 2. **Web (`sherlocaster-web`):** Servidor FastAPI que expone la interfaz de administración y sirve el feed.
 
-## 🌐 Generación de Web Estática (SSG)
-
-Sherlocaster no solo sirve una API; funciona como un generador de contenido estático. Esto significa que la interfaz de usuario es extremadamente ligera, rápida y puede ser servida de forma independiente al backend de procesamiento.
-
-Para que Sherlocaster pueda actualizar automáticamente la web estática en tu repositorio (GitHub Pages), es imprescindible configurar un **Personal Access Token (PAT)**.
-Sin este token, el contenedor no tiene permisos para realizar un `git push` desde el interior de Docker. El token actúa como tu firma digital para autorizar que el sistema suba los nuevos archivos `.xml` y `.html` cada vez que se descarga un episodio.
-
-### Características de la Interfaz:
-* **Desacoplamiento Total:** La web se genera en la carpeta `/docs` (o `/data/html` según configuración). Esto permite que el contenido sea servido por **GitHub Pages**, **Nginx** o cualquier servidor de archivos estáticos sin necesidad de ejecutar Python para cada visita.
-* **Diseño Adaptativo (Dark/Light Mode):** * Implementación nativa mediante `prefers-color-scheme` y variables CSS de **Pico CSS**.
-    * **Optimización Visual:** Uso de transparencias alpha (`rgba(255, 255, 255, 0.05)`) en los contenedores `.stat-box` y `.episode-card`. Esto permite que los elementos se mezclen suavemente con el fondo del tema (claro u oscuro) sin necesidad de cargar múltiples hojas de estilo.
-* **Feed RSS Automatizado:** Generación de `rss.xml` siguiendo los estándares de iTunes/Podcasts, actualizando automáticamente duraciones, tamaños de archivo y carátulas.
-
-### Flujo de Actualización:
-1.  El **Worker** actualiza el `state.json` tras una descarga exitosa.
-2.  La **API/Web** detecta el cambio y regenera el `index.html` y el `rss.xml` estáticos.
-3.  Los archivos se escriben en el volumen persistente, quedando disponibles inmediatamente para el usuario.
+> Para que Sherlocaster pueda actualizar automáticamente la web estática en tu repositorio (GitHub Pages), es imprescindible configurar un **Personal Access Token (PAT)**. Sin este token, el contenedor no tiene permisos para realizar un `git push` desde el interior de Docker.
 
 ## 📦 Instalación y Configuración
 
