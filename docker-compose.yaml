@@ -1,7 +1,22 @@
 services:
+  vpn_tunnel:
+    image: linuxserver/wireguard:latest
+    container_name: wg_sherlo_tunnel
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    volumes:
+      - ./wg_config:/config
+    restart: unless-stopped
+
   sherlocaster:
     build: .
     container_name: sherlocaster
+    network_mode: "service:vpn_tunnel"
+    depends_on:
+      - vpn_tunnel
     env_file:
       - ./config/twitch_token.env
       - ./config/telegram.env
@@ -22,6 +37,7 @@ services:
       - PYTHONPATH=/app
       - TZ=Europe/Madrid
     command: python3 -m app.main
+
   sherlocaster-web:
     build: .
     container_name: sherlocaster-web
@@ -34,10 +50,13 @@ services:
       - ./config.yaml:/app/config.yaml
       - ./data:/data
       - ./logs:/logs
-    working_dir: /app # <--- Esto le dice al contenedor que "viva" en esa carpeta
+    working_dir: /app
     environment:
       - TZ=Europe/Madrid
-    ports:
-      - 8000:8000
+    networks:
+      - proxy
     restart: unless-stopped
-networks: {}
+
+networks:
+  proxy:
+    external: true
