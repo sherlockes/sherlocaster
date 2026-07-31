@@ -31,7 +31,7 @@
 
         <div class="info-bar">
                 <span class="info-badge">
-                    🕒 31/07/2026 04:18
+                    🕒 31/07/2026 12:04
                 </span>
                 <span class="info-badge">
                     📚 500 eps
@@ -154,27 +154,52 @@
             
         <section>
              <pre style="max-height: 400px; overflow-y: auto; font-size: 0.7rem;"><code>Archivos en data/logs:
+- 20260731-041835.log
 - 20260731-002441.log
 - 20260730-120954.log
 - 20260730-000349.log
 - 20260729-120856.log
-- 20260729-000443.log
 
 ==============================
-Contenido de: 20260731-002441.log
+Contenido de: 20260731-041835.log
 ==============================
 
-=== Inicio de ejecución: 2026-07-30 22:00:23.438067+00:00 ===
+=== Inicio de ejecución: 2026-07-31 02:04:02.138383+00:00 ===
 [Yt] Canal: Oliver Nabani (Min: 5m)
-[Yt] yt_fdfjr24-mF0 ya procesado
-[Yt] yt_RduS9sfQZ6A más de 10 días
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (1/3)...
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (2/3)...
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (3/3)...
+WARNING: [youtube:tab] @OliverNabani/videos: Unable to download webpage: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution) (caused by TransportError("HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution)")). Giving up after 3 retries
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (1/3)...
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (2/3)...
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (3/3)...
+ERROR: [youtube:tab] @OliverNabani/videos: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution) (caused by TransportError("HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution)"))
+!!! [Yt] ERROR CRÍTICO procesando canal 'Oliver Nabani': ERROR: [youtube:tab] @OliverNabani/videos: Unable to download API page: HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution) (caused by TransportError("HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution)"))
 [Yt] Canal: Jordi LLatzer (Min: 5m)
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (1/3)...
+WARNING: [youtube:tab] HTTPSConnection(host='www.youtube.com', port=443): Failed to resolve 'www.youtube.com' ([Errno -3] Temporary failure in name resolution). Retrying (2/3)...
 [Yt] yt_ofexGbwwSYw ya procesado
 [Yt] yt_UDZUuJYz3l4 más de 10 días
 [Yt] Canal: Jordi LLatzer Inversion (Min: 5m)
-ERROR: unable to download video data: HTTP Error 403: Forbidden
-[Yt] Error descargando https://www.youtube.com/watch?v=cFErEX45ckY: ERROR: unable to download video data: HTTP Error 403: Forbidden
-[Yt] Error descargando yt_cFErEX45ckY
+
+[download]   0.0% of    8.19MiB at  146.90KiB/s ETA 00:57
+[download]   0.0% of    8.19MiB at  387.86KiB/s ETA 00:21
+[download]   0.1% of    8.19MiB at  825.95KiB/s ETA 00:10
+[download]   0.2% of    8.19MiB at    1.62MiB/s ETA 00:05
+[download]   0.4% of    8.19MiB at    3.08MiB/s ETA 00:02
+[download]   0.8% of    8.19MiB at    1.04MiB/s ETA 00:07
+[download]   1.5% of    8.19MiB at    1.10MiB/s ETA 00:07
+[download]   3.0% of    8.19MiB at    1.58MiB/s ETA 00:05
+[download]   6.1% of    8.19MiB at    2.44MiB/s ETA 00:03
+[download]  12.2% of    8.19MiB at    3.80MiB/s ETA 00:01
+[download]  24.4% of    8.19MiB at    4.23MiB/s ETA 00:01
+[download]  48.8% of    8.19MiB at    6.87MiB/s ETA 00:00
+[download]  97.7% of    8.19MiB at    8.27MiB/s ETA 00:00
+[download] 100.0% of    8.19MiB at    8.37MiB/s ETA 00:00
+[download] 100% of    8.19MiB in 00:00:01 at 5.86MiB/s   
+                                                      
+[Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_cFErEX45ckY.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_cFErEX45ckY.mono_tmp.mp3
+[Yt] Añadido: Jordi LLatzer Inversion — If You Have Over €5,000 in the Bank, Watch This Before You Invest
 [Yt] yt_uaWrNJWXEgA ya procesado
 [Yt] yt_JXn3oCn481A ya procesado
 [Yt] yt_yg_ysR2wJKk ya procesado
@@ -192,7 +217,7 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Yt] yt_y8jpmcZXF3c ya procesado
 [Yt] yt_nIBIawgL-Ws más de 10 días
 [Yt] Canal: Wall Street Wolverine (Min: 20m)
-[Yt] yt_pJBv18TLScY descartado: 10m &lt; 20m
+[Yt] yt_pJBv18TLScY ya procesado
 [Yt] yt_8kYb8e2EcKI ya procesado
 [Yt] yt_FOK4ZIC9Kek ya procesado
 [Yt] yt_GxEw1ppvrU4 ya procesado
@@ -218,90 +243,7 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Yt] yt_T1UKm55UHP4 ya procesado
 [Yt] yt_juzHvBm5D8U ya procesado
 [Yt] Canal: Solo Fonseca (Min: 5m)
-
-[download]   0.0% of   48.80MiB at  237.95KiB/s ETA 03:30
-[download]   0.0% of   48.80MiB at  474.84KiB/s ETA 01:45
-[download]   0.0% of   48.80MiB at  970.55KiB/s ETA 00:51
-[download]   0.0% of   48.80MiB at    1.82MiB/s ETA 00:26
-[download]   0.1% of   48.80MiB at    3.39MiB/s ETA 00:14
-[download]   0.1% of   48.80MiB at    1.12MiB/s ETA 00:43
-[download]   0.3% of   48.80MiB at    1.19MiB/s ETA 00:41
-[download]   0.5% of   48.80MiB at    1.70MiB/s ETA 00:28
-[download]   1.0% of   48.80MiB at    2.62MiB/s ETA 00:18
-[download]   2.0% of   48.80MiB at    4.07MiB/s ETA 00:11
-[download]   4.1% of   48.80MiB at    4.45MiB/s ETA 00:10
-[download]   8.2% of   48.80MiB at    6.68MiB/s ETA 00:06
-[download]  16.4% of   48.80MiB at    7.89MiB/s ETA 00:05
-[download]  20.1% of   48.80MiB at    8.22MiB/s ETA 00:04
-[download]  20.1% of   48.80MiB at  415.15KiB/s ETA 01:37
-[download]  20.1% of   48.80MiB at  841.16KiB/s ETA 00:47
-[download]  20.1% of   48.80MiB at    1.57MiB/s ETA 00:24
-[download]  20.1% of   48.80MiB at    2.87MiB/s ETA 00:13
-[download]  20.1% of   48.80MiB at    4.53MiB/s ETA 00:08
-[download]  20.2% of   48.80MiB at    3.67MiB/s ETA 00:10
-[download]  20.3% of   48.80MiB at    4.07MiB/s ETA 00:09
-[download]  20.6% of   48.80MiB at  485.11KiB/s ETA 01:21
-[download]  21.1% of   48.80MiB at  896.99KiB/s ETA 00:43
-[download]  22.1% of   48.80MiB at    1.60MiB/s ETA 00:23
-[download]  24.2% of   48.80MiB at    2.78MiB/s ETA 00:13
-[download]  28.3% of   48.80MiB at    4.28MiB/s ETA 00:08
-[download]  36.5% of   48.80MiB at    5.78MiB/s ETA 00:05
-[download]  39.8% of   48.80MiB at    6.18MiB/s ETA 00:04
-[download]  39.8% of   48.80MiB at  378.21KiB/s ETA 01:20
-[download]  39.8% of   48.80MiB at  748.98KiB/s ETA 00:40
-[download]  39.8% of   48.80MiB at    1.45MiB/s ETA 00:20
-[download]  39.8% of   48.80MiB at    2.27MiB/s ETA 00:12
-[download]  39.8% of   48.80MiB at    3.99MiB/s ETA 00:07
-[download]  39.9% of   48.80MiB at    3.95MiB/s ETA 00:07
-[download]  40.0% of   48.80MiB at    4.28MiB/s ETA 00:06
-[download]  40.3% of   48.80MiB at    5.09MiB/s ETA 00:05
-[download]  40.8% of   48.80MiB at    6.33MiB/s ETA 00:04
-[download]  41.8% of   48.80MiB at    7.28MiB/s ETA 00:03
-[download]  43.9% of   48.80MiB at    8.04MiB/s ETA 00:03
-[download]  48.0% of   48.80MiB at    8.73MiB/s ETA 00:02
-[download]  56.2% of   48.80MiB at    7.06MiB/s ETA 00:03
-[download]  59.5% of   48.80MiB at    7.47MiB/s ETA 00:02
-[download]  59.5% of   48.80MiB at  227.86KiB/s ETA 01:29
-[download]  59.5% of   48.80MiB at  566.06KiB/s ETA 00:35
-[download]  59.5% of   48.80MiB at    1.17MiB/s ETA 00:16
-[download]  59.5% of   48.80MiB at    2.26MiB/s ETA 00:08
-[download]  59.6% of   48.80MiB at    3.35MiB/s ETA 00:05
-[download]  59.6% of   48.80MiB at    3.26MiB/s ETA 00:06
-[download]  59.8% of   48.80MiB at    3.49MiB/s ETA 00:05
-[download]  60.0% of   48.80MiB at    4.37MiB/s ETA 00:04
-[download]  60.5% of   48.80MiB at    5.40MiB/s ETA 00:03
-[download]  61.5% of   48.80MiB at    6.80MiB/s ETA 00:02
-[download]  63.6% of   48.80MiB at    7.98MiB/s ETA 00:02
-[download]  67.7% of   48.80MiB at    8.76MiB/s ETA 00:01
-[download]  75.9% of   48.80MiB at    9.06MiB/s ETA 00:01
-[download]  79.6% of   48.80MiB at    9.25MiB/s ETA 00:01
-[download]  79.6% of   48.80MiB at  193.93KiB/s ETA 00:52
-[download]  79.6% of   48.80MiB at  490.35KiB/s ETA 00:20
-[download]  79.6% of   48.80MiB at    1.05MiB/s ETA 00:09
-[download]  79.6% of   48.80MiB at    2.10MiB/s ETA 00:04
-[download]  79.6% of   48.80MiB at    2.32MiB/s ETA 00:04
-[download]  79.7% of   48.80MiB at    2.88MiB/s ETA 00:03
-[download]  79.8% of   48.80MiB at    3.29MiB/s ETA 00:02
-[download]  80.1% of   48.80MiB at    4.13MiB/s ETA 00:02
-[download]  80.6% of   48.80MiB at    5.34MiB/s ETA 00:01
-[download]  81.6% of   48.80MiB at    6.79MiB/s ETA 00:01
-[download]  83.7% of   48.80MiB at    6.27MiB/s ETA 00:01
-[download]  87.8% of   48.80MiB at    6.86MiB/s ETA 00:00
-[download]  96.0% of   48.80MiB at    7.81MiB/s ETA 00:00
-[download]  99.4% of   48.80MiB at    8.05MiB/s ETA 00:00
-[download]  99.4% of   48.80MiB at  280.16KiB/s ETA 00:00
-[download]  99.5% of   48.80MiB at  671.55KiB/s ETA 00:00
-[download]  99.5% of   48.80MiB at    1.36MiB/s ETA 00:00
-[download]  99.5% of   48.80MiB at    2.60MiB/s ETA 00:00
-[download]  99.5% of   48.80MiB at    3.76MiB/s ETA 00:00
-[download]  99.6% of   48.80MiB at    3.91MiB/s ETA 00:00
-[download]  99.7% of   48.80MiB at    4.09MiB/s ETA 00:00
-[download] 100.0% of   48.80MiB at    4.86MiB/s ETA 00:00
-[download] 100.0% of   48.80MiB at    5.10MiB/s ETA 00:00
-[download] 100% of   48.80MiB in 00:00:07 at 6.71MiB/s   
-                                                      
-[Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_1-l1hB7tM5M.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_1-l1hB7tM5M.mono_tmp.mp3
-[Yt] Añadido: Solo Fonseca — IRAQ: TEHRAN'S ACE IN THE HOLE - @SoloFonseca
+[Yt] yt_1-l1hB7tM5M ya procesado
 [Yt] yt_Y7mF8DZVT2I ya procesado
 [Yt] yt_cNoAtvdFq6s ya procesado
 [Yt] yt_noefIXz0_Eo ya procesado
@@ -327,51 +269,7 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Yt] yt_mZaAKXsolmU ya procesado
 [Yt] yt_i8yqCdI8NdQ ya procesado
 [Yt] Canal: Marc Vidal (Min: 5m)
-
-[download]   0.0% of   22.62MiB at  211.82KiB/s ETA 01:49
-[download]   0.0% of   22.62MiB at  503.62KiB/s ETA 00:46
-[download]   0.0% of   22.62MiB at    1.02MiB/s ETA 00:22
-[download]   0.1% of   22.62MiB at    2.04MiB/s ETA 00:11
-[download]   0.1% of   22.62MiB at    3.76MiB/s ETA 00:06
-[download]   0.3% of   22.62MiB at    3.15MiB/s ETA 00:07
-[download]   0.5% of   22.62MiB at    1.86MiB/s ETA 00:12
-[download]   1.1% of   22.62MiB at    2.11MiB/s ETA 00:10
-[download]   2.2% of   22.62MiB at    2.94MiB/s ETA 00:07
-[download]   4.4% of   22.62MiB at    4.24MiB/s ETA 00:05
-[download]   8.8% of   22.62MiB at    4.99MiB/s ETA 00:04
-[download]  17.7% of   22.62MiB at    6.95MiB/s ETA 00:02
-[download]  35.4% of   22.62MiB at    8.00MiB/s ETA 00:01
-[download]  42.6% of   22.62MiB at    8.17MiB/s ETA 00:01
-[download]  42.7% of   22.62MiB at  512.00KiB/s ETA 00:26
-[download]  42.7% of   22.62MiB at    1.03MiB/s ETA 00:12
-[download]  42.7% of   22.62MiB at    2.05MiB/s ETA 00:06
-[download]  42.7% of   22.62MiB at    3.85MiB/s ETA 00:03
-[download]  42.8% of   22.62MiB at    4.35MiB/s ETA 00:02
-[download]  42.9% of   22.62MiB at    4.19MiB/s ETA 00:03
-[download]  43.2% of   22.62MiB at    4.20MiB/s ETA 00:03
-[download]  43.7% of   22.62MiB at    5.01MiB/s ETA 00:02
-[download]  44.9% of   22.62MiB at    2.60MiB/s ETA 00:04
-[download]  47.1% of   22.62MiB at    3.87MiB/s ETA 00:03
-[download]  51.5% of   22.62MiB at    5.51MiB/s ETA 00:01
-[download]  60.3% of   22.62MiB at    6.95MiB/s ETA 00:01
-[download]  78.0% of   22.62MiB at    7.88MiB/s ETA 00:00
-[download]  86.2% of   22.62MiB at    8.23MiB/s ETA 00:00
-[download]  86.2% of   22.62MiB at  275.71KiB/s ETA 00:11
-[download]  86.2% of   22.62MiB at  588.73KiB/s ETA 00:05
-[download]  86.2% of   22.62MiB at    1.14MiB/s ETA 00:02
-[download]  86.3% of   22.62MiB at    2.15MiB/s ETA 00:01
-[download]  86.3% of   22.62MiB at    4.00MiB/s ETA 00:00
-[download]  86.5% of   22.62MiB at    3.75MiB/s ETA 00:00
-[download]  86.8% of   22.62MiB at    3.63MiB/s ETA 00:00
-[download]  87.3% of   22.62MiB at    4.17MiB/s ETA 00:00
-[download]  88.4% of   22.62MiB at    5.20MiB/s ETA 00:00
-[download]  90.6% of   22.62MiB at    6.85MiB/s ETA 00:00
-[download]  95.0% of   22.62MiB at    7.85MiB/s ETA 00:00
-[download] 100.0% of   22.62MiB at    8.23MiB/s ETA 00:00
-[download] 100% of   22.62MiB in 00:00:03 at 6.71MiB/s   
-                                                      
-[Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_40DRugpPvIM.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_40DRugpPvIM.mono_tmp.mp3
-[Yt] Añadido: Marc Vidal — Why are they destroying millions of books? They're going to rewrite the past and a judge has alre...
+[Yt] yt_40DRugpPvIM ya procesado
 [Yt] yt_TW-j8UZRZgU ya procesado
 [Yt] yt_twmK01N1-oY ya procesado
 [Yt] yt_1ZsW_2w15xc ya procesado
@@ -397,136 +295,7 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Yt] yt_SfRdr913SXw ya procesado
 [Yt] yt_aOD8xqE2szA ya procesado
 [Yt] Canal: WorldCast (Min: 5m)
-
-[download]   0.0% of   85.06MiB at  209.76KiB/s ETA 06:56
-[download]   0.0% of   85.06MiB at  417.73KiB/s ETA 03:28
-[download]   0.0% of   85.06MiB at  878.13KiB/s ETA 01:39
-[download]   0.0% of   85.06MiB at    1.72MiB/s ETA 00:49
-[download]   0.0% of   85.06MiB at    2.50MiB/s ETA 00:34
-[download]   0.1% of   85.06MiB at    1.07MiB/s ETA 01:19
-[download]   0.1% of   85.06MiB at    1.14MiB/s ETA 01:14
-[download]   0.3% of   85.06MiB at    1.67MiB/s ETA 00:50
-[download]   0.6% of   85.06MiB at    2.59MiB/s ETA 00:32
-[download]   1.2% of   85.06MiB at    4.02MiB/s ETA 00:20
-[download]   2.4% of   85.06MiB at    4.61MiB/s ETA 00:18
-[download]   4.7% of   85.06MiB at    7.14MiB/s ETA 00:11
-[download]   9.4% of   85.06MiB at    8.31MiB/s ETA 00:09
-[download]  11.4% of   85.06MiB at    8.57MiB/s ETA 00:08
-[download]  11.4% of   85.06MiB at  214.48KiB/s ETA 06:07
-[download]  11.4% of   85.06MiB at  488.51KiB/s ETA 02:38
-[download]  11.4% of   85.06MiB at  987.26KiB/s ETA 01:18
-[download]  11.4% of   85.06MiB at    1.88MiB/s ETA 00:40
-[download]  11.4% of   85.06MiB at    3.52MiB/s ETA 00:21
-[download]  11.5% of   85.06MiB at    3.61MiB/s ETA 00:20
-[download]  11.5% of   85.06MiB at    4.03MiB/s ETA 00:18
-[download]  11.7% of   85.06MiB at    4.80MiB/s ETA 00:15
-[download]  12.0% of   85.06MiB at    6.01MiB/s ETA 00:12
-[download]  12.6% of   85.06MiB at    7.55MiB/s ETA 00:09
-[download]  13.7% of   85.06MiB at    8.79MiB/s ETA 00:08
-[download]  16.1% of   85.06MiB at    9.49MiB/s ETA 00:07
-[download]  20.8% of   85.06MiB at    9.93MiB/s ETA 00:06
-[download]  22.7% of   85.06MiB at   10.06MiB/s ETA 00:06
-[download]  22.7% of   85.06MiB at  276.03KiB/s ETA 04:07
-[download]  22.7% of   85.06MiB at  661.42KiB/s ETA 01:41
-[download]  22.7% of   85.06MiB at    1.35MiB/s ETA 00:48
-[download]  22.7% of   85.06MiB at    2.61MiB/s ETA 00:25
-[download]  22.7% of   85.06MiB at    4.16MiB/s ETA 00:15
-[download]  22.8% of   85.06MiB at    3.93MiB/s ETA 00:16
-[download]  22.8% of   85.06MiB at    4.19MiB/s ETA 00:15
-[download]  23.0% of   85.06MiB at    4.74MiB/s ETA 00:13
-[download]  23.3% of   85.06MiB at    6.20MiB/s ETA 00:10
-[download]  23.9% of   85.06MiB at    7.55MiB/s ETA 00:08
-[download]  25.0% of   85.06MiB at    7.17MiB/s ETA 00:08
-[download]  27.4% of   85.06MiB at    9.62MiB/s ETA 00:06
-[download]  32.1% of   85.06MiB at    9.99MiB/s ETA 00:05
-[download]  34.3% of   85.06MiB at   10.11MiB/s ETA 00:05
-[download]  34.3% of   85.06MiB at  265.23KiB/s ETA 03:37
-[download]  34.3% of   85.06MiB at  641.13KiB/s ETA 01:29
-[download]  34.3% of   85.06MiB at    1.31MiB/s ETA 00:42
-[download]  34.3% of   85.06MiB at    2.52MiB/s ETA 00:22
-[download]  34.4% of   85.06MiB at    3.85MiB/s ETA 00:14
-[download]  34.4% of   85.06MiB at    3.90MiB/s ETA 00:14
-[download]  34.5% of   85.06MiB at    4.12MiB/s ETA 00:13
-[download]  34.6% of   85.06MiB at    4.97MiB/s ETA 00:11
-[download]  34.9% of   85.06MiB at    6.18MiB/s ETA 00:08
-[download]  35.5% of   85.06MiB at    7.53MiB/s ETA 00:07
-[download]  36.7% of   85.06MiB at    8.76MiB/s ETA 00:06
-[download]  39.0% of   85.06MiB at    9.44MiB/s ETA 00:05
-[download]  43.7% of   85.06MiB at    9.95MiB/s ETA 00:04
-[download]  45.9% of   85.06MiB at   10.07MiB/s ETA 00:04
-[download]  45.9% of   85.06MiB at  243.91KiB/s ETA 03:13
-[download]  45.9% of   85.06MiB at  620.00KiB/s ETA 01:16
-[download]  45.9% of   85.06MiB at    1.27MiB/s ETA 00:36
-[download]  46.0% of   85.06MiB at    2.47MiB/s ETA 00:18
-[download]  46.0% of   85.06MiB at    3.29MiB/s ETA 00:14
-[download]  46.0% of   85.06MiB at    3.61MiB/s ETA 00:12
-[download]  46.1% of   85.06MiB at    4.11MiB/s ETA 00:11
-[download]  46.2% of   85.06MiB at    4.94MiB/s ETA 00:09
-[download]  46.5% of   85.06MiB at    6.10MiB/s ETA 00:07
-[download]  47.1% of   85.06MiB at    7.65MiB/s ETA 00:05
-[download]  48.3% of   85.06MiB at    8.82MiB/s ETA 00:04
-[download]  50.6% of   85.06MiB at    9.53MiB/s ETA 00:04
-[download]  55.3% of   85.06MiB at    8.57MiB/s ETA 00:04
-[download]  57.3% of   85.06MiB at    8.91MiB/s ETA 00:04
-[download]  57.3% of   85.06MiB at  288.68KiB/s ETA 02:09
-[download]  57.3% of   85.06MiB at  664.01KiB/s ETA 00:56
-[download]  57.3% of   85.06MiB at    1.33MiB/s ETA 00:27
-[download]  57.3% of   85.06MiB at    2.59MiB/s ETA 00:14
-[download]  57.3% of   85.06MiB at    3.92MiB/s ETA 00:09
-[download]  57.4% of   85.06MiB at    3.72MiB/s ETA 00:09
-[download]  57.4% of   85.06MiB at    4.13MiB/s ETA 00:08
-[download]  57.6% of   85.06MiB at    4.96MiB/s ETA 00:07
-[download]  57.9% of   85.06MiB at    6.22MiB/s ETA 00:05
-[download]  58.5% of   85.06MiB at    7.59MiB/s ETA 00:04
-[download]  59.6% of   85.06MiB at    7.32MiB/s ETA 00:04
-[download]  62.0% of   85.06MiB at    8.32MiB/s ETA 00:03
-[download]  66.7% of   85.06MiB at    9.22MiB/s ETA 00:03
-[download]  68.9% of   85.06MiB at    9.43MiB/s ETA 00:02
-[download]  68.9% of   85.06MiB at  267.90KiB/s ETA 01:41
-[download]  68.9% of   85.06MiB at  639.21KiB/s ETA 00:42
-[download]  68.9% of   85.06MiB at    1.31MiB/s ETA 00:20
-[download]  68.9% of   85.06MiB at    2.52MiB/s ETA 00:10
-[download]  68.9% of   85.06MiB at    3.77MiB/s ETA 00:07
-[download]  69.0% of   85.06MiB at    3.78MiB/s ETA 00:06
-[download]  69.1% of   85.06MiB at    4.38MiB/s ETA 00:06
-[download]  69.2% of   85.06MiB at    4.97MiB/s ETA 00:05
-[download]  69.5% of   85.06MiB at    6.27MiB/s ETA 00:04
-[download]  70.1% of   85.06MiB at    7.54MiB/s ETA 00:03
-[download]  71.3% of   85.06MiB at    8.83MiB/s ETA 00:02
-[download]  73.6% of   85.06MiB at    9.52MiB/s ETA 00:02
-[download]  78.3% of   85.06MiB at    9.84MiB/s ETA 00:01
-[download]  80.4% of   85.06MiB at    9.78MiB/s ETA 00:01
-[download]  80.4% of   85.06MiB at  497.25KiB/s ETA 00:34
-[download]  80.4% of   85.06MiB at    1.01MiB/s ETA 00:16
-[download]  80.4% of   85.06MiB at    1.95MiB/s ETA 00:08
-[download]  80.4% of   85.06MiB at    3.58MiB/s ETA 00:04
-[download]  80.4% of   85.06MiB at    4.41MiB/s ETA 00:03
-[download]  80.4% of   85.06MiB at    4.13MiB/s ETA 00:04
-[download]  80.5% of   85.06MiB at    4.34MiB/s ETA 00:03
-[download]  80.6% of   85.06MiB at    5.02MiB/s ETA 00:03
-[download]  80.9% of   85.06MiB at    6.27MiB/s ETA 00:02
-[download]  81.5% of   85.06MiB at    7.85MiB/s ETA 00:02
-[download]  82.7% of   85.06MiB at    8.01MiB/s ETA 00:01
-[download]  85.1% of   85.06MiB at    9.46MiB/s ETA 00:01
-[download]  89.8% of   85.06MiB at    9.84MiB/s ETA 00:00
-[download]  91.9% of   85.06MiB at   10.01MiB/s ETA 00:00
-[download]  91.9% of   85.06MiB at  250.03KiB/s ETA 00:28
-[download]  91.9% of   85.06MiB at  612.07KiB/s ETA 00:11
-[download]  91.9% of   85.06MiB at    1.25MiB/s ETA 00:05
-[download]  92.0% of   85.06MiB at    2.42MiB/s ETA 00:02
-[download]  92.0% of   85.06MiB at    3.70MiB/s ETA 00:01
-[download]  92.0% of   85.06MiB at    3.78MiB/s ETA 00:01
-[download]  92.1% of   85.06MiB at    4.11MiB/s ETA 00:01
-[download]  92.2% of   85.06MiB at    5.05MiB/s ETA 00:01
-[download]  92.5% of   85.06MiB at    6.05MiB/s ETA 00:01
-[download]  93.1% of   85.06MiB at    7.72MiB/s ETA 00:00
-[download]  94.3% of   85.06MiB at    8.73MiB/s ETA 00:00
-[download]  96.6% of   85.06MiB at    9.62MiB/s ETA 00:00
-[download] 100.0% of   85.06MiB at    9.91MiB/s ETA 00:00
-[download] 100% of   85.06MiB in 00:00:10 at 8.35MiB/s   
-                                                      
-[Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_9meyzp6772I.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_9meyzp6772I.mono_tmp.mp3
-[Yt] Añadido: WorldCast — How to Read Anyone and Decipher Their True Intentions - #285
+[Yt] yt_9meyzp6772I ya procesado
 [Yt] yt_e5Sgr9dSmuA ya procesado
 [Yt] yt_yqpp9bJh1Ts ya procesado
 [Yt] yt_XLY5R7qh1j4 ya procesado
@@ -597,172 +366,129 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Yt] yt_7oBVB9hZ2L4 ya procesado
 [Yt] yt_magh2y7gJoY ya procesado
 [Yt] Canal: Red Pill (Min: 5m)
-
-[download]   0.0% of  106.82MiB at  296.63KiB/s ETA 06:10
-[download]   0.0% of  106.82MiB at  670.70KiB/s ETA 02:43
-[download]   0.0% of  106.82MiB at    1.37MiB/s ETA 01:18
-[download]   0.0% of  106.82MiB at    2.57MiB/s ETA 00:41
-[download]   0.0% of  106.82MiB at    4.61MiB/s ETA 00:23
-[download]   0.1% of  106.82MiB at    1.18MiB/s ETA 01:30
-[download]   0.1% of  106.82MiB at    1.22MiB/s ETA 01:27
-[download]   0.2% of  106.82MiB at    1.73MiB/s ETA 01:01
-[download]   0.5% of  106.82MiB at    2.62MiB/s ETA 00:40
-[download]   0.9% of  106.82MiB at    4.10MiB/s ETA 00:25
-[download]   1.9% of  106.82MiB at    4.64MiB/s ETA 00:22
-[download]   3.7% of  106.82MiB at    7.30MiB/s ETA 00:14
-[download]   7.5% of  106.82MiB at    8.56MiB/s ETA 00:11
-[download]   9.3% of  106.82MiB at    8.93MiB/s ETA 00:10
-[download]   9.3% of  106.82MiB at  Unknown B/s ETA Unknown
-[download]   9.3% of  106.82MiB at 1022.00KiB/s ETA 01:37  
-[download]   9.3% of  106.82MiB at    1.29MiB/s ETA 01:15
-[download]   9.3% of  106.82MiB at    1.96MiB/s ETA 00:49
-[download]   9.4% of  106.82MiB at    3.66MiB/s ETA 00:26
-[download]   9.4% of  106.82MiB at    3.06MiB/s ETA 00:31
-[download]   9.4% of  106.82MiB at    4.36MiB/s ETA 00:22
-[download]   9.6% of  106.82MiB at    5.04MiB/s ETA 00:19
-[download]   9.8% of  106.82MiB at    6.23MiB/s ETA 00:15
-[download]  10.3% of  106.82MiB at    7.64MiB/s ETA 00:12
-[download]  11.2% of  106.82MiB at    8.81MiB/s ETA 00:10
-[download]  13.1% of  106.82MiB at    9.57MiB/s ETA 00:09
-[download]  16.8% of  106.82MiB at    9.77MiB/s ETA 00:09
-[download]  18.6% of  106.82MiB at    9.72MiB/s ETA 00:08
-[download]  18.6% of  106.82MiB at  246.78KiB/s ETA 06:02
-[download]  18.6% of  106.82MiB at  388.11KiB/s ETA 03:49
-[download]  18.6% of  106.82MiB at  837.54KiB/s ETA 01:46
-[download]  18.6% of  106.82MiB at    1.60MiB/s ETA 00:54
-[download]  18.6% of  106.82MiB at    2.79MiB/s ETA 00:31
-[download]  18.7% of  106.82MiB at    3.05MiB/s ETA 00:28
-[download]  18.7% of  106.82MiB at    1.25MiB/s ETA 01:09
-[download]  18.9% of  106.82MiB at    1.93MiB/s ETA 00:44
-[download]  19.1% of  106.82MiB at    3.04MiB/s ETA 00:28
-[download]  19.6% of  106.82MiB at    4.56MiB/s ETA 00:18
-[download]  20.5% of  106.82MiB at    5.72MiB/s ETA 00:14
-[download]  22.4% of  106.82MiB at    7.85MiB/s ETA 00:10
-[download]  26.1% of  106.82MiB at    8.82MiB/s ETA 00:08
-[download]  27.7% of  106.82MiB at    8.78MiB/s ETA 00:08
-[download]  27.7% of  106.82MiB at  256.45KiB/s ETA 05:16
-[download]  27.7% of  106.82MiB at  591.94KiB/s ETA 02:13
-[download]  27.7% of  106.82MiB at    1.20MiB/s ETA 01:04
-[download]  27.7% of  106.82MiB at    2.30MiB/s ETA 00:33
-[download]  27.8% of  106.82MiB at    3.03MiB/s ETA 00:25
-[download]  27.8% of  106.82MiB at    3.97MiB/s ETA 00:19
-[download]  27.8% of  106.82MiB at    3.87MiB/s ETA 00:19
-[download]  28.0% of  106.82MiB at    4.99MiB/s ETA 00:15
-[download]  28.2% of  106.82MiB at    6.09MiB/s ETA 00:12
-[download]  28.7% of  106.82MiB at    6.67MiB/s ETA 00:11
-[download]  29.6% of  106.82MiB at    8.24MiB/s ETA 00:09
-[download]  31.5% of  106.82MiB at    8.52MiB/s ETA 00:08
-[download]  35.2% of  106.82MiB at    9.09MiB/s ETA 00:07
-[download]  36.7% of  106.82MiB at    9.18MiB/s ETA 00:07
-[download]  36.7% of  106.82MiB at  Unknown B/s ETA Unknown
-[download]  36.7% of  106.82MiB at  966.95KiB/s ETA 01:12  
-[download]  36.7% of  106.82MiB at    1.17MiB/s ETA 00:58
-[download]  36.7% of  106.82MiB at    2.09MiB/s ETA 00:32
-[download]  36.7% of  106.82MiB at    3.88MiB/s ETA 00:18
-[download]  36.7% of  106.82MiB at    4.75MiB/s ETA 00:14
-[download]  36.8% of  106.82MiB at    4.42MiB/s ETA 00:15
-[download]  36.9% of  106.82MiB at    5.12MiB/s ETA 00:13
-[download]  37.1% of  106.82MiB at    5.47MiB/s ETA 00:12
-[download]  37.6% of  106.82MiB at    7.78MiB/s ETA 00:08
-[download]  38.5% of  106.82MiB at    8.04MiB/s ETA 00:08
-[download]  40.4% of  106.82MiB at    7.80MiB/s ETA 00:08
-[download]  44.1% of  106.82MiB at    7.78MiB/s ETA 00:07
-[download]  45.7% of  106.82MiB at    7.97MiB/s ETA 00:07
-[download]  45.7% of  106.82MiB at  Unknown B/s ETA Unknown
-[download]  45.7% of  106.82MiB at  571.66KiB/s ETA 01:47  
-[download]  45.7% of  106.82MiB at    1.09MiB/s ETA 00:53
-[download]  45.7% of  106.82MiB at    2.11MiB/s ETA 00:27
-[download]  45.7% of  106.82MiB at    3.94MiB/s ETA 00:14
-[download]  45.7% of  106.82MiB at    7.05MiB/s ETA 00:08
-[download]  45.8% of  106.82MiB at    5.95MiB/s ETA 00:09
-[download]  45.9% of  106.82MiB at    5.72MiB/s ETA 00:10
-[download]  46.1% of  106.82MiB at    6.65MiB/s ETA 00:08
-[download]  46.6% of  106.82MiB at    7.93MiB/s ETA 00:07
-[download]  47.5% of  106.82MiB at    6.92MiB/s ETA 00:08
-[download]  49.4% of  106.82MiB at    7.08MiB/s ETA 00:07
-[download]  53.2% of  106.82MiB at    6.75MiB/s ETA 00:07
-[download]  55.0% of  106.82MiB at    6.02MiB/s ETA 00:07
-[download]  55.0% of  106.82MiB at  316.81KiB/s ETA 02:36
-[download]  55.0% of  106.82MiB at  734.68KiB/s ETA 01:07
-[download]  55.0% of  106.82MiB at    1.36MiB/s ETA 00:35
-[download]  55.0% of  106.82MiB at    2.61MiB/s ETA 00:18
-[download]  55.0% of  106.82MiB at    3.19MiB/s ETA 00:15
-[download]  55.1% of  106.82MiB at    4.14MiB/s ETA 00:11
-[download]  55.1% of  106.82MiB at    4.13MiB/s ETA 00:11
-[download]  55.2% of  106.82MiB at    5.24MiB/s ETA 00:09
-[download]  55.5% of  106.82MiB at    5.76MiB/s ETA 00:09
-[download]  55.9% of  106.82MiB at    7.65MiB/s ETA 00:06
-[download]  56.9% of  106.82MiB at    8.75MiB/s ETA 00:05
-[download]  58.7% of  106.82MiB at    8.77MiB/s ETA 00:05
-[download]  62.5% of  106.82MiB at    9.56MiB/s ETA 00:04
-[download]  64.2% of  106.82MiB at    9.94MiB/s ETA 00:03
-[download]  64.2% of  106.82MiB at  215.05KiB/s ETA 03:02
-[download]  64.2% of  106.82MiB at  551.50KiB/s ETA 01:11
-[download]  64.2% of  106.82MiB at  404.34KiB/s ETA 01:36
-[download]  64.2% of  106.82MiB at  711.53KiB/s ETA 00:55
-[download]  64.2% of  106.82MiB at    1.38MiB/s ETA 00:27
-[download]  64.2% of  106.82MiB at    2.72MiB/s ETA 00:14
-[download]  64.3% of  106.82MiB at    3.43MiB/s ETA 00:11
-[download]  64.4% of  106.82MiB at    4.93MiB/s ETA 00:07
-[download]  64.7% of  106.82MiB at    5.74MiB/s ETA 00:06
-[download]  65.1% of  106.82MiB at    7.41MiB/s ETA 00:05
-[download]  66.1% of  106.82MiB at    8.58MiB/s ETA 00:04
-[download]  67.9% of  106.82MiB at    8.70MiB/s ETA 00:03
-[download]  71.7% of  106.82MiB at    7.34MiB/s ETA 00:04
-[download]  73.3% of  106.82MiB at    5.24MiB/s ETA 00:05
-[download]  73.3% of  106.82MiB at  265.88KiB/s ETA 01:50
-[download]  73.3% of  106.82MiB at  469.20KiB/s ETA 01:02
-[download]  73.3% of  106.82MiB at  995.90KiB/s ETA 00:29
-[download]  73.3% of  106.82MiB at    1.96MiB/s ETA 00:14
-[download]  73.4% of  106.82MiB at    3.58MiB/s ETA 00:07
-[download]  73.4% of  106.82MiB at    3.55MiB/s ETA 00:08
-[download]  73.4% of  106.82MiB at    3.73MiB/s ETA 00:07
-[download]  73.6% of  106.82MiB at    4.86MiB/s ETA 00:05
-[download]  73.8% of  106.82MiB at    5.60MiB/s ETA 00:05
-[download]  74.3% of  106.82MiB at    5.37MiB/s ETA 00:05
-[download]  75.2% of  106.82MiB at    6.73MiB/s ETA 00:03
-[download]  77.1% of  106.82MiB at    6.50MiB/s ETA 00:03
-[download]  80.8% of  106.82MiB at    6.85MiB/s ETA 00:02
-[download]  82.6% of  106.82MiB at    7.19MiB/s ETA 00:02
-[download]  82.6% of  106.82MiB at  Unknown B/s ETA Unknown
-[download]  82.6% of  106.82MiB at    2.49MiB/s ETA 00:07  
-[download]  82.6% of  106.82MiB at    3.68MiB/s ETA 00:05
-[download]  82.6% of  106.82MiB at    5.88MiB/s ETA 00:03
-[download]  82.6% of  106.82MiB at    9.60MiB/s ETA 00:01
-[download]  82.7% of  106.82MiB at    8.77MiB/s ETA 00:02
-[download]  82.7% of  106.82MiB at   14.76MiB/s ETA 00:01
-[download]  82.9% of  106.82MiB at   14.69MiB/s ETA 00:01
-[download]  83.1% of  106.82MiB at   11.41MiB/s ETA 00:01
-[download]  83.6% of  106.82MiB at    6.07MiB/s ETA 00:02
-[download]  84.5% of  106.82MiB at   10.59MiB/s ETA 00:01
-[download]  86.4% of  106.82MiB at   10.30MiB/s ETA 00:01
-[download]  90.1% of  106.82MiB at   10.48MiB/s ETA 00:01
-[download]  92.0% of  106.82MiB at   10.31MiB/s ETA 00:00
-[download]  92.0% of  106.82MiB at  646.17KiB/s ETA 00:13
-[download]  92.0% of  106.82MiB at  819.89KiB/s ETA 00:10
-[download]  92.0% of  106.82MiB at    1.42MiB/s ETA 00:06
-[download]  92.0% of  106.82MiB at    2.56MiB/s ETA 00:03
-[download]  92.0% of  106.82MiB at    4.35MiB/s ETA 00:01
-[download]  92.0% of  106.82MiB at    4.37MiB/s ETA 00:01
-[download]  92.1% of  106.82MiB at    3.88MiB/s ETA 00:02
-[download]  92.2% of  106.82MiB at    4.14MiB/s ETA 00:02
-[download]  92.4% of  106.82MiB at    5.40MiB/s ETA 00:01
-[download]  92.9% of  106.82MiB at    6.96MiB/s ETA 00:01
-[download]  93.8% of  106.82MiB at    8.37MiB/s ETA 00:00
-[download]  95.7% of  106.82MiB at    9.34MiB/s ETA 00:00
-[download]  99.4% of  106.82MiB at    9.72MiB/s ETA 00:00
-[download] 100.0% of  106.82MiB at    9.56MiB/s ETA 00:00
-[download] 100% of  106.82MiB in 00:00:14 at 7.12MiB/s   
-                                                      
-[Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_o9cyM1FnSc8.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_o9cyM1FnSc8.mono_tmp.mp3
-[Yt] Añadido: Red Pill — Libertad Sexual vs Amor Verdadero: El Debate Más SALVAJE de RedPill | REDPILL PODCAST #104 2
-[Yt] yt_WDrnodMnoMA descartado: 4m &lt; 5m
+[Yt] yt_o9cyM1FnSc8 ya procesado
+[Yt] yt_WDrnodMnoMA ya procesado
 [Yt] yt_b3kXPuA1Rjw ya procesado
 [Yt] yt_d3135UT1c-A ya procesado
 [Yt] yt_xtSrIovrmRo ya procesado
 [Yt] yt_8fzK9CV-7x4 ya procesado
 [Yt] yt_zJ0G9DpP1mc más de 10 días
 [Yt] Canal: La contracronica (Min: 5m)
+
+[download]   0.0% of   70.67MiB at  231.03KiB/s ETA 05:14
+[download]   0.0% of   70.67MiB at  584.27KiB/s ETA 02:04
+[download]   0.0% of   70.67MiB at    1.18MiB/s ETA 00:59
+[download]   0.0% of   70.67MiB at    2.30MiB/s ETA 00:30
+[download]   0.0% of   70.67MiB at    3.45MiB/s ETA 00:20
+[download]   0.1% of   70.67MiB at    1.10MiB/s ETA 01:04
+[download]   0.2% of   70.67MiB at    1.12MiB/s ETA 01:02
+[download]   0.4% of   70.67MiB at    1.62MiB/s ETA 00:43
+[download]   0.7% of   70.67MiB at    2.50MiB/s ETA 00:28
+[download]   1.4% of   70.67MiB at    3.86MiB/s ETA 00:18
+[download]   2.8% of   70.67MiB at    4.49MiB/s ETA 00:15
+[download]   5.7% of   70.67MiB at    6.77MiB/s ETA 00:09
+[download]  11.3% of   70.67MiB at    8.20MiB/s ETA 00:07
+[download]  13.7% of   70.67MiB at    8.53MiB/s ETA 00:07
+[download]  13.7% of   70.67MiB at  255.24KiB/s ETA 04:05
+[download]  13.7% of   70.67MiB at  610.97KiB/s ETA 01:42
+[download]  13.7% of   70.67MiB at    1.23MiB/s ETA 00:49
+[download]  13.7% of   70.67MiB at    2.41MiB/s ETA 00:25
+[download]  13.8% of   70.67MiB at    3.38MiB/s ETA 00:18
+[download]  13.8% of   70.67MiB at    3.55MiB/s ETA 00:17
+[download]  13.9% of   70.67MiB at    3.93MiB/s ETA 00:15
+[download]  14.1% of   70.67MiB at    4.76MiB/s ETA 00:12
+[download]  14.4% of   70.67MiB at    6.11MiB/s ETA 00:09
+[download]  15.1% of   70.67MiB at    7.62MiB/s ETA 00:07
+[download]  16.6% of   70.67MiB at    8.79MiB/s ETA 00:06
+[download]  19.4% of   70.67MiB at    9.50MiB/s ETA 00:05
+[download]  25.0% of   70.67MiB at    9.96MiB/s ETA 00:05
+[download]  27.7% of   70.67MiB at   10.08MiB/s ETA 00:05
+[download]  27.7% of   70.67MiB at  224.05KiB/s ETA 03:56
+[download]  27.7% of   70.67MiB at  526.50KiB/s ETA 01:39
+[download]  27.7% of   70.67MiB at    1.08MiB/s ETA 00:47
+[download]  27.7% of   70.67MiB at    2.10MiB/s ETA 00:24
+[download]  27.7% of   70.67MiB at    3.86MiB/s ETA 00:13
+[download]  27.7% of   70.67MiB at    3.63MiB/s ETA 00:14
+[download]  27.8% of   70.67MiB at    4.02MiB/s ETA 00:12
+[download]  28.0% of   70.67MiB at    4.85MiB/s ETA 00:10
+[download]  28.4% of   70.67MiB at    6.06MiB/s ETA 00:08
+[download]  29.1% of   70.67MiB at    7.36MiB/s ETA 00:06
+[download]  30.5% of   70.67MiB at    8.71MiB/s ETA 00:05
+[download]  33.3% of   70.67MiB at    9.38MiB/s ETA 00:05
+[download]  39.0% of   70.67MiB at    9.85MiB/s ETA 00:04
+[download]  41.6% of   70.67MiB at   10.06MiB/s ETA 00:04
+[download]  41.6% of   70.67MiB at  387.79KiB/s ETA 01:49
+[download]  41.6% of   70.67MiB at  882.08KiB/s ETA 00:47
+[download]  41.6% of   70.67MiB at    1.76MiB/s ETA 00:23
+[download]  41.6% of   70.67MiB at    3.14MiB/s ETA 00:13
+[download]  41.6% of   70.67MiB at    3.91MiB/s ETA 00:10
+[download]  41.7% of   70.67MiB at    3.69MiB/s ETA 00:11
+[download]  41.8% of   70.67MiB at    4.00MiB/s ETA 00:10
+[download]  42.0% of   70.67MiB at    4.62MiB/s ETA 00:08
+[download]  42.3% of   70.67MiB at    5.83MiB/s ETA 00:06
+[download]  43.0% of   70.67MiB at    7.35MiB/s ETA 00:05
+[download]  44.4% of   70.67MiB at    6.85MiB/s ETA 00:05
+[download]  47.3% of   70.67MiB at    9.59MiB/s ETA 00:03
+[download]  52.9% of   70.67MiB at    9.30MiB/s ETA 00:03
+[download]  55.6% of   70.67MiB at    9.37MiB/s ETA 00:03
+[download]  55.6% of   70.67MiB at  244.11KiB/s ETA 02:12
+[download]  55.6% of   70.67MiB at  515.25KiB/s ETA 01:02
+[download]  55.6% of   70.67MiB at    1.10MiB/s ETA 00:28
+[download]  55.6% of   70.67MiB at    2.10MiB/s ETA 00:14
+[download]  55.6% of   70.67MiB at    3.60MiB/s ETA 00:08
+[download]  55.7% of   70.67MiB at    3.54MiB/s ETA 00:08
+[download]  55.8% of   70.67MiB at    4.07MiB/s ETA 00:07
+[download]  55.9% of   70.67MiB at    4.82MiB/s ETA 00:06
+[download]  56.3% of   70.67MiB at    6.14MiB/s ETA 00:05
+[download]  57.0% of   70.67MiB at    7.56MiB/s ETA 00:04
+[download]  58.4% of   70.67MiB at    8.28MiB/s ETA 00:03
+[download]  61.3% of   70.67MiB at    8.84MiB/s ETA 00:03
+[download]  66.9% of   70.67MiB at    9.20MiB/s ETA 00:02
+[download]  69.3% of   70.67MiB at    9.31MiB/s ETA 00:02
+[download]  69.3% of   70.67MiB at  322.39KiB/s ETA 01:09
+[download]  69.3% of   70.67MiB at  749.96KiB/s ETA 00:29
+[download]  69.3% of   70.67MiB at    1.51MiB/s ETA 00:14
+[download]  69.3% of   70.67MiB at    2.80MiB/s ETA 00:07
+[download]  69.3% of   70.67MiB at    4.19MiB/s ETA 00:05
+[download]  69.4% of   70.67MiB at    3.74MiB/s ETA 00:05
+[download]  69.5% of   70.67MiB at    4.15MiB/s ETA 00:05
+[download]  69.7% of   70.67MiB at    4.83MiB/s ETA 00:04
+[download]  70.0% of   70.67MiB at    6.24MiB/s ETA 00:03
+[download]  70.7% of   70.67MiB at    7.69MiB/s ETA 00:02
+[download]  72.1% of   70.67MiB at    8.50MiB/s ETA 00:02
+[download]  75.0% of   70.67MiB at    8.93MiB/s ETA 00:01
+[download]  80.6% of   70.67MiB at    9.28MiB/s ETA 00:01
+[download]  82.8% of   70.67MiB at    9.51MiB/s ETA 00:01
+[download]  82.8% of   70.67MiB at  373.69KiB/s ETA 00:33
+[download]  82.8% of   70.67MiB at  783.64KiB/s ETA 00:15
+[download]  82.8% of   70.67MiB at    1.58MiB/s ETA 00:07
+[download]  82.8% of   70.67MiB at    2.89MiB/s ETA 00:04
+[download]  82.8% of   70.67MiB at    4.64MiB/s ETA 00:02
+[download]  82.9% of   70.67MiB at    4.30MiB/s ETA 00:02
+[download]  83.0% of   70.67MiB at    4.36MiB/s ETA 00:02
+[download]  83.1% of   70.67MiB at    5.11MiB/s ETA 00:02
+[download]  83.5% of   70.67MiB at    6.19MiB/s ETA 00:01
+[download]  84.2% of   70.67MiB at    7.60MiB/s ETA 00:01
+[download]  85.6% of   70.67MiB at    8.65MiB/s ETA 00:01
+[download]  88.4% of   70.67MiB at    9.53MiB/s ETA 00:00
+[download]  94.1% of   70.67MiB at   10.01MiB/s ETA 00:00
+[download]  96.4% of   70.67MiB at   10.16MiB/s ETA 00:00
+[download]  96.4% of   70.67MiB at  242.28KiB/s ETA 00:10
+[download]  96.4% of   70.67MiB at  578.34KiB/s ETA 00:04
+[download]  96.4% of   70.67MiB at    1.17MiB/s ETA 00:02
+[download]  96.4% of   70.67MiB at    2.31MiB/s ETA 00:01
+[download]  96.4% of   70.67MiB at    3.31MiB/s ETA 00:00
+[download]  96.4% of   70.67MiB at    3.60MiB/s ETA 00:00
+[download]  96.5% of   70.67MiB at    4.00MiB/s ETA 00:00
+[download]  96.7% of   70.67MiB at    4.68MiB/s ETA 00:00
+[download]  97.1% of   70.67MiB at    6.11MiB/s ETA 00:00
+[download]  97.8% of   70.67MiB at    7.44MiB/s ETA 00:00
+[download]  99.2% of   70.67MiB at    8.74MiB/s ETA 00:00
+[download] 100.0% of   70.67MiB at    9.12MiB/s ETA 00:00
+[download] 100% of   70.67MiB in 00:00:08 at 8.09MiB/s   
+                                                      
+[Yt] Procesando audio (bitrate: 64, speed: 1.5x): ffmpeg -y -i /data/audio/yt_yg0PNsGopi0.mp3 -ac 1 -acodec libmp3lame -b:a 64k -af atempo=1.5 /data/audio/yt_yg0PNsGopi0.mono_tmp.mp3
+[Yt] Añadido: La contracronica — Cursed Borders
 [Yt] yt_es_yXfD8XUo ya procesado
 [Yt] yt_59xrNi62q8E ya procesado
 [Yt] yt_2t0DT8eF96E ya procesado
@@ -787,7 +513,6 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Yt] yt_lH92r6FI37I ya procesado
 [Yt] yt_jp7TeiQ1XpY ya procesado
 [Yt] yt_jmRVkgKHvVk ya procesado
-[Yt] yt_fSCGF4VTHqA ya procesado
 [Yt] Canal: Punto de vista (Min: 5m)
 [Yt] yt_4FUWVSSxdHE ya procesado
 [Yt] yt_AylOF1qTMz0 ya procesado
@@ -801,7 +526,10 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Yt] yt_creAp3yHP-M ya procesado
 [Yt] yt_6aiM4twvmLo más de 10 días
 [Tw] Procesando canal: Jordi Llatzer
-[Tw] twt_2832985187 aún en emisión (pub=2026-07-30T19:56:12+00:00)
+[Tw] Bajando audio: twt_2832985187
+[Tw] Ejecutando: twitch-dl download 2832985187 -q audio_only --output /data/audio/twt_2832985187.mkv --auth-token t2xgoiw1neylxeyplvip74wpb69rwj
+[Tw] Convirtiendo a MP3 (bitrate: 64k, speed: 1.5x)
+[Tw] Añadido: Jordi Llatzer — BOLSA: Resultados de Apple, Amazon, Master Card..
 [Tw] twt_2832169167 ya procesado
 [Tw] twt_2830536032 ya procesado
 [Tw] twt_2829792521 ya procesado
@@ -811,7 +539,7 @@ ERROR: unable to download video data: HTTP Error 403: Forbidden
 [Kick] Sin VODs para jordillatzer
 [Fd] generado en /data/feed.xml
 [Fd] Feed ok con 500 episodios
-[Tg] Intentando enviar notificación de 4 episodios...
+[Tg] Intentando enviar notificación de 3 episodios...
 [Tg] Notificación enviada.
 [Rc] Feed subido
 [Rc] Subiendo todos los .mp3 desde /data/audio → Sherlockes78_GD:/sherlocaster
